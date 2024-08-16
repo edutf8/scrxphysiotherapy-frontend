@@ -13,9 +13,9 @@ export default function InstagramGallery() {
         const fetchImages = async () => {
             try {
                 const response = await axios.get("https://jsonplaceholder.typicode.com/photos");
-                if (isMobileDevice() && !fetched) {
+                if (!isMobileDevice() && !fetched) {
                     setImages(response.data.slice(0, 6));
-                } else {
+                } else if (isMobileDevice() && !fetched) {
                     setImages(response.data.slice(0, 1));
                 }
                 setFetched(true);
