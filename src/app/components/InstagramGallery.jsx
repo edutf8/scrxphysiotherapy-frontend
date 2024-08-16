@@ -19,15 +19,21 @@ export default function InstagramGallery() {
 
     return (
         <div className={"flex justify-center items-center p-5"}>
-            <div className={"grid grid-cols-3 gap-10"}>
+            <div className={"grid grid-cols-1 md:grid-cols-3 gap-10"}>
                 {images.map((image, index) => (
                     <div key={index} className={"max-w-sm rounded overflow-hidden shadow-lg"}>
-                        <img src={image.url} alt={image.title} className={"w-full"} />
+                        <img src={image.url} alt={image.title} className={"w-full"}/>
                         <div className={"px-6 py-4"}>
                             <div className={"font-bold text-xl mb-2"}>{image.title}</div>
                         </div>
                     </div>
                 ))}
+            </div>
+            <div className={"mt-5 block md:hidden"}>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"
+                   className={"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"}>
+                    Check Out Our Instagram
+                </a>
             </div>
         </div>
     )
