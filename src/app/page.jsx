@@ -68,18 +68,13 @@ export default function Home() {
           </section>
           <section id={"scrx-in-elite-sport"}>
               <div className={"container mx-auto mt-5 text-center"}>
-                  <div className="flex flex-col md:flex-row mx-auto justify-center items-center text-center h-full w-full">
-                      <div className="flex-1 p-5 mt-5 md:mt-0">
-                          <video className="w-full h-auto rounded-lg" controls>
-                              <source src="/why-choose-us.mp4" type="video/mp4"/>
-                          </video>
-                      </div>
-                      <div className="flex-1 p-5 text-black">
+                  <div
+                      className="flex flex-col-reverse md:flex-row mx-auto justify-center items-center text-center h-full w-full">
+                      <div className="flex-1 p-5 text-black md:order-1 order-2">
                           <h1 className="text-3xl font-bold mb-4 uppercase">Our Work In Elite Sport</h1>
                           <p className={"text-lg"}>
                               South Coast Rx Physiotherapy are proud to be the provider of choice for a number of local
-                              sports
-                              clubs as well as amateur and elite athletes alike.
+                              sports clubs as well as amateur and elite athletes alike.
                           </p>
                           <button className="mt-5 p-[3px] text-lg sm:text-xl md:text-xl relative">
                               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg"/>
@@ -88,6 +83,11 @@ export default function Home() {
                                   Discover Our Services
                               </div>
                           </button>
+                      </div>
+                      <div className="flex-1 p-5 mt-5 md:mt-0 md:order-2 order-1">
+                          <video className="w-full h-auto rounded-lg" controls>
+                              <source src="/why-choose-us.mp4" type="video/mp4"/>
+                          </video>
                       </div>
                   </div>
               </div>
