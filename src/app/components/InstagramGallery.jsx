@@ -40,9 +40,9 @@ export default function InstagramGallery() {
                         </div>
                     </div>
                 ))}
-                <div className={"mt-5 block md:hidden"}>
+                <div className={"block md:hidden"}>
                     <a href="https://instagram.com/scrxphysiotherapy">
-                        <FontAwesomeIcon icon={faInstagram}/>
+                        <FontAwesomeIcon icon={faInstagram}/> Instagram
                     </a>
                 </div>
             </div>
