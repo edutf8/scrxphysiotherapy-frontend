@@ -1,0 +1,34 @@
+import React, {useEffect, useState} from "react";
+import axios from "axios";
+
+export default function InstagramGallery() {
+    const [images, setImages] = useState([]);
+
+    useEffect(() => {
+        fetchImages().then(r => console.log(r));
+    }, []);
+
+    const fetchImages = async () => {
+        try {
+            const response = await axios.get("https://jsonplaceholder.typicode.com/photos");
+            setImages(response.data.slice(0, 6));
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    return (
+        <div className={"flex justify-center items-center p-5"}>
+            <div className={"grid grid-cols-3 gap-10"}>
+                {images.map((image, index) => (
+                    <div key={index} className={"max-w-sm rounded overflow-hidden shadow-lg"}>
+                        <img src={image.url} alt={image.title} className={"w-full"} />
+                        <div className={"px-6 py-4"}>
+                            <div className={"font-bold text-xl mb-2"}>{image.title}</div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    )
+}

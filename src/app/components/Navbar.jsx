@@ -1,0 +1,87 @@
+"use client";
+
+import Link from 'next/link';
+import { useState } from 'react';
+import Image from "next/image";
+
+export default function Navbar() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+        <nav className="bg-white shadow-lg p-5">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-between h-16">
+                    <div className="flex items-center">
+                        <div className="hidden md:flex space-x-8">
+                            <Link href="/services" className="text-gray-800 hover:text-gray-500">Services</Link>
+                            <Link href="/clinics" className="text-gray-800 hover:text-gray-500">Clinics</Link>
+                            <Link href="/team" className="text-gray-800 hover:text-gray-500">Team</Link>
+                            <Link href="/partners" className="text-gray-800 hover:text-gray-500">Partners</Link>
+                        </div>
+                    </div>
+
+                    <div className="flex-shrink-0">
+                        <Link href="/">
+                            <Image
+                                src={"/SCRx-logo.jpeg"}
+                                alt={"logo"} className={"w-72 md:w-48 lg:w-72"} width={300} height={500}/>
+                        </Link>
+                    </div>
+
+                    <div className="flex items-center">
+                        <div className="hidden md:flex space-x-8">
+                            <Link href="/education" className="text-gray-800 hover:text-gray-500">Education</Link>
+                            <Link href="/journey" className="text-gray-800 hover:text-gray-500">Journey</Link>
+                            <Link href="/vision" className="text-gray-800 hover:text-gray-500">Vision</Link>
+                            <Link href="/contact" className="text-gray-800 hover:text-gray-500">Contact Us</Link>
+                        </div>
+
+                        <div className="md:hidden">
+                            <button
+                                onClick={() => setIsOpen(!isOpen)}
+                                className="text-gray-800 hover:text-gray-500 focus:outline-none"
+                            >
+                                <svg
+                                    className="h-6 w-6"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    {isOpen ? (
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M6 18L18 6M6 6l12 12"
+                                        />
+                                    ) : (
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M4 6h16M4 12h16m-7 6h7"
+                                        />
+                                    )}
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {isOpen && (
+                <div className="md:hidden">
+                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                        <Link href="/services" className="block text-gray-800 hover:text-gray-500">Services</Link>
+                        <Link href="/clinics" className="block text-gray-800 hover:text-gray-500">Clinics</Link>
+                        <Link href="/team" className="block text-gray-800 hover:text-gray-500">Team</Link>
+                        <Link href="/journey" className="block text-gray-800 hover:text-gray-500">Journey</Link>
+                        <Link href="/vision" className="block text-gray-800 hover:text-gray-500">Vision</Link>
+                        <Link href="/contact" className="block text-gray-800 hover:text-gray-500">Contact Us</Link>
+                    </div>
+                </div>
+            )}
+        </nav>
+    );
+}
