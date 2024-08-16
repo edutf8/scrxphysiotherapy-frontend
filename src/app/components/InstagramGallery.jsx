@@ -11,14 +11,17 @@ export default function InstagramGallery() {
 
         // Function to fetch images if on mobile and not already fetched
         const fetchImages = async () => {
-            if (isMobileDevice() && !fetched) {
-                try {
-                    const response = await axios.get("https://jsonplaceholder.typicode.com/photos");
+            try {
+                const response = await axios.get("https://jsonplaceholder.typicode.com/photos");
+                if (!isMobileDevice() && !fetched) {
                     setImages(response.data.slice(0, 6));
                     setFetched(true); // Set the flag to true after fetching
-                } catch (error) {
-                    console.error(error);
+                } else {
+                    setImages(response.data.slice(0, 1));
+                    setFetched(true); // Set the flag to true after fetching
                 }
+            } catch (error) {
+                console.error(error);
             }
         };
 
