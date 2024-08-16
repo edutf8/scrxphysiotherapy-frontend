@@ -60,7 +60,7 @@ export default function Home() {
                       </div>
                       <div className="flex-1 p-5 mt-5 md:mt-0">
                           <video className="w-full h-auto rounded-lg" controls>
-                              <source src="/why-choose-us.mp4" type="video/mp4"/>
+                              <source src="https://scrxcdn.fra1.cdn.digitaloceanspaces.com/why-choose-us.mp4" type="video/mp4"/>
                           </video>
                       </div>
                   </div>
@@ -86,7 +86,7 @@ export default function Home() {
                       </div>
                       <div className="flex-1 p-5 mt-5 md:mt-0 md:order-2 order-1">
                           <video className="w-full h-auto rounded-lg" controls>
-                              <source src="/why-choose-us.mp4" type="video/mp4"/>
+                              <source src="https://scrxcdn.fra1.cdn.digitaloceanspaces.com/why-choose-us.mp4" type="video/mp4"/>
                           </video>
                       </div>
                   </div>
