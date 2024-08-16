@@ -70,7 +70,7 @@ export default function Home() {
               <div className={"container mx-auto mt-5 text-center"}>
                   <div
                       className="flex flex-col-reverse md:flex-row mx-auto justify-center items-center text-center h-full w-full">
-                      <div className="flex-1 p-5 text-black md:order-1 order-2">
+                      <div className="flex-1 p-5 text-black md:order-2 order-2">
                           <h1 className="text-3xl font-bold mb-4 uppercase">Our Work In Elite Sport</h1>
                           <p className={"text-lg"}>
                               South Coast Rx Physiotherapy are proud to be the provider of choice for a number of local
@@ -84,7 +84,7 @@ export default function Home() {
                               </div>
                           </button>
                       </div>
-                      <div className="flex-1 p-5 mt-5 md:mt-0 md:order-2 order-1">
+                      <div className="flex-1 p-5 mt-5 md:mt-0 md:order-1 order-1">
                           <video className="w-full h-auto rounded-lg" controls>
                               <source src="https://scrxcdn.fra1.cdn.digitaloceanspaces.com/why-choose-us.mp4" type="video/mp4"/>
                           </video>
