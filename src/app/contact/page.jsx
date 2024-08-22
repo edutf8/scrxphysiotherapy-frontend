@@ -3,7 +3,6 @@
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import CallToAction from "../components/CallToAction";
 import axios from "axios";
 import {useState} from "react";
 
@@ -130,11 +129,6 @@ export default function Contact() {
                             </div>
                         </form>
                     )}
-                </div>
-            </section>
-            <section id={"call-to-action"}>
-                <div className={"container mx-auto"}>
-                    <CallToAction />
                 </div>
             </section>
             <section id={"footer"}>
