@@ -1,12 +1,14 @@
-{
-  "description": "MSK",
-  "title": "Physiotherapy",
-  "costMap": {
-    "Initial Assessment": 65,
-    "Follow Up": 50,
-    "3x Sessions (10% Off)": 135,
-    "5x Sessions (15% Off)": "212.50"
-  },
-  "src": "/luke.jpg",
-  "content": "MSK physiotherapy, short for musculoskeletal physiotherapy, is a specialized branch of physical therapy focused on treating injuries and disorders affecting the muscles, bones, and joints. It aims to alleviate pain, improve mobility, and enhance overall physical function through a combination of manual therapy, exercise, and education. MSK physiotherapists assess conditions such as back pain, sports injuries, arthritis, and post-surgical rehabilitation, tailoring treatments to individual needs.<br /> <br />Their approach often includes techniques like joint manipulation, massage, stretching, and strengthening exercises, along with advice on posture and ergonomics to prevent future issues."
-}
+[
+  {
+    "description": "MSK",
+    "title": "Physiotherapy",
+    "costMap": {
+      "Initial Assessment": "65",
+      "Follow Up": "50",
+      "3x Sessions (10% Off)": "135",
+      "5x Sessions (15% Off)": "212.50"
+    },
+    "src": "https://scrxcdn.fra1.cdn.digitaloceanspaces.com/luke.jpg",
+    "content": "MSK physiotherapy, short for musculoskeletal physiotherapy, is a specialized branch of physical therapy focused on treating injuries and disorders affecting the muscles, bones, and joints. It aims to alleviate pain, improve mobility, and enhance overall physical function through a combination of manual therapy, exercise, and education. MSK physiotherapists assess conditions such as back pain, sports injuries, arthritis, and post-surgical rehabilitation, tailoring treatments to individual needs.<br />&nbsp;<br />Their approach often includes techniques like joint manipulation, massage, stretching, and strengthening exercises, along with advice on posture and ergonomics to prevent future issues."
+  }
+]

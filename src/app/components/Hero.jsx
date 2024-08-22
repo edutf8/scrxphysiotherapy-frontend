@@ -11,13 +11,13 @@ const HeroSection = () => {
 
     return (
         <div
-            className="flex justify-center items-center mx-auto relative text-white text-center py-20 px-4 bg-black bg-opacity-50 overflow-hidden mt-5"
+            className="flex justify-center items-center mx-auto relative text-white text-center py-20 px-4 bg-black bg-opacity-50 overflow-hidden"
             style={{
-                backgroundImage: "url('/luke.jpg')",
+                backgroundImage: "url('https://scrxcdn.fra1.cdn.digitaloceanspaces.com/luke.jpg')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
-                height: '720px',
+                height: '768px',
             }}
         >
             <div className="absolute inset-0 bg-gray-800 bg-opacity-50"></div>
