@@ -1,7 +1,7 @@
 [
   {
-    "description": "MSK",
-    "title": "Physiotherapy",
+    "description": "MSK Physiotherapy",
+    "title": "MSK Physiotherapy",
     "costMap": {
       "Initial Assessment": "65",
       "Follow Up": "50",

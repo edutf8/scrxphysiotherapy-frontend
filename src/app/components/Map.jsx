@@ -17,14 +17,18 @@ const Map = () => {
             style: 'mapbox://styles/mapbox/streets-v12',
             center: [-1.0717329407634963, 50.806003718639204],
             zoom: 11.5,
+            interactive: false,
         });
+
 
         const ravelin = new mapboxgl.Marker()
             .setLngLat([-1.0984100389059392, 50.792669006490684])
+            .setPopup(new mapboxgl.Popup().setText('Ravelin Sports Centre'))
             .addTo(map.current);
 
-        const alexandra = new mapboxgl.Marker()
+        const alexandra = new mapboxgl.Marker({ })
             .setLngLat([-1.0874, 50.8241])
+            .setPopup(new mapboxgl.Popup().setText('Alexandra Sports'))
             .addTo(map.current);
     }, []);
 

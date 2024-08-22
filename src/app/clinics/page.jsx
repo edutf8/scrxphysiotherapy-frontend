@@ -3,8 +3,30 @@ import Map from '../components/Map';
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import ClinicCardsLayout from "../components/ClinicCardsLayout";
 
 export default function Clinics() {
+    const clinics = [
+        {
+            title: "Ravelin Sports Centre",
+            description: "The South Coast Rx clinic is based in Portsmouth’s newest and most advanced leisure centre. With a spacious and modern clinic room, 175 station gym, 25 metre pool, climbing wall, ski simulator and cafe; this is the perfect environment to recover, rehabilitate and optimise performance with SCRx",
+            address: "Ravelin Sports Centre, Cambridge Rd, Portsmouth PO1 2LQ"
+        },
+        {
+            title: "Alexandra Sports",
+            description: "South Coast Rx are delighted to partner one of the UK’s leading running specialist retailers to provide a Physiotherapy service which is run out of the clinic room located on the first floor. <br />" +
+                "<br />" +
+                "Alexandra Sports pride themselves on industry leading technology, product knowledge and most of all, customer service. If you are a keen runner, triathlete or simply live in the north of Portsmouth, this is a great environment to be assessed by one of our expert team. ",
+            address: "Alexandra Sports, 40 Gladys Ave, Hilsea, Portsmouth PO2 9BL"
+        },
+        {
+            title: "Clinic C",
+            description: "A brief description about Clinic C.",
+            address: "789 Broadway St, City, Country"
+        }
+    ];
+
+
     return (
         <div className={"bg-white min-h-screen"}>
             <section id={"navigation"}>
@@ -12,11 +34,13 @@ export default function Clinics() {
                 <Header/>
             </section>
             <section id={"clinics"}>
-
+                <div className={"container mx-auto mb-5"}>
+                    <ClinicCardsLayout clinics={clinics} />
+                </div>
             </section>
             <section id={"map"}>
                 <div className="container mx-auto">
-                    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+                    <div className="flex flex-col py-2">
                         <Map/>
                     </div>
                 </div>
