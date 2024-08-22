@@ -10,7 +10,7 @@ const ClinicCard = ({ title, description, address, fullWidth }) => {
 
             </div>
             <div className={`p-1 text-right flex-shrink-0`}>
-                <p className="text-blue-500 text-md">{address}</p>
+                <p className="text-blue-500 text-sm">{address}</p>
             </div>
             <div className="border-t-4 border-b-4 border-blue-500"></div>
         </div>
