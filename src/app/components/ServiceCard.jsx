@@ -171,8 +171,9 @@ export function ServiceCard() {
                                             <ul>
                                                 {Object.entries(card.costMap).map(([key, value]) => (
                                                     <li key={key} className="flex justify-between uppercase">
-                                                        <span>{key}</span>
-                                                        <span className="ml-5 text-blue-500">£{value}</span>
+                                                        <span className="text-left">{key}</span>
+                                                        <span
+                                                            className="ml-auto text-right text-blue-500">£{value}</span>
                                                     </li>
                                                 ))}
                                             </ul>
