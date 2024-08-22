@@ -4,6 +4,11 @@ import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "../hooks/use-outside-click";
 
+const fetchData = async () => {
+    const response = await fetch('https://scrxcdn.fra1.cdn.digitaloceanspaces.com/services.json');
+    return response.json();
+}
+
 export function ServiceCard() {
     const [active, setActive] = useState(null);
     const id = useId();
@@ -27,6 +32,15 @@ export function ServiceCard() {
     }, [active]);
 
     useOutsideClick(ref, () => setActive(null));
+
+    const [cards, setCards] = useState([]);
+    useEffect(() => {
+        fetchData().then(data => {
+            setCards(data);
+        });
+    }, []);
+
+    if (!cards) return <div>Loading...</div>;
 
     return (
         <>
@@ -195,34 +209,3 @@ export const CloseIcon = () => {
         </motion.svg>
     );
 };
-
-const cards = [
-    {
-        description: "MSK",
-        title: "Physiotherapy",
-        costMap: {
-            "Initial Assessment": 65,
-            "Follow Up": 50,
-            "3x Sessions (10% Off)": 135,
-            "5x Sessions (15% Off)": "212.50",
-        },
-        src: "/luke.jpg",
-        ctaText: "Visit",
-        ctaLink: "https://ui.aceternity.com/templates",
-        content: () => {
-            return (
-                <p>
-                    MSK physiotherapy, short for musculoskeletal physiotherapy, is a specialized branch of physical therapy
-                    focused on treating injuries and disorders affecting the muscles, bones, and joints.
-                    It aims to alleviate pain, improve mobility, and enhance overall physical function through a
-                    combination of manual therapy, exercise, and education. MSK physiotherapists assess conditions
-                    such as back pain, sports injuries, arthritis, and post-surgical rehabilitation,
-                    tailoring treatments to individual needs. <br /> <br />
-                    Their approach often includes techniques like joint manipulation,
-                    massage, stretching, and strengthening exercises, along with advice
-                    on posture and ergonomics to prevent future issues.
-                </p>
-            );
-        },
-    },
-];
