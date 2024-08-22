@@ -2,7 +2,7 @@
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 const fetchData = async () => {
     try {
@@ -26,7 +26,7 @@ const fetchData = async () => {
 };
 
 export default function FAQ() {
-    const [activeIndex, setActiveIndex] = React.useState(null);
+    const [activeIndex, setActiveIndex] = useState(null);
     const [faqData, setFaqData] = useState([]);
 
     const handleClick = (index) => {
@@ -42,29 +42,29 @@ export default function FAQ() {
     if (!Array.isArray(faqData) || !faqData.length) return <div>Loading...</div>; // Handle the loading state
 
     return (
-        <div className={"bg-white min-h-screen flex flex-col"}>
-            <section id={"navigation"}>
-                <Navbar/>
-                <Header/>
+        <div className="bg-white min-h-screen flex flex-col">
+            <section id="navigation">
+                <Navbar />
+                <Header />
             </section>
-            <section id={"faq"} className={"flex-grow"}>
-                <div className={"container mx-auto max-w-2xl mt-10 p-6"}>
-                    <h2 className={"text-3xl font-bold mb-6 text-gray-900"}>Frequently Asked Questions</h2>
+            <section id="faq" className="flex-grow">
+                <div className="container mx-auto max-w-lg sm:max-w-2xl mt-6 p-4 sm:p-6">
+                    <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-gray-900">Frequently Asked Questions</h2>
                     {faqData.map((faq, index) => (
                         <div
                             key={index}
-                            className={`mb-4 p-4 bg-white shadow-md rounded-lg cursor-pointer transition-all duration-300 ${activeIndex === index ? 'max-h-screen' : 'max-h-16'}`}
+                            className={`mb-2 sm:mb-4 p-3 sm:p-4 bg-white shadow-md rounded-lg cursor-pointer transition-all duration-300 ${activeIndex === index ? 'max-h-screen' : 'max-h-16'}`}
                             onClick={() => handleClick(index)}
                         >
-                            <h3 className={"text-lg font-semibold text-gray-900"}>{faq.question}</h3>
-                            <p className={`mt-2 text-gray-700 overflow-hidden transition-all duration-300 ${activeIndex === index ? 'block' : 'hidden'}`}>{faq.answer}</p>
+                            <h3 className="text-md sm:text-lg font-semibold text-gray-900">{faq.question}</h3>
+                            <p className={`mt-2 text-sm sm:text-base text-gray-700 overflow-hidden transition-all duration-300 ${activeIndex === index ? 'block' : 'hidden'}`}>{faq.answer}</p>
                         </div>
                     ))}
                 </div>
             </section>
-            <section id={"footer"}>
-                <Footer/>
+            <section id="footer">
+                <Footer />
             </section>
         </div>
-    )
+    );
 }
