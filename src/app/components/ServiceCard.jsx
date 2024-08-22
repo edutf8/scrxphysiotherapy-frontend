@@ -102,6 +102,7 @@ export function ServiceCard() {
                                     src={active.src}
                                     alt={active.title}
                                     className="rounded-lg object-cover object-top"
+                                    unoptimized
                                 />
                             </motion.div>
 
@@ -155,6 +156,7 @@ export function ServiceCard() {
                                         src={card.src}
                                         alt={card.title}
                                         className="rounded-lg object-cover object-top"
+                                        unoptimized
                                     />
                                 </motion.div>
                                 <div className="flex justify-center items-center flex-col">
