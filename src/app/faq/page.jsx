@@ -37,17 +37,17 @@ export default function FAQ() {
         fetchData().then(data => {
             setFaqData(data);
         });
-    });
+    }, []);
 
     if (!Array.isArray(faqData) || !faqData.length) return <div>Loading...</div>; // Handle the loading state
 
     return (
-        <div className={"bg-white min-h-screen"}>
+        <div className={"bg-white min-h-screen flex flex-col"}>
             <section id={"navigation"}>
                 <Navbar/>
                 <Header/>
             </section>
-            <section id={"team"}>
+            <section id={"faq"} className={"flex-grow"}>
                 <div className={"container mx-auto max-w-2xl mt-10 p-6"}>
                     <h2 className={"text-3xl font-bold mb-6 text-gray-900"}>Frequently Asked Questions</h2>
                     {faqData.map((faq, index) => (
