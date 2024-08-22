@@ -168,15 +168,15 @@ export function ServiceCard() {
                                     </motion.h3>
                                     <motion.div>
                                         <div className="p-4">
-                                            <ul>
+                                            <ul className="w-full">
                                                 {Object.entries(card.costMap).map(([key, value]) => (
-                                                    <li key={key} className="flex justify-between uppercase">
-                                                        <span className="text-left">{key}</span>
-                                                        <span
-                                                            className="ml-auto text-right text-blue-500">£{value}</span>
+                                                    <li key={key} className="flex justify-between w-full uppercase">
+                                                        <span className="w-1/2 text-left">{key}</span>
+                                                        <span className="w-1/2 text-right text-blue-500">£{value}</span>
                                                     </li>
                                                 ))}
                                             </ul>
+
                                         </div>
                                     </motion.div>
                                 </div>
