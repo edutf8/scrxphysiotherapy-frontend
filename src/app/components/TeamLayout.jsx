@@ -74,7 +74,7 @@ export default function TeamLayout() {
             {teamData.map((team, index) => (
                 <div key={index} className={"text-center cursor-pointer"} onClick={() => setSelectedTeamMember(team)}>
                     <img
-                        className={"rounded-xl sm:size-48 lg:size-60 mx-auto"}
+                        className={"rounded-xl mx-auto"}
                         src={team.image}
                         alt={`${team.name}'s Avatar`}
                     />
