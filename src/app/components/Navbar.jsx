@@ -15,7 +15,7 @@ export default function Navbar() {
                         <div className="hidden md:flex space-x-8">
                             <Link href="/services" className="text-gray-800 hover:text-gray-500">Services</Link>
                             <Link href="/clinics" className="text-gray-800 hover:text-gray-500">Clinics</Link>
-                            <Link href="/src/app/components/TeamLayout" className="text-gray-800 hover:text-gray-500">Team</Link>
+                            <Link href="/team" className="text-gray-800 hover:text-gray-500">Team</Link>
                             <Link href="/partners" className="text-gray-800 hover:text-gray-500">Partners</Link>
                         </div>
                     </div>
