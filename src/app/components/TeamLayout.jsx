@@ -55,7 +55,7 @@ export default function TeamLayout() {
     return (
         <div className={"grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12"}>
             {teamData.map((team, index) => (
-                <div key={index} className={"text-center"}>
+                <div key={index} className={"text-center cursor-pointer"} onClick={() => setSelectedTeamMember(team)}>
                     <img
                         className={"rounded-xl sm:size-48 lg:size-60 mx-auto"}
                         src={team.image}
