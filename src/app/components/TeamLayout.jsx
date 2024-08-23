@@ -1,6 +1,23 @@
 import {useEffect, useState} from "react";
 
 function Modal({ isOpen, onClose, teamMember }) {
+    useEffect(() => {
+        // Function to handle keydown events
+        const handleKeyDown = (event) => {
+            if (event.key === "Escape") {
+                onClose();
+            }
+        };
+
+        if (isOpen) {
+            window.addEventListener("keydown", handleKeyDown);
+        }
+
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [isOpen, onClose]);
+
     if (!isOpen) return null;
 
     return (
