@@ -75,7 +75,7 @@ export default function Navbar() {
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
                         <Link href="/services" className="block text-gray-800 hover:text-gray-500">Services</Link>
                         <Link href="/clinics" className="block text-gray-800 hover:text-gray-500">Clinics</Link>
-                        <Link href="/src/app/components/TeamLayout" className="block text-gray-800 hover:text-gray-500">Team</Link>
+                        <Link href="/team" className="block text-gray-800 hover:text-gray-500">Team</Link>
                         <Link href="/journey" className="block text-gray-800 hover:text-gray-500">Journey</Link>
                         <Link href="/vision" className="block text-gray-800 hover:text-gray-500">Vision</Link>
                         <Link href="/contact" className="block text-gray-800 hover:text-gray-500">Contact Us</Link>
