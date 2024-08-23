@@ -6,7 +6,7 @@ import TeamLayout from "../components/TeamLayout";
 
 export default function Team() {
     return (
-        <div className={"bg-white min-h-screen"}>
+        <div className={"bg-white min-h-screen flex flex-col"}>
             <section id={"navigation"}>
                 <Navbar/>
                 <Header/>

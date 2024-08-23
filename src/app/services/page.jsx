@@ -9,7 +9,7 @@ import {ServiceCard} from "../components/ServiceCard";
 
 export default function Services() {
     return (
-        <div className={"bg-white min-h-screen mb-5"}>
+        <div className={"bg-white min-h-screen flex flex-col mb-5"}>
             <section id={"navigation-section"}>
                 <Navbar/>
                 <Header/>
