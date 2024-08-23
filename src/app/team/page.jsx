@@ -12,7 +12,7 @@ export default function Team() {
                 <Header/>
             </section>
             <section id={"team"}>
-                <div className={"container mx-auto"}>
+                <div className={"container mx-auto mt-5"}>
                     <TeamLayout />
                 </div>
             </section>
