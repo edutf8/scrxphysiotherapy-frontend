@@ -52,7 +52,7 @@ export default function Contact() {
     };
 
     return (
-        <div className={"bg-white min-h-screen flex flex-col"}>
+        <div className={"bg-gray-100 min-h-screen flex flex-col"}>
             <section id={"navigation"}>
                 <Navbar />
                 <Header />

@@ -43,7 +43,7 @@ export default function FAQ() {
     if (!Array.isArray(faqData) || !faqData.length) return <div>Loading...</div>; // Handle the loading state
 
     return (
-        <div className="bg-white min-h-screen flex flex-col">
+        <div className="bg-gray-100 min-h-screen flex flex-col">
             <section id="navigation">
                 <Navbar />
                 <Header />
