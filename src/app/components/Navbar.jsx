@@ -35,9 +35,8 @@ export default function Navbar() {
                                 </button>
                                 {isDropdownOpen && (
                                     <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-300 shadow-lg rounded-lg z-50">
-                                        <Link href="/partners/partner1" className="block px-4 py-2 text-gray-800 hover:bg-blue-100">Partner 1</Link>
-                                        <Link href="/partners/partner2" className="block px-4 py-2 text-gray-800 hover:bg-blue-100">Partner 2</Link>
-                                        <Link href="/partners/partner3" className="block px-4 py-2 text-gray-800 hover:bg-blue-100">Partner 3</Link>
+                                        <Link href="/partners/FirstAid4Sport" className="block px-4 py-2 text-gray-800 hover:bg-blue-100">First Aid 4 Sport</Link>
+                                        <Link href="/partners/BelieveAndAchieve" className="block px-4 py-2 text-gray-800 hover:bg-blue-100">Believe And Achieve</Link>
                                     </div>
                                 )}
                             </div>
@@ -119,9 +118,8 @@ export default function Navbar() {
                         </button>
                         {isDropdownOpen && (
                             <div className="bg-white border border-gray-300 shadow-lg rounded-lg z-50">
-                                <Link href="/partners/partner1" className="block px-4 py-2 text-gray-800 hover:bg-blue-100">Partner 1</Link>
-                                <Link href="/partners/partner2" className="block px-4 py-2 text-gray-800 hover:bg-blue-100">Partner 2</Link>
-                                <Link href="/partners/partner3" className="block px-4 py-2 text-gray-800 hover:bg-blue-100">Partner 3</Link>
+                                <Link href="/partners/FirstAid4Sport" className="block px-4 py-2 text-gray-800 hover:bg-blue-100">First Aid 4 Sport</Link>
+                                <Link href="/partners/BelieveAndAchieve" className="block px-4 py-2 text-gray-800 hover:bg-blue-100">Believe And Achieve</Link>
                             </div>
                         )}
                         <Link href="/journey" className="block text-gray-800 hover:text-blue-600">Journey</Link>
