@@ -55,35 +55,44 @@ export default function Navbar() {
                         </Link>
                     </div>
 
-                    <div className="flex items-center md:hidden">
-                        <button
-                            onClick={() => setIsOpen(!isOpen)}
-                            className="text-gray-800 hover:text-blue-600 focus:outline-none ml-auto"
-                        >
-                            <svg
-                                className="h-6 w-6"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
+                    <div className="flex items-center">
+                        <div className="hidden md:flex space-x-8">
+                            <Link href="/education" className="text-gray-800 hover:text-blue-600 transition duration-300">Education</Link>
+                            <Link href="/journey" className="text-gray-800 hover:text-blue-600 transition duration-300">Journey</Link>
+                            <Link href="/vision" className="text-gray-800 hover:text-blue-600 transition duration-300">Vision</Link>
+                            <Link href="/contact" className="text-gray-800 hover:text-blue-600 transition duration-300">Contact Us</Link>
+                        </div>
+
+                        <div className="md:hidden flex items-center">
+                            <button
+                                onClick={() => setIsOpen(!isOpen)}
+                                className="text-gray-800 hover:text-blue-600 focus:outline-none ml-auto"
                             >
-                                {isOpen ? (
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M6 18L18 6M6 6l12 12"
-                                    />
-                                ) : (
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M4 6h16M4 12h16m-7 6h7"
-                                    />
-                                )}
-                            </svg>
-                        </button>
+                                <svg
+                                    className="h-6 w-6"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    {isOpen ? (
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M6 18L18 6M6 6l12 12"
+                                        />
+                                    ) : (
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M4 6h16M4 12h16m-7 6h7"
+                                        />
+                                    )}
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -116,6 +125,7 @@ export default function Navbar() {
                                 <Link href="/partners/partner3" className="block px-4 py-2 text-gray-800 hover:bg-blue-100">Partner 3</Link>
                             </div>
                         )}
+                        <Link href="/journey" className="block text-gray-800 hover:text-blue-600">Education</Link>
                         <Link href="/journey" className="block text-gray-800 hover:text-blue-600">Journey</Link>
                         <Link href="/vision" className="block text-gray-800 hover:text-blue-600">Vision</Link>
                         <Link href="/contact" className="block text-gray-800 hover:text-blue-600">Contact Us</Link>
