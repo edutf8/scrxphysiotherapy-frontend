@@ -2,7 +2,7 @@
 
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
-import CallToAction from "../components/CallToAction";
+import CTA from "../components/CTA";
 import Footer from "../components/Footer";
 import {ServiceCard} from "../components/ServiceCard";
 
@@ -21,7 +21,7 @@ export default function Services() {
             </section>
             <section id={"call-to-action"}>
                 <div className={"container mx-auto mt-10"}>
-                    <CallToAction/>
+                    <CTA />
                 </div>
             </section>
             <section id={"footer"}>

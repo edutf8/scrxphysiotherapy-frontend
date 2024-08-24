@@ -7,7 +7,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import { Carousel } from "./components/Carousel";
 import {InfiniteMovingCards} from "./ui/infinite-moving-cards";
-import CallToAction from "./components/CallToAction";
+import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import InstagramGallery from "./components/InstagramGallery";
 
@@ -117,13 +117,13 @@ export default function Home() {
               </div>
           </section>
           <section id={"call-to-action"}>
-              <div className={"container mx-auto mt-10"}>
-                  <CallToAction/>
+              <div className={"mx-auto mt-10"}>
+                  <CTA />
               </div>
           </section>
           <section id={"footer"}>
               <div className={"mx-auto text-center"}>
-              <Footer/>
+                  <Footer/>
               </div>
           </section>
       </div>

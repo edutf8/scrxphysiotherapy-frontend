@@ -4,7 +4,7 @@ import {faInstagram} from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
     return (
-        <footer className="border-t-2 border-blue-500 mt-5 p-3">
+        <footer className="border-t-2 border-blue-500 p-3">
             <div
                 className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                 <div className="text-sm font-semibold text-center md:text-left">

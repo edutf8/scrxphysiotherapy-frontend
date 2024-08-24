@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import React, { useState } from "react";
+import CTA from "../components/CTA";
 
 const fetchData = async () => {
     try {
@@ -61,6 +62,9 @@ export default function FAQ() {
                         </div>
                     ))}
                 </div>
+            </section>
+            <section id={"call-to-action"}>
+                <CTA />
             </section>
             <section id="footer">
                 <Footer />
