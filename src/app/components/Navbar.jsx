@@ -46,52 +46,35 @@ export default function Navbar() {
                         </Link>
                     </div>
 
-                    <div className="flex items-center">
-                        <div className="hidden md:flex space-x-8">
-                            <Link href="/education" className="text-gray-800 hover:text-blue-600 transition duration-300">Education</Link>
-                            <Link href="/journey" className="text-gray-800 hover:text-blue-600 transition duration-300">Journey</Link>
-                            <Link href="/vision" className="text-gray-800 hover:text-blue-600 transition duration-300">Vision</Link>
-                            <Link href="/contact" className="text-gray-800 hover:text-blue-600 transition duration-300">Contact Us</Link>
-                        </div>
-
-                        <div className="md:hidden flex items-center">
-                            <Link href="/" className="mr-auto">
-                                <Image
-                                    src={"/SCRx-logo.jpeg"}
-                                    alt={"logo"}
-                                    className={"w-36"}
-                                    width={150} height={250}
-                                />
-                            </Link>
-                            <button
-                                onClick={() => setIsOpen(!isOpen)}
-                                className="text-gray-800 hover:text-blue-600 focus:outline-none ml-auto"
+                    <div className="flex items-center md:hidden">
+                        <button
+                            onClick={() => setIsOpen(!isOpen)}
+                            className="text-gray-800 hover:text-blue-600 focus:outline-none ml-auto"
+                        >
+                            <svg
+                                className="h-6 w-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
                             >
-                                <svg
-                                    className="h-6 w-6"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    {isOpen ? (
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                            d="M6 18L18 6M6 6l12 12"
-                                        />
-                                    ) : (
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                            d="M4 6h16M4 12h16m-7 6h7"
-                                        />
-                                    )}
-                                </svg>
-                            </button>
-                        </div>
+                                {isOpen ? (
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M6 18L18 6M6 6l12 12"
+                                    />
+                                ) : (
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M4 6h16M4 12h16m-7 6h7"
+                                    />
+                                )}
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
