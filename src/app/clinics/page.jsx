@@ -47,7 +47,9 @@ export default function Clinics() {
                 </div>
             </section>
             <section id={"call-to-action"}>
-                <CTA/>
+                <div className="mx-auto mt-5">
+                    <CTA/>
+                </div>
             </section>
             <section id={"footer"}>
                 <Footer />
