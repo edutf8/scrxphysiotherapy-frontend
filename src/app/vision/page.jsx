@@ -9,6 +9,7 @@ import { FaUsers, FaTrophy, FaBalanceScale, FaHandsHelping } from 'react-icons/f
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
+import CTA from "../components/CTA";
 
 export default function Vision() {
     return (
@@ -81,17 +82,9 @@ export default function Vision() {
                 </div>
             </section>
 
-            <section className="bg-blue-600 text-white py-12 md:py-16">
-                <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-2xl md:text-3xl font-semibold mb-4">Ready to Experience the Difference?</h2>
-                    <p className="text-lg mb-8">
-                        Book your appointment now and start your journey to better health and well-being.
-                    </p>
-                    <Link href="/contact">
-                        <button className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-gray-100 transition duration-300">
-                            Book Now
-                        </button>
-                    </Link>
+            <section id={"call-to-action"}>
+                <div className={"mx-auto mt-5"}>
+                    <CTA />
                 </div>
             </section>
 
