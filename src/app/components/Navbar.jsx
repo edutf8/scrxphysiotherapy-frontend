@@ -20,9 +20,18 @@ export default function Navbar() {
                             <div className="relative">
                                 <button
                                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                                    className="text-gray-800 hover:text-blue-600 transition duration-300"
+                                    className="flex items-center text-gray-800 hover:text-blue-600 transition duration-300"
                                 >
                                     Partners
+                                    <svg
+                                        className={`w-4 h-4 ml-1 transition-transform duration-300 ${isDropdownOpen ? 'transform rotate-180' : ''}`}
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
                                 </button>
                                 {isDropdownOpen && (
                                     <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-300 shadow-lg rounded-lg">
@@ -87,9 +96,18 @@ export default function Navbar() {
                         <Link href="/team" className="block text-gray-800 hover:text-blue-600">Team</Link>
                         <button
                             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                            className="block w-full text-gray-800 hover:text-blue-600"
+                            className="block w-full text-gray-800 hover:text-blue-600 flex justify-center"
                         >
                             Partners
+                            <svg
+                                className={`w-4 h-4 ml-1 transition-transform duration-300 ${isDropdownOpen ? 'transform rotate-180' : ''}`}
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                            </svg>
                         </button>
                         {isDropdownOpen && (
                             <div className="bg-white border border-gray-300 shadow-lg rounded-lg">
