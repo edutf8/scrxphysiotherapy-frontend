@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ClinicCardsLayout from "../components/ClinicCardsLayout";
+import CTA from "../components/CTA";
 
 export default function Clinics() {
     const clinics = [
@@ -44,6 +45,9 @@ export default function Clinics() {
                         <Map/>
                     </div>
                 </div>
+            </section>
+            <section id={"call-to-action"}>
+                <CTA/>
             </section>
             <section id={"footer"}>
                 <Footer />

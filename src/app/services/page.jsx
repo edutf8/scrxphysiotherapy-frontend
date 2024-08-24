@@ -20,7 +20,7 @@ export default function Services() {
                 </div>
             </section>
             <section id={"call-to-action"}>
-                <div className={"container mx-auto mt-10"}>
+                <div className={"mx-auto mt-10"}>
                     <CTA />
                 </div>
             </section>
@@ -32,42 +32,3 @@ export default function Services() {
         </div>
     );
 }
-
-const images = [
-    "https://via.placeholder.com/200x150?text=1",
-    "https://via.placeholder.com/200x150?text=2",
-    "https://via.placeholder.com/200x150?text=3",
-    "https://via.placeholder.com/200x150?text=4",
-    "https://via.placeholder.com/200x150?text=5",
-    "https://via.placeholder.com/200x150?text=6",
-    "https://via.placeholder.com/200x150?text=7",
-    "https://via.placeholder.com/200x150?text=8"
-];
-
-const testimonials = [
-    {
-        review:
-            "I have been seeing the team at South Coast Rx for a number of years now and I can honestly say they are the best in the business. I have had a number of injuries over the years and they have always been able to get me back to full fitness in no time at all. I would highly recommend them to anyone.",
-        name: "Charles Dickens",
-    },
-    {
-        review:
-            "I have been seeing the team at South Coast Rx for a number of years now and I can honestly say they are the best in the business. I have had a number of injuries over the years and they have always been able to get me back to full fitness in no time at all. I would highly recommend them to anyone.",
-        name: "William Shakespeare",
-    },
-    {
-        review:
-            "I have been seeing the team at South Coast Rx for a number of years now and I can honestly say they are the best in the business. I have had a number of injuries over the years and they have always been able to get me back to full fitness in no time at all. I would highly recommend them to anyone.",
-        name: "Edgar Allan Poe",
-    },
-    {
-        review:
-            "I have been seeing the team at South Coast Rx for a number of years now and I can honestly say they are the best in the business. I have had a number of injuries over the years and they have always been able to get me back to full fitness in no time at all. I would highly recommend them to anyone.",
-        name: "Jane Austen",
-    },
-    {
-        review:
-            "I have been seeing the team at South Coast Rx for a number of years now and I can honestly say they are the best in the business. I have had a number of injuries over the years and they have always been able to get me back to full fitness in no time at all. I would highly recommend them to anyone.",
-        name: "Herman Melville",
-    },
-];

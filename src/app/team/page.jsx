@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import TeamLayout from "../components/TeamLayout";
+import CTA from "../components/CTA";
 
 export default function Team() {
     return (
@@ -15,6 +16,9 @@ export default function Team() {
                 <div className={"container mx-auto mt-5"}>
                     <TeamLayout />
                 </div>
+            </section>
+            <section id={"call-to-action"}>
+                <CTA />
             </section>
             <section id={"footer"}>
                 <Footer />

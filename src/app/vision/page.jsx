@@ -13,19 +13,16 @@ import Header from "../components/Header";
 export default function Vision() {
     return (
         <div className="bg-white min-h-screen flex flex-col">
-            {/* Navigation Section */}
             <section id="navigation">
                 <Navbar />
                 <Header />
             </section>
 
-            {/* Hero Section */}
             <section className="relative h-[66vh] md:h-[75vh] flex items-center justify-center overflow-hidden">
-                {/* Background Image */}
                 <Image
                     src="/camanddan.png"
                     alt="Vision and Values Hero Image"
-                    fill // Use fill to ensure the image covers the entire section
+                    fill
                     objectFit="cover"
                     objectPosition="center"
                     className="z-0"
@@ -40,7 +37,6 @@ export default function Vision() {
                 </div>
             </section>
 
-            {/* Values Section */}
             <section className="py-12 md:py-16 bg-gray-100">
                 <div className="container mx-auto px-4">
                     <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8 md:mb-12">Our Core Values</h2>
@@ -85,7 +81,6 @@ export default function Vision() {
                 </div>
             </section>
 
-            {/* Call to Action Section */}
             <section className="bg-blue-600 text-white py-12 md:py-16">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-2xl md:text-3xl font-semibold mb-4">Ready to Experience the Difference?</h2>
@@ -100,7 +95,6 @@ export default function Vision() {
                 </div>
             </section>
 
-            {/* Footer Section */}
             <section id="footer">
                 <Footer />
             </section>
