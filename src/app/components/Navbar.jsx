@@ -56,6 +56,7 @@ export default function Navbar() {
 
                     <div className="flex items-center">
                         <div className="hidden md:flex space-x-8">
+                            <Link href="/education" className="text-gray-800 hover:text-blue-600 transition duration-300">Education</Link>
                             <Link href="/journey" className="text-gray-800 hover:text-blue-600 transition duration-300">Journey</Link>
                             <Link href="/vision" className="text-gray-800 hover:text-blue-600 transition duration-300">Vision</Link>
                             <Link href="/contact" className="text-gray-800 hover:text-blue-600 transition duration-300">Contact Us</Link>
@@ -122,6 +123,7 @@ export default function Navbar() {
                                 <Link href="/partners/BelieveAndAchieve" className="block px-4 py-2 text-gray-800 hover:bg-blue-100">Believe And Achieve</Link>
                             </div>
                         )}
+                        <Link href="/education" className="block text-gray-800 hover:text-blue-600">Education</Link>
                         <Link href="/journey" className="block text-gray-800 hover:text-blue-600">Journey</Link>
                         <Link href="/vision" className="block text-gray-800 hover:text-blue-600">Vision</Link>
                         <Link href="/contact" className="block text-gray-800 hover:text-blue-600">Contact Us</Link>
