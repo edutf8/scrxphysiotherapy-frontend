@@ -7,9 +7,7 @@ export default function CTA() {
             <div className="container mx-auto px-4 text-center">
                 <p className="text-lg">South Coast Rx Physiotherapy<br/>We keep you doing the things you love</p>
                 <h1 className="text-2xl md:text-3xl font-semibold mt-4 mb-4 uppercase">
-                    Take your next step with us
-                    <br/>
-                    Find Out How We Can Help You.
+                    Start your recovery with South Coast Rx today
                 </h1>
                 <Link href="/https://south-coast-rx-physiotherapy12.selectandbook.com/">
                     <button
