@@ -23,6 +23,9 @@ export default function Footer() {
                         <FontAwesomeIcon icon={faInstagram}/>
                     </a>
                     <a href="/faq" className="hover:underline">
+                        Privacy Notice
+                    </a>
+                    <a href="/faq" className="hover:underline">
                         FAQ
                     </a>
                     <a href="/contact" className="hover:underline">
