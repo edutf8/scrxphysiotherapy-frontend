@@ -17,29 +17,7 @@ export default function Navbar() {
                             <Link href="/services" className="text-gray-800 hover:text-blue-600 transition duration-300">Services</Link>
                             <Link href="/clinics" className="text-gray-800 hover:text-blue-600 transition duration-300">Clinics</Link>
                             <Link href="/team" className="text-gray-800 hover:text-blue-600 transition duration-300">Team</Link>
-                            <div className="relative">
-                                <button
-                                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                                    className="flex items-center text-gray-800 hover:text-blue-600 transition duration-300"
-                                >
-                                    Partners
-                                    <svg
-                                        className={`w-4 h-4 ml-1 transition-transform duration-300 ${isDropdownOpen ? 'transform rotate-180' : ''}`}
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                                    </svg>
-                                </button>
-                                {isDropdownOpen && (
-                                    <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-300 shadow-lg rounded-lg z-50">
-                                        <Link href="/partners/FirstAid4Sport" className="block px-4 py-2 text-gray-800 hover:bg-blue-100">First Aid 4 Sport</Link>
-                                        <Link href="/partners/BelieveAndAchieve" className="block px-4 py-2 text-gray-800 hover:bg-blue-100">Believe And Achieve</Link>
-                                    </div>
-                                )}
-                            </div>
+                            <Link href="/firstaid" className="text-gray-800 hover:text-blue-600 transition duration-300">First Aid 4 Sport</Link>
                         </div>
                     </div>
 
