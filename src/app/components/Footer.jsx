@@ -22,7 +22,7 @@ export default function Footer() {
                     <a href="https://instagram.com/scrxphysiotherapy">
                         <FontAwesomeIcon icon={faInstagram}/>
                     </a>
-                    <a href="/faq" className="hover:underline">
+                    <a href="/gdpr" className="hover:underline">
                         Privacy Notice
                     </a>
                     <a href="/faq" className="hover:underline">
