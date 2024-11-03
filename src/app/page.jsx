@@ -108,14 +108,6 @@ export default function Home() {
                   />
               </div>
           </section>
-          <section id={"instagram"}>
-              <div className={"container mx-auto pt-5 text-center items-center justify-center mt-5"}>
-                  <h1 className={"text-4xl uppercase font-bold"}>Check Out Our Instagram</h1>
-                  <div className={"mt-2"}>
-                      <InstagramGallery/>
-                  </div>
-              </div>
-          </section>
           <section id={"call-to-action"}>
               <div className={"mx-auto mt-10"}>
                   <CTA />
