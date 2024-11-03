@@ -8,7 +8,7 @@ export default function Header() {
                         <img
                             src="/googlereview.png"
                             alt="Google 5-star rating"
-                            className="w-18 h-10 align-mid ml-5" // Adjust the size as needed
+                            className="w-18 h-10 align-mid ml-2" // Adjust the size as needed
                         />
                     </div>
 
