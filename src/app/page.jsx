@@ -107,6 +107,9 @@ export default function Home() {
                               <source src="https://scrxcdn.fra1.cdn.digitaloceanspaces.com/why-choose-us.mp4"
                                       type="video/mp4"/>
                           </video>
+                          <p className="text-gray-700 text-center mt-5">
+                              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                          </p>
                       </div>
                   </div>
               </div>
