@@ -44,9 +44,9 @@ export default function Home() {
                               Why Choose Us?
                           </h1>
                           <p className="text-base sm:text-lg">
-                              Longest Appointment Times in Portsmouth
+                              Longest Appointment & Treatment Times in Portsmouth
                               <br/>
-                              You Will Be Fitter, Stronger and More Resilient Than Ever Before
+                              We are the highest rated physiotherapy clinic in Portsmouth
                               <br/>
                               We Use The Latest Technology and Evidence-Based Practice
                           </p>
@@ -73,13 +73,12 @@ export default function Home() {
                       <div className="flex-1 p-5 text-black md:order-2 order-2">
                           <h1 className="text-3xl font-bold mb-4 uppercase">Our Work In Elite Sport</h1>
                           <p className={"text-lg"}>
-                              South Coast Rx Physiotherapy are proud to be the provider of choice for a number of local
-                              sports clubs as well as amateur and elite athletes alike.
+                              South Coast Rx Physiotherapy are proud to be the provider of choice for a number of England, GB and other professional athletes.
                           </p>
                           <button className="mt-5 p-[3px] text-lg sm:text-xl md:text-xl relative">
                               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg"/>
                               <div
-                                  className="px-8 py-2 bg-blue-500 rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+                                  className="px-8 py-2 bg-blue-500 rounded-[6px] relative group transition duration-200 text-white hover:bg-transparent">
                                   Discover Our Services
                               </div>
                           </button>
@@ -95,22 +94,26 @@ export default function Home() {
           <section id={"reviews"}>
               <div className={"container mx-auto mt-10 text-center items-center justify-center"}>
                   <div className={"w-full p-5"}>
-                      <h1 className={"text-4xl uppercase font-semibold pt-2"}>Read What Others <br/>Have to Say</h1>
+                      <h1 className={"text-4xl uppercase font-semibold pt-2"}>Our Testimonials</h1>
                   </div>
               </div>
               <div
                   className="mt-5 rounded-md flex flex-col bg-gray-100 items-center justify-center relative overflow-hidden">
-                  <InfiniteMovingCards
-                      items={testimonials}
-                      direction="left"
-                      speed="slow"
-                      pauseOnHover={true}
-                  />
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                      <div
+                          className="bg-white p-4 md:p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                          <h3 className="text-lg md:text-xl font-semibold mb-2 text-center">NAME</h3>
+                          <video className="w-full h-auto rounded-lg" controls>
+                              <source src="https://scrxcdn.fra1.cdn.digitaloceanspaces.com/why-choose-us.mp4"
+                                      type="video/mp4"/>
+                          </video>
+                      </div>
+                  </div>
               </div>
           </section>
           <section id={"call-to-action"}>
               <div className={"mx-auto mt-10"}>
-                  <CTA />
+                  <CTA/>
               </div>
           </section>
           <section id={"footer"}>
@@ -119,24 +122,24 @@ export default function Home() {
               </div>
           </section>
       </div>
-  );
+);
 }
 
 const images = [
-    "https://via.placeholder.com/200x150?text=1",
-    "https://via.placeholder.com/200x150?text=2",
-    "https://via.placeholder.com/200x150?text=3",
-    "https://via.placeholder.com/200x150?text=4",
-    "https://via.placeholder.com/200x150?text=5",
-    "https://via.placeholder.com/200x150?text=6",
-    "https://via.placeholder.com/200x150?text=7",
-    "https://via.placeholder.com/200x150?text=8"
+"https://via.placeholder.com/200x150?text=1",
+"https://via.placeholder.com/200x150?text=2",
+"https://via.placeholder.com/200x150?text=3",
+"https://via.placeholder.com/200x150?text=4",
+"https://via.placeholder.com/200x150?text=5",
+"https://via.placeholder.com/200x150?text=6",
+"https://via.placeholder.com/200x150?text=7",
+"https://via.placeholder.com/200x150?text=8"
 ];
 
 const testimonials = [
-    {
-        review:
-            "I have been seeing the team at South Coast Rx for a number of years now and I can honestly say they are the best in the business. I have had a number of injuries over the years and they have always been able to get me back to full fitness in no time at all. I would highly recommend them to anyone.",
+{
+    review:
+        "I have been seeing the team at South Coast Rx for a number of years now and I can honestly say they are the best in the business. I have had a number of injuries over the years and they have always been able to get me back to full fitness in no time at all. I would highly recommend them to anyone.",
         name: "Charles Dickens",
     },
     {
