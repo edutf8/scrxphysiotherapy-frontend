@@ -108,7 +108,32 @@ export default function Home() {
                                       type="video/mp4"/>
                           </video>
                           <p className="text-gray-700 text-center mt-5">
-                              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                              ut labore et dolore magna aliqua.
+                          </p>
+                      </div>
+                      <div
+                          className="bg-white p-4 md:p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                          <h3 className="text-lg md:text-xl font-semibold mb-2 text-center">NAME</h3>
+                          <video className="w-full h-auto rounded-lg" controls>
+                              <source src="https://scrxcdn.fra1.cdn.digitaloceanspaces.com/why-choose-us.mp4"
+                                      type="video/mp4"/>
+                          </video>
+                          <p className="text-gray-700 text-center mt-5">
+                              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                              ut labore et dolore magna aliqua.
+                          </p>
+                      </div>
+                      <div
+                          className="bg-white p-4 md:p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                          <h3 className="text-lg md:text-xl font-semibold mb-2 text-center">NAME</h3>
+                          <video className="w-full h-auto rounded-lg" controls>
+                              <source src="https://scrxcdn.fra1.cdn.digitaloceanspaces.com/why-choose-us.mp4"
+                                      type="video/mp4"/>
+                          </video>
+                          <p className="text-gray-700 text-center mt-5">
+                              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                              ut labore et dolore magna aliqua.
                           </p>
                       </div>
                   </div>
@@ -125,24 +150,24 @@ export default function Home() {
               </div>
           </section>
       </div>
-);
+  );
 }
 
 const images = [
-"https://via.placeholder.com/200x150?text=1",
-"https://via.placeholder.com/200x150?text=2",
-"https://via.placeholder.com/200x150?text=3",
-"https://via.placeholder.com/200x150?text=4",
-"https://via.placeholder.com/200x150?text=5",
-"https://via.placeholder.com/200x150?text=6",
-"https://via.placeholder.com/200x150?text=7",
-"https://via.placeholder.com/200x150?text=8"
+    "https://via.placeholder.com/200x150?text=1",
+    "https://via.placeholder.com/200x150?text=2",
+    "https://via.placeholder.com/200x150?text=3",
+    "https://via.placeholder.com/200x150?text=4",
+    "https://via.placeholder.com/200x150?text=5",
+    "https://via.placeholder.com/200x150?text=6",
+    "https://via.placeholder.com/200x150?text=7",
+    "https://via.placeholder.com/200x150?text=8"
 ];
 
 const testimonials = [
-{
-    review:
-        "I have been seeing the team at South Coast Rx for a number of years now and I can honestly say they are the best in the business. I have had a number of injuries over the years and they have always been able to get me back to full fitness in no time at all. I would highly recommend them to anyone.",
+    {
+        review:
+            "I have been seeing the team at South Coast Rx for a number of years now and I can honestly say they are the best in the business. I have had a number of injuries over the years and they have always been able to get me back to full fitness in no time at all. I would highly recommend them to anyone.",
         name: "Charles Dickens",
     },
     {
