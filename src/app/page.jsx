@@ -99,7 +99,7 @@ export default function Home() {
                   </div>
               </div>
               <div
-                  className="mt-5 rounded-md flex flex-col bg-white items-center justify-center relative overflow-hidden">
+                  className="mt-5 rounded-md flex flex-col bg-gray-100 items-center justify-center relative overflow-hidden">
                   <InfiniteMovingCards
                       items={testimonials}
                       direction="left"
