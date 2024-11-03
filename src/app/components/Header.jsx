@@ -3,8 +3,13 @@ export default function Header() {
         <div className={"bg-gradient-to-r from-blue-600 via-blue-700 to-blue-500 border-b-2 border-white"}>
             <div className={"max-w-[85rem] px-4 py-2 sm:px-6 lg:px-8 mx-auto"}>
                 <div className={"grid justify-center md:grid-cols-2 md:justify-between md:items-center gap-2"}>
-                    <div className={"text-center md:text-start"}>
+                    <div className={"text-center md:text-start flex items-center gap-2"}>
                         <p className={"mt-1 text-white font-medium"}>Portsmouth&#39;s Highest Rated Physiotherapy Clinic</p>
+                        <img
+                            src="/googlereview.png"
+                            alt="Google 5-star rating"
+                            className="w-6 h-6" // Adjust the size as needed
+                        />
                     </div>
 
                     <div className={"mt-1 text-center md:text-start md:flex md:justify-end md:items-center"}>
