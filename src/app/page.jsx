@@ -14,7 +14,7 @@ import InstagramGallery from "./components/InstagramGallery";
 
 export default function Home() {
   return (
-      <div className={"bg-gray-100 min-h-screen mb-5"}>
+      <div className={"bg-gray-100 min-h-screen"}>
           <section id={"navigation-section"}>
               <Navbar/>
               <Header/>
