@@ -99,7 +99,7 @@ export default function Home() {
               </div>
               <div
                   className="container mx-auto mt-5 rounded-md flex flex-col bg-gray-100 items-center justify-center relative">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                       <div
                           className="bg-white p-4 md:p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
                           <h3 className="text-lg md:text-xl font-semibold mb-2 text-center">NAME</h3>
