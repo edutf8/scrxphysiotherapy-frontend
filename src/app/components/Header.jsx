@@ -1,6 +1,6 @@
 export default function Header() {
     return (
-        <div className={"bg-gradient-to-r from-blue-700 via-blue-500 to-blue-700 border-b-2 border-white"}>
+        <div className={"bg-gradient-to-r from-blue-500 via-blue-700 to-blue-500 border-b-2 border-white"}>
             <div className={"max-w-[85rem] px-4 py-2 sm:px-6 lg:px-8 mx-auto"}>
                 <div className={"grid justify-center md:grid-cols-2 md:justify-between md:items-center gap-2"}>
                     <div className={"text-center md:text-start flex items-center gap-2"}>
@@ -8,7 +8,7 @@ export default function Header() {
                         <img
                             src="/googlereview.png"
                             alt="Google 5-star rating"
-                            className="w-18 h-10" // Adjust the size as needed
+                            className="w-18 h-10 shadow-lg" // Adjust the size as needed
                         />
                     </div>
 
