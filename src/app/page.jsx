@@ -113,7 +113,7 @@ export default function Home() {
                           </p>
                       </div>
                       <div
-                          className="bg-white p-4 md:p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                          className="bg-white p-4 md:p-6 rounded-lg shadow-lg shadow-blue-600 transform hover:scale-105 transition-transform duration-300">
                           <h3 className="text-lg md:text-xl font-semibold mb-2 text-center">NAME</h3>
                           <video className="w-full h-auto rounded-lg" controls>
                               <source src="https://scrxcdn.fra1.cdn.digitaloceanspaces.com/why-choose-us.mp4"
