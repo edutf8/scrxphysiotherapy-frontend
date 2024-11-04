@@ -77,7 +77,7 @@ function ClinicCard({ clinic }) {
                     {clinic.parkingInfo && (
                         <p className="mt-2 text-xs text-gray-500">{clinic.parkingInfo}</p>
                     )}
-                    <div className="mt-3 h-64">
+                    <div className="mt-3 h-48 w-full md:w-1/2"> {/* Reduced map width */}
                         <Map coordinates={clinic.coordinates} title={clinic.title} />
                     </div>
                 </div>
