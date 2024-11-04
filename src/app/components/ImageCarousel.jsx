@@ -26,7 +26,7 @@ export default function ImageCarousel({ images }) {
             <img
                 src={`/${images[currentIndex]}`}
                 alt={`Clinic image ${currentIndex + 1}`}
-                className="w-auto h-auto max-w-full max-h-full object-contain mx-auto rounded-md"
+                className="w-auto h-1/2 max-w-full max-h-full object-contain mx-auto rounded-md"
             />
             <button
                 onClick={goToPrevious}

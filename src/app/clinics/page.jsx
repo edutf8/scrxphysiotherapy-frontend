@@ -23,7 +23,7 @@ export default function Clinics() {
             title: "Alexandra Sports",
             description: "South Coast Rx are delighted to partner one of the UK’s leading running specialist retailers...",
             address: "Alexandra Sports, 40 Gladys Ave, Hilsea, Portsmouth PO2 9BL",
-            images: ['alexandrasportsone.jpeg', 'alexandrasportstwo.jpeg', 'alexandrasportsthree.jpeg'],
+            images: ['alexandrasportsone.jpeg', 'alexandrasportstwo.jpeg', 'alexandrasportsthree.jpg'],
             coordinates: [-1.0874, 50.8241]
         }
     ];
