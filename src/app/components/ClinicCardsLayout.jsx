@@ -13,14 +13,6 @@ const ClinicCardsLayout = ({ clinics }) => {
                     />
                 </div>
             ))}
-            <div className="w-full px-2">
-                <ClinicCard
-                    title={clinics[2].title}
-                    description={clinics[2].description}
-                    address={clinics[2].address}
-                    fullWidth={true}
-                />
-            </div>
         </div>
     );
 }
