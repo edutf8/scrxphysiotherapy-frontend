@@ -57,8 +57,8 @@ function ClinicCard({ clinic }) {
     const [isExpanded, setIsExpanded] = useState(false);
 
     return (
-        <div className="border rounded-md p-4 mb-4 shadow-md bg-white flex flex-col md:flex-row items-start md:items-center justify-between">
-            <div className="flex-grow">
+        <div className="border rounded-md p-4 mb-4 shadow-md bg-white flex flex-col md:flex-row items-center md:justify-between">
+            <div className="flex-grow flex flex-col justify-center md:items-start text-center md:text-left">
                 <h2 className="text-lg font-semibold">{clinic.title}</h2>
                 <p className="text-sm text-gray-600">{clinic.address}</p>
 
