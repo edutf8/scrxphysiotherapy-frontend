@@ -22,14 +22,24 @@ export default function ImageCarousel({ images }) {
     };
 
     return (
-        <div className="relative w-full overflow-hidden rounded-md mb-3">
+        <div className="relative mx-auto mb-3" style={{ width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '200px' }}>
             <img
-                src={`/${images[currentIndex]}`}
+                src={`/${images[currentIndex]}.jpg`}
                 alt={`Clinic image ${currentIndex + 1}`}
-                className="w-full h-full object-cover"
+                className="w-auto h-auto max-w-full max-h-full object-contain mx-auto rounded-md"
             />
-            <button onClick={goToPrevious} className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-75 p-1 rounded-full">‹</button>
-            <button onClick={goToNext} className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-75 p-1 rounded-full">›</button>
+            <button
+                onClick={goToPrevious}
+                className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-75 p-1 rounded-full"
+            >
+                ‹
+            </button>
+            <button
+                onClick={goToNext}
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-75 p-1 rounded-full"
+            >
+                ›
+            </button>
         </div>
     );
 }
