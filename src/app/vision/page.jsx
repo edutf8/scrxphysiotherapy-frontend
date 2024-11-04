@@ -79,7 +79,7 @@ export default function Vision() {
                 </div>
             </section>
             <section id={"our-purpose"}>
-                <div className={"container mx-auto px-4 mt-10"}>
+                <div className={"container mx-auto px-4"}>
                     <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8 md:mb-12">Our Purpose</h2>
                     <div
                         className="bg-white p-4 md:p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
