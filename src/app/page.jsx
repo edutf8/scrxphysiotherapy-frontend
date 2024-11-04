@@ -23,15 +23,17 @@ export default function Home() {
               <Hero/>
           </section>
           <section id={"physio-at-home"}>
-              <div className={"container mx-auto mt-10 text-center border-t border-b border-2"}>
-                  <h1 className={"text-4xl uppercase font-semibold"}>South Coast Rx Physiotherapy now offers
-                      appointments at home</h1>
-                  <a className={"py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium" +
-                      " rounded-full border border-gray-200 bg-blue-500 text-gray-800 shadow-sm hover:bg-blue-700" +
-                      " focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none text-white"}
-                     href={"https://south-coast-rx-physiotherapy12.selectandbook.com/"}>
-                      Click Here to Find Out More
-                  </a>
+              <div className={"mt-10 text-center border-t-2 border-b-2"}>
+                  <div className={"container mx-auto"}>
+                      <h1 className={"text-4xl uppercase font-semibold"}>South Coast Rx Physiotherapy now offers
+                          appointments at home</h1>
+                      <a className={"py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium" +
+                          " rounded-full border border-gray-200 bg-blue-500 text-gray-800 shadow-sm hover:bg-blue-700" +
+                          " focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none text-white"}
+                         href={"https://south-coast-rx-physiotherapy12.selectandbook.com/"}>
+                          Click Here to Find Out More
+                      </a>
+                  </div>
               </div>
           </section>
           <section id={"partners-section"}>
