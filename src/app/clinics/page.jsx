@@ -16,14 +16,14 @@ export default function Clinics() {
             description: "The South Coast Rx clinic is based in Portsmouth’s newest and most advanced leisure centre...",
             address: "Ravelin Sports Centre, Cambridge Rd, Portsmouth PO1 2LQ",
             parkingInfo: "Free parking of up to 90 minutes is provided at the University of Portsmouth Ravelin Centre. Please see the centre reception after your appointment for a ticket.",
-            images: ['ravelineone.png', 'ravelintwo.png', 'ravelinthree.png', 'ravelinfour.png'],
+            images: ['ravelineone.png'],
             coordinates: [-1.0984100389059392, 50.792669006490684]
         },
         {
             title: "Alexandra Sports",
             description: "South Coast Rx are delighted to partner one of the UK’s leading running specialist retailers...",
             address: "Alexandra Sports, 40 Gladys Ave, Hilsea, Portsmouth PO2 9BL",
-            images: ['alexandrasportsone.jpeg', 'alexandrasportstwo.jpeg', 'alexandrasportsthree.jpg'],
+            images: ['alexandrasportsone.jpeg'],
             coordinates: [-1.0874, 50.8241]
         }
     ];
