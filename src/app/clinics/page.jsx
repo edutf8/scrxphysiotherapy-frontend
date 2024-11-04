@@ -31,7 +31,7 @@ export default function Clinics() {
                 <Header/>
             </section>
             <section id={"clinics"}>
-                <div className={"container mx-auto mb-5 flex-grow"}>
+                <div className={"container mx-auto mt-10 mb-5 flex-grow"}>
                     {clinics.map((clinic, index) => (
                         <ClinicCard key={index} clinic={clinic} />
                     ))}
