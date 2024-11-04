@@ -35,7 +35,7 @@ export default function Vision() {
                     </h1>
                 </div>
             </section>
-            <section id={"our-purpose"}>
+            <section id={"our-purpose"} className={"py-12 md:py-16 bg-gray-100"}>
                 <div className={"container mx-auto px-4"}>
                     <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8 md:mb-12">Our Purpose</h2>
                     <div
@@ -48,7 +48,7 @@ export default function Vision() {
                     </div>
                 </div>
             </section>
-            <section className="py-12 md:py-16 bg-gray-100">
+            <section className="mt-5 bg-gray-100">
                 <div className="container mx-auto px-4">
                     <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8 md:mb-12">Our Vision &
                         Values</h2>
