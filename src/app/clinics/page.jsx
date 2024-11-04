@@ -57,7 +57,7 @@ function ClinicCard({ clinic }) {
     const [isExpanded, setIsExpanded] = useState(false);
 
     return (
-        <div className="border rounded-md p-4 mb-4 shadow-md bg-white flex flex-col md:flex-row items-start md:items-center">
+        <div className="border rounded-md p-4 mb-4 shadow-md bg-white flex flex-col md:flex-row items-start md:items-center justify-between">
             <div className="flex-grow">
                 <h2 className="text-lg font-semibold">{clinic.title}</h2>
                 <p className="text-sm text-gray-600">{clinic.address}</p>
@@ -83,13 +83,13 @@ function ClinicCard({ clinic }) {
                 </div>
             </div>
 
-            <div className="md:w-1/2 flex flex-wrap gap-2 mt-4 md:mt-0 md:ml-4">
+            <div className="md:w-1/3 ml-auto flex flex-wrap gap-2">
                 {clinic.images.map((image, index) => (
                     <img
                         key={index}
                         src={`/${image}`}
                         alt={`${clinic.title} image ${index + 1}`}
-                        className="w-full md:w-[48%] h-auto rounded-md object-cover"
+                        className="w-full h-auto rounded-md object-cover"
                     />
                 ))}
             </div>
