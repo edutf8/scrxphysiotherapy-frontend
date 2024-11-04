@@ -1,11 +1,13 @@
 "use client"
 
+import Head from 'next/head';
 import Map from '../components/Map';
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import CTA from "../components/CTA";
 import { useState } from 'react';
+import ImageCarousel from '../components/ImageCarousel';
 
 export default function Clinics() {
     const clinics = [
@@ -14,12 +16,14 @@ export default function Clinics() {
             description: "The South Coast Rx clinic is based in Portsmouth’s newest and most advanced leisure centre...",
             address: "Ravelin Sports Centre, Cambridge Rd, Portsmouth PO1 2LQ",
             parkingInfo: "Free parking of up to 90 minutes is provided at the University of Portsmouth Ravelin Centre. Please see the centre reception after your appointment for a ticket.",
+            images: ['ravelineone', 'ravelintwo', 'ravelinthree', 'ravelinfour'],
             coordinates: [-1.0984100389059392, 50.792669006490684]
         },
         {
             title: "Alexandra Sports",
             description: "South Coast Rx are delighted to partner one of the UK’s leading running specialist retailers...",
             address: "Alexandra Sports, 40 Gladys Ave, Hilsea, Portsmouth PO2 9BL",
+            images: ['alexandrasportsone', 'alexandrasportstwo', 'alexandrasportsthree'],
             coordinates: [-1.0874, 50.8241]
         }
     ];
@@ -31,7 +35,7 @@ export default function Clinics() {
                 <Header/>
             </section>
             <section id={"clinics"}>
-                <div className={"container mx-auto mt-10 mb-5 flex-grow"}>
+                <div className={"container mx-auto mb-5 flex-grow"}>
                     {clinics.map((clinic, index) => (
                         <ClinicCard key={index} clinic={clinic} />
                     ))}
@@ -56,6 +60,7 @@ function ClinicCard({ clinic }) {
         <div className="border rounded-md p-4 mb-4 shadow-md bg-white">
             <h2 className="text-lg font-semibold">{clinic.title}</h2>
             <p className="text-sm text-gray-600">{clinic.address}</p>
+            <ImageCarousel images={clinic.images} />
             <button
                 className="mt-2 text-blue-500 hover:underline"
                 onClick={() => setIsExpanded(!isExpanded)}
@@ -78,3 +83,4 @@ function ClinicCard({ clinic }) {
         </div>
     );
 }
+
