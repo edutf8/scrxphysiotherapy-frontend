@@ -24,7 +24,7 @@ export default function ImageCarousel({ images }) {
     return (
         <div className="relative w-full h-64 overflow-hidden rounded-md mb-3">
             <img
-                src={`/${images[currentIndex]}.jpg`}
+                src={`/${images[currentIndex]}`}
                 alt={`Clinic image ${currentIndex + 1}`}
                 className="w-full h-full object-cover"
             />
