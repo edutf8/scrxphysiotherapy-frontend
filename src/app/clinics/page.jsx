@@ -1,4 +1,5 @@
-import Head from 'next/head';
+"use client"
+
 import Map from '../components/Map';
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
