@@ -24,7 +24,7 @@ export default function Home() {
           </section>
           <section id={"physio-at-home"}>
               <div className={"mt-10 text-center bg-gray-200"}>
-                  <div className={"container mx-auto pt-2 pb-2"}>
+                  <div className={"container mx-auto pt-5 pb-5"}>
                       <h1 className={"text-4xl uppercase font-semibold"}>South Coast Rx Physiotherapy now offers
                           appointments at home</h1>
                       <a className={"mt-5 py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium" +
