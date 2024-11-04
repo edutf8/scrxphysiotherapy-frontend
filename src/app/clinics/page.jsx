@@ -30,7 +30,7 @@ export default function Clinics() {
                 <Header/>
             </section>
             <section id={"clinics"}>
-                <div className={"container mx-auto mb-5"}>
+                <div className={"container mx-auto mb-5 flex-grow"}>
                     <ClinicCardsLayout clinics={clinics} />
                 </div>
             </section>
