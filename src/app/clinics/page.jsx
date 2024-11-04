@@ -60,7 +60,18 @@ function ClinicCard({ clinic }) {
         <div className="border rounded-md p-4 mb-4 shadow-md bg-white">
             <h2 className="text-lg font-semibold">{clinic.title}</h2>
             <p className="text-sm text-gray-600">{clinic.address}</p>
-            <ImageCarousel images={clinic.images} />
+
+            <div className={`grid gap-2 ${clinic.images.length === 4 ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-1'}`}>
+                {clinic.images.map((image, index) => (
+                    <img
+                        key={index}
+                        src={`/${image}`}
+                        alt={`${clinic.title} image ${index + 1}`}
+                        className="w-full h-auto rounded-md object-cover"
+                    />
+                ))}
+            </div>
+
             <button
                 className="mt-2 text-blue-500 hover:underline"
                 onClick={() => setIsExpanded(!isExpanded)}
@@ -83,4 +94,3 @@ function ClinicCard({ clinic }) {
         </div>
     );
 }
-
