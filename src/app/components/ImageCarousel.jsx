@@ -24,7 +24,7 @@ export default function ImageCarousel({ images }) {
     return (
         <div className="relative mx-auto mb-3" style={{ width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '200px' }}>
             <img
-                src={`/${images[currentIndex]}.jpg`}
+                src={`/${images[currentIndex]}`}
                 alt={`Clinic image ${currentIndex + 1}`}
                 className="w-auto h-auto max-w-full max-h-full object-contain mx-auto rounded-md"
             />
