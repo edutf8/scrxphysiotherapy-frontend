@@ -86,9 +86,7 @@ export default function Vision() {
                         <div className="flex items-center justify-center mb-4">
                             <FaHandsHelping className="text-blue-600 w-10 h-10 md:w-12 md:h-12" />
                         </div>
-                        <p className="text-gray-700 text-center">
-                            To improve the lives of others
-                        </p>
+                        <h3 className="text-lg md:text-xl font-semibold mb-2 text-center">To Improve The Lives Of Others</h3>
                     </div>
                 </div>
             </section>
