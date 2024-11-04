@@ -50,6 +50,9 @@ export default function Home() {
                   />
               </div>
           </section>
+          <section id={"partners-section-remake"}>
+
+          </section>
           <section id={"why-choose-scrx"}>
               <div className={"container mx-auto mt-10 text-center"}>
                   <div className="flex flex-col md:flex-row mx-auto justify-center items-center text-center">

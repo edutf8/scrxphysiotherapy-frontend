@@ -4,12 +4,12 @@ export default function Header() {
             <div className={"max-w-7xl px-4 py-2 sm:px-6 lg:px-8 mx-auto"}>
                 <div className={"grid justify-center md:grid-cols-2 md:justify-between md:items-center gap-2"}>
                     <div className={"text-center md:text-start flex items-center gap-2"}>
-                        <p className={"mt-1 font-medium"}>Portsmouth&#39;s Highest Rated Physiotherapy Clinic</p>
                         <img
                             src="/googlereview.png"
                             alt="Google 5-star rating"
-                            className="w-18 h-10 align-mid ml-2" // Adjust the size as needed
+                            className="w-18 h-10 align-mid mr-2"
                         />
+                        <p className={"mt-1 font-medium"}>Portsmouth&#39;s Highest Rated Physiotherapy Clinic</p>
                     </div>
 
                     <div className={"mt-1 text-center md:text-start md:flex md:justify-end md:items-center"}>
