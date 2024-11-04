@@ -67,7 +67,7 @@ function ClinicCard({ clinic }) {
                         key={index}
                         src={`/${image}`}
                         alt={`${clinic.title} image ${index + 1}`}
-                        className="w-full h-96 rounded-md object-cover"
+                        className="w-auto h-96 rounded-md object-cover"
                     />
                 ))}
             </div>
