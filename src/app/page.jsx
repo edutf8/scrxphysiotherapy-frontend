@@ -27,7 +27,7 @@ export default function Home() {
                   <div className={"container mx-auto pt-2 pb-2"}>
                       <h1 className={"text-4xl uppercase font-semibold"}>South Coast Rx Physiotherapy now offers
                           appointments at home</h1>
-                      <a className={"py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium" +
+                      <a className={"mt-5 py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium" +
                           " rounded-full border border-gray-200 bg-blue-500 text-gray-800 shadow-sm hover:bg-blue-700" +
                           " focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none text-white"}
                          href={"https://south-coast-rx-physiotherapy12.selectandbook.com/"}>
