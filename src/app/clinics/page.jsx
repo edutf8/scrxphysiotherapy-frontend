@@ -19,11 +19,6 @@ export default function Clinics() {
                 "<br />" +
                 "Alexandra Sports pride themselves on industry leading technology, product knowledge and most of all, customer service. If you are a keen runner, triathlete or simply live in the north of Portsmouth, this is a great environment to be assessed by one of our expert team. ",
             address: "Alexandra Sports, 40 Gladys Ave, Hilsea, Portsmouth PO2 9BL"
-        },
-        {
-            title: "Clinic C",
-            description: "A brief description about Clinic C.",
-            address: "789 Broadway St, City, Country"
         }
     ];
 
@@ -37,13 +32,6 @@ export default function Clinics() {
             <section id={"clinics"}>
                 <div className={"container mx-auto mb-5"}>
                     <ClinicCardsLayout clinics={clinics} />
-                </div>
-            </section>
-            <section id={"map"}>
-                <div className="container mx-auto">
-                    <div className="flex flex-col py-2">
-                        <Map/>
-                    </div>
                 </div>
             </section>
             <section id={"call-to-action"}>
