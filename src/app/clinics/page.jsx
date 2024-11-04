@@ -57,39 +57,41 @@ function ClinicCard({ clinic }) {
     const [isExpanded, setIsExpanded] = useState(false);
 
     return (
-        <div className="border rounded-md p-4 mb-4 shadow-md bg-white">
-            <h2 className="text-lg font-semibold">{clinic.title}</h2>
-            <p className="text-sm text-gray-600">{clinic.address}</p>
+        <div className="border rounded-md p-4 mb-4 shadow-md bg-white flex flex-col md:flex-row items-start md:items-center">
+            <div className="flex-grow">
+                <h2 className="text-lg font-semibold">{clinic.title}</h2>
+                <p className="text-sm text-gray-600">{clinic.address}</p>
 
-            <div className={`grid gap-2 ${clinic.images.length === 4 ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-1'}`}>
+                <button
+                    className="mt-2 text-blue-500 hover:underline"
+                    onClick={() => setIsExpanded(!isExpanded)}
+                >
+                    {isExpanded ? "Collapse" : "Click to expand"}
+                </button>
+
+                <div
+                    className={`transition-all duration-300 ease-in-out overflow-hidden ${isExpanded ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}
+                    style={{ transform: isExpanded ? 'translateY(0)' : 'translateY(-10px)' }}
+                >
+                    <p className="mt-2 text-sm text-gray-700">{clinic.description}</p>
+                    {clinic.parkingInfo && (
+                        <p className="mt-2 text-xs text-gray-500">{clinic.parkingInfo}</p>
+                    )}
+                    <div className="mt-3 h-64">
+                        <Map coordinates={clinic.coordinates} title={clinic.title} />
+                    </div>
+                </div>
+            </div>
+
+            <div className="md:w-1/2 flex flex-wrap gap-2 mt-4 md:mt-0 md:ml-4">
                 {clinic.images.map((image, index) => (
                     <img
                         key={index}
                         src={`/${image}`}
                         alt={`${clinic.title} image ${index + 1}`}
-                        className="w-auto h-auto rounded-md object-cover"
+                        className="w-full md:w-[48%] h-auto rounded-md object-cover"
                     />
                 ))}
-            </div>
-
-            <button
-                className="mt-2 text-blue-500 hover:underline"
-                onClick={() => setIsExpanded(!isExpanded)}
-            >
-                {isExpanded ? "Collapse" : "Click to expand"}
-            </button>
-
-            <div
-                className={`transition-all duration-300 ease-in-out overflow-hidden ${isExpanded ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}
-                style={{ transform: isExpanded ? 'translateY(0)' : 'translateY(-10px)' }}
-            >
-                <p className="mt-2 text-sm text-gray-700">{clinic.description}</p>
-                {clinic.parkingInfo && (
-                    <p className="mt-2 text-xs text-gray-500">{clinic.parkingInfo}</p>
-                )}
-                <div className="mt-3 h-64">
-                    <Map coordinates={clinic.coordinates} title={clinic.title} />
-                </div>
             </div>
         </div>
     );
