@@ -41,7 +41,7 @@ export default function Home() {
               <div className={"container mx-auto mt-10 text-center"}>
                   <h1 className={"text-4xl uppercase font-semibold"}>Who We Work With</h1>
               </div>
-              <div className={"container mx-auto"}>
+              <div className={"container mx-auto object-center"}>
                   <PartnersGrid partners={partners}/>
               </div>
           </section>
