@@ -10,7 +10,7 @@ import {InfiniteMovingCards} from "./ui/infinite-moving-cards";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import InstagramGallery from "./components/InstagramGallery";
-import PartnersGrid from "@/app/components/PartnersGrid";
+import PartnersGrid from "./components/PartnersGrid";
 
 
 export default function Home() {
