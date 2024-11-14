@@ -10,6 +10,7 @@ import {InfiniteMovingCards} from "./ui/infinite-moving-cards";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import InstagramGallery from "./components/InstagramGallery";
+import PartnersGrid from "@/app/components/PartnersGrid";
 
 
 export default function Home() {
@@ -40,14 +41,8 @@ export default function Home() {
               <div className={"container mx-auto mt-10 text-center"}>
                   <h1 className={"text-4xl uppercase font-semibold"}>Who We Work With</h1>
               </div>
-              <div className={"flex items-center justify-center"}>
-                  <Carousel
-                      images={images}
-                      direction={"left"}
-                      speed={"slow"}
-                      pauseOnHover={false}
-                      className={"custom-scroller"}
-                  />
+              <div className={"container mx-auto"}>
+                  <PartnersGrid partners={partners}/>
               </div>
           </section>
           <section id={"partners-section-remake"}>
@@ -181,30 +176,85 @@ const images = [
     "https://via.placeholder.com/200x150?text=8"
 ];
 
-const testimonials = [
+const partners = [
     {
-        review:
-            "I have been seeing the team at South Coast Rx for a number of years now and I can honestly say they are the best in the business. I have had a number of injuries over the years and they have always been able to get me back to full fitness in no time at all. I would highly recommend them to anyone.",
-        name: "Charles Dickens",
+        name: "University of Portsmouth",
+        logo: "https://via.placeholder.com/200x150?text=1"
     },
     {
-        review:
-            "I have been seeing the team at South Coast Rx for a number of years now and I can honestly say they are the best in the business. I have had a number of injuries over the years and they have always been able to get me back to full fitness in no time at all. I would highly recommend them to anyone.",
-        name: "William Shakespeare",
+        name: "PGMOL",
+        logo: "https://via.placeholder.com/200x150?text=2"
     },
     {
-        review:
-            "I have been seeing the team at South Coast Rx for a number of years now and I can honestly say they are the best in the business. I have had a number of injuries over the years and they have always been able to get me back to full fitness in no time at all. I would highly recommend them to anyone.",
-        name: "Edgar Allan Poe",
+        name: "University of Chichester",
+        logo: "https://via.placeholder.com/200x150?text=3"
     },
     {
-        review:
-            "I have been seeing the team at South Coast Rx for a number of years now and I can honestly say they are the best in the business. I have had a number of injuries over the years and they have always been able to get me back to full fitness in no time at all. I would highly recommend them to anyone.",
-        name: "Jane Austen",
+        name: "PA",
+        logo: "https://via.placeholder.com/200x150?text=4"
     },
     {
-        review:
-            "I have been seeing the team at South Coast Rx for a number of years now and I can honestly say they are the best in the business. I have had a number of injuries over the years and they have always been able to get me back to full fitness in no time at all. I would highly recommend them to anyone.",
-        name: "Herman Melville",
+        name: "EHUB",
+        logo: "https://via.placeholder.com/200x150?text=5"
     },
-];
+    {
+        name: "Constant",
+        logo: "https://via.placeholder.com/200x150?text=6"
+    },
+    {
+        name: "Southampton Solent University",
+        logo: "https://via.placeholder.com/200x150?text=7"
+    },
+    {
+        name: "Southern Legion",
+        logo: "https://via.placeholder.com/200x150?text=8"
+    },
+    {
+        name: "NHS",
+        logo: "https://via.placeholder.com/200x150?text=9"
+    },
+    {
+        name: "Wild Dogs Rugby",
+        logo: "https://via.placeholder.com/200x150?text=10"
+    },
+    {
+        name: "Alexandra Sports",
+        logo: "https://via.placeholder.com/200x150?text=11"
+    },
+    {
+        name: "Arthritis Action",
+        logo: "https://via.placeholder.com/200x150?text=12"
+    },
+    {
+        name: "TASS",
+        logo: "https://via.placeholder.com/200x150?text=7"
+    },
+    {
+        name: "South Island Sevens",
+        logo: "https://via.placeholder.com/200x150?text=8"
+    },
+    {
+        name: "Portsmouth Force",
+        logo: "https://via.placeholder.com/200x150?text=9"
+    },
+    {
+        name: "PN",
+        logo: "https://via.placeholder.com/200x150?text=10"
+    },
+    {
+        name: "Believe & Achieve",
+        logo: "https://via.placeholder.com/200x150?text=11"
+    },
+    {
+        name: "Garmin",
+        logo: "https://via.placeholder.com/200x150?text=12"
+    },
+    {
+        name: "Portsmouth Grammar School",
+        logo: "https://via.placeholder.com/200x150?text=7"
+    },
+    {
+        name: "Royal Navy",
+        logo: "https://via.placeholder.com/200x150?text=8"
+    }
+]
