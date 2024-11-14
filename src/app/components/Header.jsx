@@ -13,7 +13,7 @@ export default function Header() {
                     </div>
 
                     <div className={"mt-1 text-center md:text-start md:flex md:justify-end md:items-center"}>
-                        <a className={"py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium" +
+                        <a className={"py-3 px-4 mr-2 inline-flex items-center gap-x-2 text-sm font-medium" +
                             " rounded-full border border-gray-200 bg-blue-500 text-gray-800 shadow-sm hover:bg-blue-700" +
                             " focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none text-white"}
                            href={"https://south-coast-rx-physiotherapy12.selectandbook.com/"}>
