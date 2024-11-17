@@ -46,14 +46,20 @@ const Timeline = () => {
         if (timelineRef.current) {
             const timelineElement = timelineRef.current;
             const boxes = timelineElement.querySelectorAll('.timeline-box');
+
             if (boxes.length > 0) {
-                const firstBox = boxes[0].getBoundingClientRect();
-                const lastBox = boxes[boxes.length - 1].getBoundingClientRect();
+                const firstBox = boxes[0];
+                const lastBox = boxes[boxes.length - 1];
+                const containerTop = timelineElement.getBoundingClientRect().top;
+
+                const firstBoxTop = firstBox.offsetTop;
+                const lastBoxBottom = lastBox.offsetTop + lastBox.offsetHeight;
 
                 // Calculate the top position and height of the timeline
-                const containerTop = timelineElement.getBoundingClientRect().top;
-                const top = firstBox.top - containerTop; // Distance from the container's top
-                const height = lastBox.bottom - firstBox.top;
+                const top = firstBoxTop;
+                const height = lastBoxBottom - firstBoxTop;
+
+                console.log('Top:', top, 'Height:', height); // Debug output
 
                 setTimelineStyles({
                     top,
