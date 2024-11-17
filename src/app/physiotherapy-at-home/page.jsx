@@ -19,7 +19,7 @@ export default function PhysiotherapyAtHome() {
                     {/* Image Section */}
                     <div className="w-full lg:w-1/2">
                         <Image
-                            src="/image.png" // Replace with the actual image path
+                            src="/physio-at-home.png" // Replace with the actual image path
                             alt="Physiotherapist working with a client in a home setting"
                             width={600}
                             height={400}
