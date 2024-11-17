@@ -45,8 +45,7 @@ const Timeline = () => {
     useEffect(() => {
         const calculateTimelineStyles = () => {
             if (timelineRef.current) {
-                const timelineElement = timelineRef.current;
-                const boxes = timelineElement.querySelectorAll('.timeline-box');
+                const boxes = timelineRef.current.querySelectorAll('.timeline-box');
 
                 if (boxes.length > 0) {
                     const firstBox = boxes[0];
@@ -59,16 +58,27 @@ const Timeline = () => {
                     const top = firstBoxTop;
                     const height = lastBoxBottom - firstBoxTop;
 
-                    console.log('Calculated top:', top, 'Calculated height:', height);
+                    console.log('Calculated top:', top, 'Calculated height:', height); // Debugging logs
                     setTimelineStyles({ top, height });
                 }
             }
         };
 
-        // Use setTimeout to defer calculation until after the DOM updates
-        const timeoutId = setTimeout(calculateTimelineStyles, 0);
+        // Use ResizeObserver to detect layout changes
+        const observer = new ResizeObserver(() => {
+            calculateTimelineStyles();
+        });
 
-        return () => clearTimeout(timeoutId); // Cleanup timeout
+        if (timelineRef.current) {
+            observer.observe(timelineRef.current);
+        }
+
+        // Cleanup observer on unmount
+        return () => {
+            if (timelineRef.current) {
+                observer.unobserve(timelineRef.current);
+            }
+        };
     }, []);
 
     return (
