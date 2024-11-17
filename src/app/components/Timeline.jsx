@@ -45,7 +45,7 @@ const Timeline = () => {
                         key={index}
                         className={`flex items-center w-full ${
                             index % 2 === 0 ? 'justify-start' : 'justify-end'
-                        }`}
+                        } relative`}
                     >
                         <div
                             className={`bg-gray-800 p-6 rounded-lg shadow-lg w-2/5 ${
@@ -56,15 +56,24 @@ const Timeline = () => {
                             <h3 className="text-gray-100 text-xl font-semibold mb-2">{item.title}</h3>
                             <p className="text-gray-300">{item.description}</p>
                         </div>
+                        {/* Connection Dot */}
                         <div
-                            className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white absolute"
+                            className="absolute w-4 h-4 bg-blue-500 rounded-full"
                             style={{
-                                left: index % 2 === 0 ? 'calc(50% - 1.5rem)' : 'calc(50% + 1rem)',
+                                left: index % 2 === 0 ? '50%' : 'calc(50% - 0.5rem)',
                                 transform: 'translateX(-50%)',
                             }}
-                        >
-                            ✓
-                        </div>
+                        ></div>
+                        {/* Connection Line */}
+                        <div
+                            className={`absolute h-px bg-blue-500 ${
+                                index % 2 === 0 ? '-left-1/4' : '-right-1/4'
+                            }`}
+                            style={{
+                                top: '50%',
+                                width: 'calc(25% - 2rem)',
+                            }}
+                        ></div>
                     </div>
                 ))}
             </div>
