@@ -37,7 +37,7 @@ const Timeline = () => {
     ];
 
     const timelineRef = useRef(null);
-    const [timelineHeight, setTimelineHeight] = useState(0);
+    const [timelineHeight, setTimelineHeight] = useState(200); // Default fallback height
 
     useEffect(() => {
         if (timelineRef.current) {
@@ -46,11 +46,12 @@ const Timeline = () => {
             if (boxes.length > 0) {
                 const firstBox = boxes[0].getBoundingClientRect();
                 const lastBox = boxes[boxes.length - 1].getBoundingClientRect();
-
                 const containerTop = timelineElement.getBoundingClientRect().top;
 
                 // Calculate height between first and last boxes
-                setTimelineHeight(lastBox.bottom - firstBox.top);
+                const calculatedHeight = lastBox.bottom - firstBox.top;
+                console.log('Calculated timeline height:', calculatedHeight);
+                setTimelineHeight(calculatedHeight > 0 ? calculatedHeight : 200); // Fallback to 200px if calculation fails
             }
         }
     }, []);
@@ -63,7 +64,7 @@ const Timeline = () => {
                 ref={timelineRef}
                 className="absolute left-1/2 w-1 bg-gray-600 transform -translate-x-1/2"
                 style={{
-                    top: '50px', // Adjust to start just below the title
+                    top: '50px', // Adjust to start below the title
                     height: `${timelineHeight}px`,
                 }}
             ></div>
