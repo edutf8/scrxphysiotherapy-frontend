@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
 
 const Timeline = () => {
     const timelineData = [
@@ -36,109 +36,38 @@ const Timeline = () => {
         },
     ];
 
-    const timelineRef = useRef(null);
-    const [timelineStyles, setTimelineStyles] = useState({
-        top: 0,
-        height: 0,
-    });
-
-    useEffect(() => {
-        const calculateTimelineStyles = () => {
-            if (timelineRef.current) {
-                const boxes = timelineRef.current.querySelectorAll('.timeline-box');
-
-                if (boxes.length > 0) {
-                    const firstBox = boxes[0];
-                    const lastBox = boxes[boxes.length - 1];
-
-                    const firstBoxTop = firstBox.offsetTop;
-                    const lastBoxBottom = lastBox.offsetTop + lastBox.offsetHeight;
-
-                    // Calculate the top position and height of the timeline
-                    const top = firstBoxTop;
-                    const height = lastBoxBottom - firstBoxTop;
-
-                    console.log('Calculated top:', top, 'Calculated height:', height); // Debugging logs
-                    setTimelineStyles({ top, height });
-                }
-            }
-        };
-
-        // Use ResizeObserver to detect layout changes
-        const observer = new ResizeObserver(() => {
-            calculateTimelineStyles();
-        });
-
-        if (timelineRef.current) {
-            observer.observe(timelineRef.current);
-        }
-
-        // Cleanup observer on unmount
-        return () => {
-            if (timelineRef.current) {
-                observer.unobserve(timelineRef.current);
-            }
-        };
-    }, []);
-
     return (
-        <div className="p-8 rounded-lg shadow-lg relative">
-            <h2 className="text-gray-700 text-lg font-semibold mb-6 text-center">Timeline</h2>
-            {/* Central Timeline Line */}
-            <div
-                ref={timelineRef}
-                className="absolute left-1/2 w-1 bg-gray-600 transform -translate-x-1/2"
-                style={{
-                    top: `${timelineStyles.top}px`,
-                    height: `${timelineStyles.height}px`,
-                }}
-            ></div>
-            <div className="relative space-y-12">
-                {timelineData.map((item, index) => (
-                    <div
-                        key={index}
-                        className={`relative flex items-center ${
-                            index % 2 === 0 ? 'justify-start' : 'justify-end'
-                        }`}
-                    >
-                        {/* Connection Dot */}
-                        <div
-                            className="absolute w-4 h-4 bg-blue-500 rounded-full"
-                            style={{
-                                left: '50%',
-                                transform: 'translateX(-50%)',
-                            }}
-                        ></div>
-
-                        {/* Connection Line */}
-                        <div
-                            className={`absolute h-0.5 bg-blue-500 ${
-                                index % 2 === 0 ? 'right-1/2' : 'left-1/2'
-                            }`}
-                            style={{
-                                width: 'calc(50% - 3rem)', // Adjust the line to stop before the box
-                                top: '50%',
-                                zIndex: 0, // Line stays behind the box
-                            }}
-                        ></div>
-
-                        {/* Timeline Box */}
-                        <div
-                            className={`timeline-box relative bg-gray-800 p-6 rounded-lg shadow-lg w-2/5 ${
-                                index % 2 === 0 ? 'text-right' : 'text-left'
-                            }`}
-                            style={{
-                                zIndex: 10, // Box appears above the line
-                            }}
+        <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+            {timelineData.map((item, index) => (
+                <li key={index}>
+                    {index !== 0 && <hr />}
+                    <div className="timeline-middle">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            className="h-5 w-5"
                         >
-                            <div className="text-gray-400 text-lg font-semibold">{item.year}</div>
-                            <h3 className="text-gray-100 text-xl font-semibold mb-2">{item.title}</h3>
-                            <p className="text-gray-300">{item.description}</p>
-                        </div>
+                            <path
+                                fillRule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                                clipRule="evenodd"
+                            />
+                        </svg>
                     </div>
-                ))}
-            </div>
-        </div>
+                    <div
+                        className={`${
+                            index % 2 === 0 ? 'timeline-start md:text-end' : 'timeline-end'
+                        } mb-10`}
+                    >
+                        <time className="font-mono italic">{item.year}</time>
+                        <div className="text-lg font-black">{item.title}</div>
+                        <p>{item.description}</p>
+                    </div>
+                    <hr />
+                </li>
+            ))}
+        </ul>
     );
 };
 
