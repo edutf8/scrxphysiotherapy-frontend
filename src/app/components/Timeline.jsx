@@ -37,16 +37,38 @@ const Timeline = () => {
     return (
         <div className="bg-gray-900 p-8 rounded-lg shadow-lg relative">
             <h2 className="text-gray-300 text-lg font-semibold mb-6 text-center">Timeline</h2>
-            {/* Timeline Line */}
+            {/* Central Timeline Line */}
             <div className="absolute top-0 left-1/2 h-full w-1 bg-gray-600 transform -translate-x-1/2"></div>
             <div className="relative space-y-12">
                 {timelineData.map((item, index) => (
                     <div
                         key={index}
-                        className={`flex items-center w-full ${
+                        className={`relative flex items-center ${
                             index % 2 === 0 ? 'justify-start' : 'justify-end'
-                        } relative`}
+                        }`}
                     >
+                        {/* Connection Dot */}
+                        <div
+                            className="absolute w-4 h-4 bg-blue-500 rounded-full"
+                            style={{
+                                left: '50%',
+                                transform: 'translateX(-50%)',
+                            }}
+                        ></div>
+
+                        {/* Connection Line */}
+                        <div
+                            className={`absolute h-0.5 bg-blue-500 ${
+                                index % 2 === 0 ? 'right-1/2' : 'left-1/2'
+                            }`}
+                            style={{
+                                width: 'calc(25% - 1rem)',
+                                top: '50%',
+                                transform: index % 2 === 0 ? 'translateX(-1rem)' : 'translateX(1rem)',
+                            }}
+                        ></div>
+
+                        {/* Timeline Content */}
                         <div
                             className={`bg-gray-800 p-6 rounded-lg shadow-lg w-2/5 ${
                                 index % 2 === 0 ? 'text-right' : 'text-left'
@@ -56,24 +78,6 @@ const Timeline = () => {
                             <h3 className="text-gray-100 text-xl font-semibold mb-2">{item.title}</h3>
                             <p className="text-gray-300">{item.description}</p>
                         </div>
-                        {/* Connection Dot */}
-                        <div
-                            className="absolute w-4 h-4 bg-blue-500 rounded-full"
-                            style={{
-                                left: index % 2 === 0 ? '50%' : 'calc(50% - 0.5rem)',
-                                transform: 'translateX(-50%)',
-                            }}
-                        ></div>
-                        {/* Connection Line */}
-                        <div
-                            className={`absolute h-px bg-blue-500 ${
-                                index % 2 === 0 ? '-left-1/4' : '-right-1/4'
-                            }`}
-                            style={{
-                                top: '50%',
-                                width: 'calc(25% - 2rem)',
-                            }}
-                        ></div>
                     </div>
                 ))}
             </div>
