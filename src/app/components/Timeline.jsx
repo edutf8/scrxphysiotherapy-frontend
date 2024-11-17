@@ -35,17 +35,42 @@ const Timeline = () => {
     ];
 
     return (
-        <div className="timeline-container">
-            {timelineData.map((item, index) => (
-                <div key={index} className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
-                    <div className="timeline-content">
-                        <h3>{item.year}</h3>
-                        <h2>{item.title}</h2>
-                        <p>{item.description}</p>
+        <div className="relative p-8">
+            {/* Static Timeline Line */}
+            <div className="absolute left-1/2 w-1 bg-gray-600 top-0 bottom-0 transform -translate-x-1/2"></div>
+            <div className="relative space-y-12">
+                {timelineData.map((item, index) => (
+                    <div
+                        key={index}
+                        className={`relative flex items-center ${
+                            index % 2 === 0 ? 'justify-start' : 'justify-end'
+                        }`}
+                    >
+                        {/* Connection Dot */}
+                        <div
+                            className="absolute w-4 h-4 bg-blue-500 rounded-full"
+                            style={{
+                                left: '50%',
+                                transform: 'translateX(-50%)',
+                            }}
+                        ></div>
+
+                        {/* Timeline Box */}
+                        <div
+                            className={`relative bg-gray-800 p-6 rounded-lg shadow-lg w-2/5 ${
+                                index % 2 === 0 ? 'text-right' : 'text-left'
+                            }`}
+                            style={{
+                                zIndex: 10, // Ensure boxes appear above the timeline
+                            }}
+                        >
+                            <div className="text-gray-400 text-lg font-semibold">{item.year}</div>
+                            <h3 className="text-gray-100 text-xl font-semibold mb-2">{item.title}</h3>
+                            <p className="text-gray-300">{item.description}</p>
+                        </div>
                     </div>
-                    <div className="timeline-marker"></div>
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
     );
 };
