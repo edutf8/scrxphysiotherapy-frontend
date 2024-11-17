@@ -1,16 +1,14 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import { Carousel } from "./components/Carousel";
-import {InfiniteMovingCards} from "./ui/infinite-moving-cards";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
-import InstagramGallery from "./components/InstagramGallery";
 import PartnersGrid from "./components/PartnersGrid";
+import Timeline from "./components/Timeline";
 
 
 export default function Home() {
@@ -45,9 +43,6 @@ export default function Home() {
                   <PartnersGrid partners={partners}/>
               </div>
           </section>
-          <section id={"partners-section-remake"}>
-
-          </section>
           <section id={"why-choose-scrx"}>
               <div className={"container mx-auto mt-10 text-center"}>
                   <div className="flex flex-col md:flex-row mx-auto justify-center items-center text-center">
@@ -76,6 +71,11 @@ export default function Home() {
                           </video>
                       </div>
                   </div>
+              </div>
+          </section>
+          <section id={"what-makes-us-different0"}>
+              <div className={"container mx-auto mt-10 text-center"}>
+                  <Timeline/>
               </div>
           </section>
           <section id={"scrx-in-elite-sport"}>
