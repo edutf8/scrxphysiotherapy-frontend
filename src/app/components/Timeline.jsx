@@ -56,8 +56,7 @@ const Timeline = () => {
     }, []);
 
     return (
-        <div className="bg-gray-900 p-8 rounded-lg shadow-lg relative">
-            <h2 className="text-gray-300 text-lg font-semibold mb-6 text-center">Timeline</h2>
+        <div className="p-8 rounded-lg shadow-lg relative">
             {/* Central Timeline Line */}
             <div
                 ref={timelineRef}
