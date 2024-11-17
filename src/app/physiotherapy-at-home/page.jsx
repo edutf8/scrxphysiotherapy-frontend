@@ -20,7 +20,7 @@ export default function PhysiotherapyAtHome() {
                         src="/physio-at-home.jpg" // Replace with the actual image path
                         alt="Physiotherapist working with a client in a home setting"
                         layout="fill"
-                        objectFit="cover"
+                        objectFit="contain"
                         className="rounded-b-lg"
                     />
                 </div>
