@@ -35,18 +35,35 @@ const Timeline = () => {
     ];
 
     return (
-        <div className="bg-gray-900 p-8 rounded-lg shadow-lg">
-            <h2 className="text-gray-300 text-lg font-semibold mb-6">Timeline with icon snapped to the start</h2>
-            <div className="space-y-8">
+        <div className="bg-gray-900 p-8 rounded-lg shadow-lg relative">
+            <h2 className="text-gray-300 text-lg font-semibold mb-6 text-center">Timeline</h2>
+            {/* Timeline Line */}
+            <div className="absolute top-0 left-1/2 h-full w-1 bg-gray-600 transform -translate-x-1/2"></div>
+            <div className="relative space-y-12">
                 {timelineData.map((item, index) => (
                     <div
                         key={index}
-                        className="flex items-start space-x-4 p-6 bg-gray-800 rounded-lg shadow-lg"
+                        className={`flex items-center w-full ${
+                            index % 2 === 0 ? 'justify-start' : 'justify-end'
+                        }`}
                     >
-                        <div className="text-gray-400 text-lg font-semibold">{item.year}</div>
-                        <div className="flex-1">
+                        <div
+                            className={`bg-gray-800 p-6 rounded-lg shadow-lg w-2/5 ${
+                                index % 2 === 0 ? 'text-right' : 'text-left'
+                            }`}
+                        >
+                            <div className="text-gray-400 text-lg font-semibold">{item.year}</div>
                             <h3 className="text-gray-100 text-xl font-semibold mb-2">{item.title}</h3>
                             <p className="text-gray-300">{item.description}</p>
+                        </div>
+                        <div
+                            className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white absolute"
+                            style={{
+                                left: index % 2 === 0 ? 'calc(50% - 1.5rem)' : 'calc(50% + 1rem)',
+                                transform: 'translateX(-50%)',
+                            }}
+                        >
+                            ✓
                         </div>
                     </div>
                 ))}
