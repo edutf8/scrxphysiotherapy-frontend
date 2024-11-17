@@ -46,6 +46,17 @@ const Timeline = () => {
                             index % 2 === 0 ? 'justify-start' : 'justify-end'
                         }`}
                     >
+                        {/* Connection Line */}
+                        <div
+                            className={`absolute h-0.5 bg-blue-500 ${
+                                index % 2 === 0 ? 'right-1/2' : 'left-1/2'
+                            }`}
+                            style={{
+                                width: 'calc(50% - 2rem)', // Adjust the line to stop before the box
+                                top: '50%',
+                            }}
+                        ></div>
+
                         {/* Connection Dot */}
                         <div
                             className="absolute w-4 h-4 bg-blue-500 rounded-full"
@@ -61,7 +72,7 @@ const Timeline = () => {
                                 index % 2 === 0 ? 'text-right' : 'text-left'
                             }`}
                             style={{
-                                zIndex: 10, // Ensure boxes appear above the timeline
+                                zIndex: 10, // Ensure boxes appear above the connection lines
                             }}
                         >
                             <div className="text-gray-400 text-lg font-semibold">{item.year}</div>
