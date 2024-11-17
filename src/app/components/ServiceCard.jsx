@@ -144,7 +144,7 @@ export function ServiceCard() {
                         layoutId={`card-${card.title}-${id}`}
                         key={card.title}
                         onClick={() => setActive(card)}
-                        className="p-4 flex flex-col hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
+                        className="p-4 flex flex-col rounded-xl cursor-pointer"
                     >
                         <div className="bg-white shadow-lg rounded-lg overflow-hidden my-5 transition duration-300 transform hover:shadow-2xl hover:-translate-y-2 mb-5">
                             <div className="flex gap-4 flex-col w-full">
