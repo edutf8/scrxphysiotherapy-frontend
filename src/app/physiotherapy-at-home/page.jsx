@@ -14,37 +14,41 @@ export default function PhysiotherapyAtHome() {
                 <Header/>
             </section>
             <section id={"main-content"} className={"container mx-auto"}>
-                {/* Hero Section */}
-                <div className="relative w-full h-72">
-                    <Image
-                        src="/physio-at-home.jpg" // Replace with the actual image path
-                        alt="Physiotherapist working with a client in a home setting"
-                        layout="fill"
-                        objectFit="contain"
-                        className="rounded-b-lg"
-                    />
-                </div>
+                <section
+                    className="px-6 py-10 max-w-5xl mx-auto flex flex-col lg:flex-row items-center lg:items-start gap-8">
+                    {/* Image Section */}
+                    <div className="w-full lg:w-1/2">
+                        <Image
+                            src="/image.png" // Replace with the actual image path
+                            alt="Physiotherapist working with a client in a home setting"
+                            width={600}
+                            height={400}
+                            className="rounded-lg shadow-md"
+                        />
+                    </div>
 
-                {/* Introduction Section */}
-                <section className="px-6 py-10 max-w-4xl mx-auto">
-                    <h1 className="text-3xl font-bold text-gray-800 mb-4">
-                        Physiotherapy at Home
-                    </h1>
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                        Whether you have recently been discharged from hospital, or struggling
-                        with long-term pain, discomfort or immobility, we will be able to
-                        help you. Our home Physiotherapy assessment and rehabilitation service
-                        is led by a band 7 NHS Physiotherapist who has a wealth of experience
-                        of working in Elderly Medicine.
-                    </p>
-                    <p className="text-lg text-gray-700 leading-relaxed mt-4">
-                        Each initial consultation will include a comprehensive assessment and
-                        rehabilitation plan tailored to your goals.
-                    </p>
-                    <p className="text-lg text-gray-700 leading-relaxed mt-4">
-                        Our service currently supports people living in a PO1-PO6 postcode.
-                    </p>
+                    {/* Text Section */}
+                    <div className="w-full lg:w-1/2">
+                        <h1 className="text-3xl font-bold text-gray-800 mb-4">
+                            Physiotherapy at Home
+                        </h1>
+                        <p className="text-lg text-gray-700 leading-relaxed">
+                            Whether you have recently been discharged from hospital, or struggling
+                            with long-term pain, discomfort or immobility, we will be able to help
+                            you. Our home Physiotherapy assessment and rehabilitation service is led
+                            by a band 7 NHS Physiotherapist who has a wealth of experience of working
+                            in Elderly Medicine.
+                        </p>
+                        <p className="text-lg text-gray-700 leading-relaxed mt-4">
+                            Each initial consultation will include a comprehensive assessment and
+                            rehabilitation plan tailored to your goals.
+                        </p>
+                        <p className="text-lg text-gray-700 leading-relaxed mt-4">
+                            Our service currently supports people living in a PO1-PO6 postcode.
+                        </p>
+                    </div>
                 </section>
+
 
                 {/* Services Section */}
                 <section className="py-10">
