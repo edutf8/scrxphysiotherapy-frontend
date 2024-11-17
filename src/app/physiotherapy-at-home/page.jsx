@@ -3,6 +3,8 @@ import { FaHome, FaWalking, FaClipboardList } from 'react-icons/fa';
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import React from "react";
+import CTA from "../components/CTA";
+import Footer from "../components/Footer";
 
 export default function PhysiotherapyAtHome() {
     return (
@@ -108,6 +110,16 @@ export default function PhysiotherapyAtHome() {
                         Make an Enquiry
                     </a>
                 </section>
+            </section>
+            <section id={"call-to-action"}>
+                <div className={"mx-auto mt-10"}>
+                    <CTA/>
+                </div>
+            </section>
+            <section id={"footer"}>
+                <div className={"mx-auto text-center"}>
+                    <Footer/>
+                </div>
             </section>
         </div>
     );
