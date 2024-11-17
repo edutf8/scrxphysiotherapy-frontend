@@ -41,4 +41,56 @@
   position: relative;
 }
 
+.timeline-container {
+  display: grid;
+  grid-template-columns: 1fr 2px 1fr;
+  gap: 0;
+  position: relative;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.timeline-item.left {
+  grid-column: 1 / 2;
+  text-align: right;
+}
+
+.timeline-item.right {
+  grid-column: 3 / 4;
+  text-align: left;
+}
+
+.timeline-content {
+  background: #1f2937; /* Dark Gray */
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+}
+
+.timeline-marker {
+  width: 10px;
+  height: 10px;
+  background: #3b82f6; /* Blue */
+  border-radius: 50%;
+  grid-column: 2 / 3;
+  justify-self: center;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: #9ca3af; /* Gray */
+  transform: translateX(-50%);
+}
+
 

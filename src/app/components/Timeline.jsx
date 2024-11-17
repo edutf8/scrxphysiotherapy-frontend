@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
 
 const Timeline = () => {
     const timelineData = [
@@ -36,96 +34,18 @@ const Timeline = () => {
         },
     ];
 
-    const timelineRef = useRef(null);
-    const [timelineStyles, setTimelineStyles] = useState({
-        top: 0,
-        height: 0,
-    });
-
-    useEffect(() => {
-        const calculateTimelineStyles = () => {
-            if (timelineRef.current) {
-                const boxes = timelineRef.current.querySelectorAll('.timeline-box');
-
-                if (boxes.length > 0) {
-                    const firstBox = boxes[0];
-                    const lastBox = boxes[boxes.length - 1];
-
-                    const firstBoxTop = firstBox.offsetTop;
-                    const lastBoxBottom = lastBox.offsetTop + lastBox.offsetHeight;
-
-                    // Calculate the top position and height of the timeline
-                    const top = firstBoxTop;
-                    const height = lastBoxBottom - firstBoxTop;
-
-                    setTimelineStyles({ top, height });
-                }
-            }
-        };
-
-        // Ensure styles are calculated after DOM updates
-        const timeoutId = setTimeout(calculateTimelineStyles, 0);
-
-        return () => clearTimeout(timeoutId); // Cleanup timeout
-    }, []);
-
     return (
-        <div className="p-8 rounded-lg shadow-lg relative">
-            <h2 className="text-gray-700 text-lg font-semibold mb-6 text-center">Timeline</h2>
-            {/* Central Timeline Line */}
-            <div
-                ref={timelineRef}
-                className="absolute left-1/2 w-1 bg-gray-600 transform -translate-x-1/2"
-                style={{
-                    top: `${timelineStyles.top}px`,
-                    height: `${timelineStyles.height}px`,
-                }}
-            ></div>
-            <div className="relative space-y-12">
-                {timelineData.map((item, index) => (
-                    <div
-                        key={index}
-                        className={`relative flex items-center ${
-                            index % 2 === 0 ? 'justify-start' : 'justify-end'
-                        }`}
-                    >
-                        {/* Connection Dot */}
-                        <div
-                            className="absolute w-4 h-4 bg-blue-500 rounded-full"
-                            style={{
-                                left: '50%',
-                                transform: 'translateX(-50%)',
-                            }}
-                        ></div>
-
-                        {/* Connection Line */}
-                        <div
-                            className={`absolute h-0.5 bg-blue-500 ${
-                                index % 2 === 0 ? 'right-1/2' : 'left-1/2'
-                            }`}
-                            style={{
-                                width: 'calc(50% - 3rem)', // Adjust the line to stop before the box
-                                top: '50%',
-                                zIndex: 0, // Line stays behind the box
-                            }}
-                        ></div>
-
-                        {/* Timeline Box */}
-                        <div
-                            className={`timeline-box relative bg-gray-800 p-6 rounded-lg shadow-lg w-2/5 ${
-                                index % 2 === 0 ? 'text-right' : 'text-left'
-                            }`}
-                            style={{
-                                zIndex: 10, // Box appears above the line
-                            }}
-                        >
-                            <div className="text-gray-400 text-lg font-semibold">{item.year}</div>
-                            <h3 className="text-gray-100 text-xl font-semibold mb-2">{item.title}</h3>
-                            <p className="text-gray-300">{item.description}</p>
-                        </div>
+        <div className="timeline-container">
+            {timelineData.map((item, index) => (
+                <div key={index} className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
+                    <div className="timeline-content">
+                        <h3>{item.year}</h3>
+                        <h2>{item.title}</h2>
+                        <p>{item.description}</p>
                     </div>
-                ))}
-            </div>
+                    <div className="timeline-marker"></div>
+                </div>
+            ))}
         </div>
     );
 };
