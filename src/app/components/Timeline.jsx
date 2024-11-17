@@ -36,7 +36,6 @@ const Timeline = () => {
 
     return (
         <div className="relative p-8">
-            <h2 className="text-gray-700 text-lg font-semibold mb-6 text-center">Timeline</h2>
             {/* Static Timeline Line */}
             <div className="absolute left-1/2 w-1 bg-gray-600 top-0 bottom-0 transform -translate-x-1/2"></div>
             <div className="relative space-y-12">
