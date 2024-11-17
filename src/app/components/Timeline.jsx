@@ -43,30 +43,32 @@ const Timeline = () => {
     });
 
     useEffect(() => {
-        if (timelineRef.current) {
-            const timelineElement = timelineRef.current;
-            const boxes = timelineElement.querySelectorAll('.timeline-box');
+        const calculateTimelineStyles = () => {
+            if (timelineRef.current) {
+                const timelineElement = timelineRef.current;
+                const boxes = timelineElement.querySelectorAll('.timeline-box');
 
-            if (boxes.length > 0) {
-                const firstBox = boxes[0];
-                const lastBox = boxes[boxes.length - 1];
-                const containerTop = timelineElement.getBoundingClientRect().top;
+                if (boxes.length > 0) {
+                    const firstBox = boxes[0];
+                    const lastBox = boxes[boxes.length - 1];
 
-                const firstBoxTop = firstBox.offsetTop;
-                const lastBoxBottom = lastBox.offsetTop + lastBox.offsetHeight;
+                    const firstBoxTop = firstBox.offsetTop;
+                    const lastBoxBottom = lastBox.offsetTop + lastBox.offsetHeight;
 
-                // Calculate the top position and height of the timeline
-                const top = firstBoxTop;
-                const height = lastBoxBottom - firstBoxTop;
+                    // Calculate the top position and height of the timeline
+                    const top = firstBoxTop;
+                    const height = lastBoxBottom - firstBoxTop;
 
-                console.log('Top:', top, 'Height:', height); // Debug output
-
-                setTimelineStyles({
-                    top,
-                    height,
-                });
+                    console.log('Calculated top:', top, 'Calculated height:', height);
+                    setTimelineStyles({ top, height });
+                }
             }
-        }
+        };
+
+        // Use setTimeout to defer calculation until after the DOM updates
+        const timeoutId = setTimeout(calculateTimelineStyles, 0);
+
+        return () => clearTimeout(timeoutId); // Cleanup timeout
     }, []);
 
     return (
