@@ -45,7 +45,7 @@ export default function PhysiotherapyAtHome() {
                 </section>
 
                 {/* Services Section */}
-                <section className="bg-white py-10">
+                <section className="py-10">
                     <div className="max-w-5xl mx-auto px-6">
                         <h2 className="text-2xl font-bold text-gray-800 text-center mb-8">
                             Services Offered
