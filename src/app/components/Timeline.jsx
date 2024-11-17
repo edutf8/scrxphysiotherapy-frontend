@@ -69,7 +69,7 @@ const Timeline = () => {
 
                         {/* Timeline Box */}
                         <div
-                            className={`relative bg-gray-800 p-6 rounded-lg shadow-lg w-1/2 ${
+                            className={`relative bg-gray-800 p-6 rounded-lg shadow-lg w-5/12 ${
                                 index % 2 === 0 ? 'text-right' : 'text-left'
                             }`}
                             style={{
