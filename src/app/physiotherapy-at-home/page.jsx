@@ -84,7 +84,7 @@ export default function PhysiotherapyAtHome() {
                 </section>
 
                 {/* Pricing Section */}
-                <section className="px-6 py-10 max-w-4xl mx-auto">
+                <section className="px-6 py-10 max-w-4xl mx-auto text-center">
                     <h2 className="text-2xl font-bold text-gray-800 text-center mb-8">
                         Pricing
                     </h2>
