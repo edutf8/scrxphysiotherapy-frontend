@@ -103,7 +103,7 @@ export default function Vision() {
                 </div>
             </section>
             <section id={"call-to-action"}>
-                <div className={"mx-auto mt-5"}>
+                <div className={"mx-auto mt-10"}>
                     <CTA/>
                 </div>
             </section>
