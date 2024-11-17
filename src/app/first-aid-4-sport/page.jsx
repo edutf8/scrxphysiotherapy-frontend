@@ -1,9 +1,18 @@
 // pages/first-aid-4-sport.js
 import Image from "next/image";
+import Navbar from "../components/Navbar";
+import Header from "../components/Header";
+import React from "react";
+import CTA from "../components/CTA";
+import Footer from "../components/Footer";
 
 export default function FirstAid4Sport() {
     return (
         <div className="bg-gray-100 py-10 px-6">
+            <section id={"navigation-section"}>
+                <Navbar/>
+                <Header/>
+            </section>
             {/* Header */}
             <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-3xl font-bold text-gray-800">
@@ -89,6 +98,16 @@ export default function FirstAid4Sport() {
                     </div>
                 </div>
             </div>
+            <section id={"call-to-action"}>
+                <div className={"mx-auto mt-10"}>
+                    <CTA/>
+                </div>
+            </section>
+            <section id={"footer"}>
+                <div className={"mx-auto text-center"}>
+                    <Footer/>
+                </div>
+            </section>
         </div>
     );
 }
