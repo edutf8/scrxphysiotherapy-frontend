@@ -14,7 +14,7 @@ export default function FirstAid4Sport() {
                 <Header/>
             </section>
             {/* Header */}
-            <div className="max-w-4xl mx-auto text-center">
+            <div className="max-w-4xl mx-auto text-center mt-10">
                 <h1 className="text-3xl font-bold text-gray-800">
                     Our Partnership with First Aid 4 Sport
                 </h1>
