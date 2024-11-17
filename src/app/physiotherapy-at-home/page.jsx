@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { FaHome, FaWalking, FaClipboardList } from 'react-icons/fa';
-import Navbar from "@/app/components/Navbar";
-import Header from "@/app/components/Header";
+import Navbar from "../components/Navbar";
+import Header from "../components/Header";
 import React from "react";
 
 export default function PhysiotherapyAtHome() {
