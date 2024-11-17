@@ -12,7 +12,7 @@ const PartnersGrid = ({ partners }) => {
             {partners.map((partner, index) => (
                 <div
                     key={index}
-                    className={`flex items-center justify-center overflow-hidden bg-gray-100 p-4 rounded-lg transform transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg ${
+                    className={`flex items-center object-center justify-center overflow-hidden bg-gray-100 p-4 rounded-lg transform transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg ${
                         // Apply col-span if it's the first item in an incomplete last row
                         index >= numItems - lastRowItems && lastRowItems > 0 && index % itemsPerRow === 0
                             ? `xl:col-span-${Math.floor((itemsPerRow - lastRowItems) / 2)}`
