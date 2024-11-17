@@ -8,7 +8,7 @@ import Footer from "../components/Footer";
 
 export default function FirstAid4Sport() {
     return (
-        <div className="bg-gray-100 py-10 px-6">
+        <div className="bg-gray-100">
             <section id={"navigation-section"}>
                 <Navbar/>
                 <Header/>
