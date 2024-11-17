@@ -1,4 +1,6 @@
-import React from 'react';
+"use client";
+
+import React, { useEffect, useState, useRef } from 'react';
 
 const Timeline = () => {
     const timelineData = [
@@ -34,11 +36,37 @@ const Timeline = () => {
         },
     ];
 
+    const timelineRef = useRef(null);
+    const [timelineHeight, setTimelineHeight] = useState(0);
+
+    useEffect(() => {
+        if (timelineRef.current) {
+            // Calculate the distance between the first and last boxes
+            const timelineElement = timelineRef.current;
+            const boxes = timelineElement.querySelectorAll('.timeline-box');
+            if (boxes.length > 0) {
+                const firstBox = boxes[0].getBoundingClientRect();
+                const lastBox = boxes[boxes.length - 1].getBoundingClientRect();
+                const containerTop = timelineElement.getBoundingClientRect().top;
+
+                // Set the timeline height based on the position of the first and last boxes
+                setTimelineHeight(lastBox.bottom - firstBox.top);
+            }
+        }
+    }, []);
+
     return (
         <div className="bg-gray-900 p-8 rounded-lg shadow-lg relative">
             <h2 className="text-gray-300 text-lg font-semibold mb-6 text-center">Timeline</h2>
             {/* Central Timeline Line */}
-            <div className="absolute top-0 left-1/2 h-full w-1 bg-gray-600 transform -translate-x-1/2"></div>
+            <div
+                ref={timelineRef}
+                className="absolute left-1/2 w-1 bg-gray-600 transform -translate-x-1/2"
+                style={{
+                    top: '0',
+                    height: `${timelineHeight}px`, // Dynamic height for the timeline
+                }}
+            ></div>
             <div className="relative space-y-12">
                 {timelineData.map((item, index) => (
                     <div
@@ -70,7 +98,7 @@ const Timeline = () => {
 
                         {/* Timeline Box */}
                         <div
-                            className={`relative bg-gray-800 p-6 rounded-lg shadow-lg w-2/5 ${
+                            className={`timeline-box relative bg-gray-800 p-6 rounded-lg shadow-lg w-2/5 ${
                                 index % 2 === 0 ? 'text-right' : 'text-left'
                             }`}
                             style={{
