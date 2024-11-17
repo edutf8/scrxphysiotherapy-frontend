@@ -37,7 +37,10 @@ const Timeline = () => {
     ];
 
     const timelineRef = useRef(null);
-    const [timelineHeight, setTimelineHeight] = useState(200); // Default fallback height
+    const [timelineStyles, setTimelineStyles] = useState({
+        top: 0,
+        height: 0,
+    });
 
     useEffect(() => {
         if (timelineRef.current) {
@@ -46,12 +49,16 @@ const Timeline = () => {
             if (boxes.length > 0) {
                 const firstBox = boxes[0].getBoundingClientRect();
                 const lastBox = boxes[boxes.length - 1].getBoundingClientRect();
-                const containerTop = timelineElement.getBoundingClientRect().top;
 
-                // Calculate height between first and last boxes
-                const calculatedHeight = lastBox.bottom - firstBox.top;
-                console.log('Calculated timeline height:', calculatedHeight);
-                setTimelineHeight(calculatedHeight > 0 ? calculatedHeight : 200); // Fallback to 200px if calculation fails
+                // Calculate the top position and height of the timeline
+                const containerTop = timelineElement.getBoundingClientRect().top;
+                const top = firstBox.top - containerTop; // Distance from the container's top
+                const height = lastBox.bottom - firstBox.top;
+
+                setTimelineStyles({
+                    top,
+                    height,
+                });
             }
         }
     }, []);
@@ -64,8 +71,8 @@ const Timeline = () => {
                 ref={timelineRef}
                 className="absolute left-1/2 w-1 bg-gray-600 transform -translate-x-1/2"
                 style={{
-                    top: '50px', // Adjust to start below the title
-                    height: `${timelineHeight}px`,
+                    top: `${timelineStyles.top}px`,
+                    height: `${timelineStyles.height}px`,
                 }}
             ></div>
             <div className="relative space-y-12">
