@@ -41,15 +41,15 @@ const Timeline = () => {
 
     useEffect(() => {
         if (timelineRef.current) {
-            // Calculate the distance between the first and last boxes
             const timelineElement = timelineRef.current;
             const boxes = timelineElement.querySelectorAll('.timeline-box');
             if (boxes.length > 0) {
                 const firstBox = boxes[0].getBoundingClientRect();
                 const lastBox = boxes[boxes.length - 1].getBoundingClientRect();
+
                 const containerTop = timelineElement.getBoundingClientRect().top;
 
-                // Set the timeline height based on the position of the first and last boxes
+                // Calculate height between first and last boxes
                 setTimelineHeight(lastBox.bottom - firstBox.top);
             }
         }
@@ -57,13 +57,14 @@ const Timeline = () => {
 
     return (
         <div className="p-8 rounded-lg shadow-lg relative">
+            <h2 className="text-gray-700 text-lg font-semibold mb-6 text-center">Timeline</h2>
             {/* Central Timeline Line */}
             <div
                 ref={timelineRef}
                 className="absolute left-1/2 w-1 bg-gray-600 transform -translate-x-1/2"
                 style={{
-                    top: '0',
-                    height: `${timelineHeight}px`, // Dynamic height for the timeline
+                    top: '50px', // Adjust to start just below the title
+                    height: `${timelineHeight}px`,
                 }}
             ></div>
             <div className="relative space-y-12">
