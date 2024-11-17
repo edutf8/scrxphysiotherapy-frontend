@@ -62,17 +62,20 @@ const Timeline = () => {
                                 index % 2 === 0 ? 'right-1/2' : 'left-1/2'
                             }`}
                             style={{
-                                width: 'calc(25% - 1rem)',
+                                width: 'calc(50% - 3rem)', // Adjust the line to stop before the box
                                 top: '50%',
-                                transform: index % 2 === 0 ? 'translateX(-1rem)' : 'translateX(1rem)',
+                                zIndex: 0, // Line stays behind the box
                             }}
                         ></div>
 
-                        {/* Timeline Content */}
+                        {/* Timeline Box */}
                         <div
-                            className={`bg-gray-800 p-6 rounded-lg shadow-lg w-2/5 ${
+                            className={`relative bg-gray-800 p-6 rounded-lg shadow-lg w-2/5 ${
                                 index % 2 === 0 ? 'text-right' : 'text-left'
                             }`}
+                            style={{
+                                zIndex: 10, // Box appears above the line
+                            }}
                         >
                             <div className="text-gray-400 text-lg font-semibold">{item.year}</div>
                             <h3 className="text-gray-100 text-xl font-semibold mb-2">{item.title}</h3>
