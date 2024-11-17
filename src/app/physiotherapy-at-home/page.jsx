@@ -28,7 +28,7 @@ export default function PhysiotherapyAtHome() {
                     </div>
 
                     {/* Text Section */}
-                    <div className="w-full lg:w-1/2">
+                    <div className="w-full lg:w-1/2 flex items-center">
                         <h1 className="text-3xl font-bold text-gray-800 mb-4">
                             Physiotherapy at Home
                         </h1>
