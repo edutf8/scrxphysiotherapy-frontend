@@ -108,7 +108,7 @@ export default function PhysiotherapyAtHome() {
                 {/* Call to Action */}
                 <section className="text-center py-10">
                     <a
-                        href="/enquiry" // Update with the actual enquiry page URL
+                        href="/contact" // Update with the actual enquiry page URL
                         className="bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-blue-700 focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
                     >
                         Make an Enquiry
