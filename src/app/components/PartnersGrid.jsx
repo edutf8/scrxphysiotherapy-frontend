@@ -8,24 +8,19 @@ const PartnersGrid = ({ partners }) => {
     const lastRowItems = numItems % itemsPerRow;
 
     return (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-4 p-4">
+        <div className="grid gap-4 p-4">
             {partners.map((partner, index) => {
-                // Check if this is the first item in the last row
-                const isLastRowFirstItem =
-                    index >= numItems - lastRowItems && lastRowItems > 0 && index % itemsPerRow === 0;
+                // Check if this is part of the last row
+                const isLastRow = index >= numItems - lastRowItems && lastRowItems > 0;
 
                 return (
                     <div
                         key={index}
-                        className={`flex items-center object-center justify-center overflow-hidden bg-gray-100 p-4 rounded-lg transform transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg ${
-                            isLastRowFirstItem ? 'xl:col-start-2' : '' // Center the bottom row
-                        }`}
-                        style={{
-                            gridColumnStart:
-                                index >= numItems - lastRowItems && lastRowItems > 0
-                                    ? `span ${Math.floor((itemsPerRow - lastRowItems) / 2)}`
-                                    : undefined,
-                        }}
+                        className={`grid ${
+                            isLastRow
+                                ? 'grid-cols-6' // Last row has 6 columns
+                                : 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7'
+                        } flex items-center justify-center overflow-hidden bg-gray-100 p-4 rounded-lg transform transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg`}
                     >
                         <Image
                             src={partner.logo}
