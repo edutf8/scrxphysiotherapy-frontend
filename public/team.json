@@ -16,7 +16,7 @@
     "name": "Daniel Rebolledo",
     "category": 3,
     "role": "Financial & Clinical Director",
-    "image": "https://scrxcdn.fra1.cdn.digitaloceanspaces.com/dan.jpg",
+    "image": "/daniel-rebolledo.jpg",
     "qualifications": [
       "Sport and Exercise Science BSc",
       "Physiotherapy MSc",
@@ -28,7 +28,7 @@
     "name": "Helena Dickin",
     "category": 2,
     "role": "Pilates Team Leader, Senior Physiotherapist",
-    "image": null,
+    "image": "/helena-dickin.jpg",
     "qualifications": [
       "Exercise and Sports Science BSc",
       "Physiotherapy MSc",
@@ -41,7 +41,7 @@
     "name": "Luke Smithard",
     "category": 1,
     "role": "Sports Performance Physiotherapist",
-    "image": null,
+    "image": "/luke-smithard.jpg",
     "qualifications": [
       "Physiotherapy BSc Hons",
       "Band 7 Lower Limb Team Leader",
@@ -54,7 +54,7 @@
     "name": "Christian Robinson",
     "category": 1,
     "role": "Sports Performance Physiotherapist",
-    "image": null,
+    "image": "/christian-robinson.jpg",
     "qualifications": [
       "Sport and Exercise Science BSc",
       "Physiotherapy MSc"
@@ -65,7 +65,7 @@
     "name": "Sarah Bamford",
     "category": 2,
     "role": "Clinical Specialist Paediatric & Adolescent Physiotherapist",
-    "image": null,
+    "image": "/sarah-bamford.jpg",
     "qualifications": [
       "Sports Rehabilitation BSc",
       "Physiotherapy BSc"
@@ -73,22 +73,10 @@
     "description": "Sarah is a Clinical Specialist Physiotherapist in Children and Adolescents working for the NHS and now South Coast Rx Physiotherapy. She has over 10 years’ experience in the NHS, and privately within high level sports such as rugby and hockey. She started her career with a degree in Sports Rehabilitation followed by a Physiotherapy degree from Southampton University, and further onto study the specialism of MSK Paediatrics and the Young Athlete. She has previously worked across both Childrens and Adults services as Clinical MSK Lead, with a specialist interest in shoulders and high level rehabilitation. She regularly lectures and educates others in this area and has passion to raise the awareness that Children are not little adults."
   },
   {
-    "name": "Dan Young",
-    "category": 1,
-    "role": "Senior Physiotherapist",
-    "image": null,
-    "qualifications": [
-      "Sport and Exercise Science BSc",
-      "Physiotherapy MSc",
-      "Member of the Chartered Society of Physiotherapy"
-    ],
-    "description": "Dan graduated from the University of Southampton with distinction degrees in Sport and Exercise Science (BSc) and Physiotherapy (MSc). He began his professional career within the NHS, progressing to become a Band 7 Team Leader specializing in shoulder injury rehabilitation. In the sports sector, Dan has worked with a range of Great Britain professional athletes, including those in sailing, boxing, judo, American football, and triathlons. He has also worked privately as a physiotherapist overseas in New Zealand and Australia and serves as a guest lecturer on the MSc Physiotherapy degree at the University of Southampton and Portsmouth. Dan is passionate about the life-changing impact physiotherapy can have on people's lives. Outside of his professional role, he has competed nationally at the British Athletics Championships and at the UK and New Zealand CrossFit Nationals, where he finished third in the team event."
-  },
-  {
     "name": "Samantha Groves",
     "category": 2,
     "role": "Pitchside Team, Leader Paediatric and Adolescent Physiotherapist",
-    "image": null,
+    "image": "/samantha-groves.jpg",
     "qualifications": [
       "Sport and Exercise Science BSc Hons",
       "Physiotherapy MSc",
@@ -102,7 +90,7 @@
     "name": "Rupak Pun",
     "category": 1,
     "role": "Sports Therapist",
-    "image": null,
+    "image": "/rupak-pun.jpg",
     "qualifications": [
       "MSci Sports Therapy",
       "Level 4 ITMMIF Qualified",
@@ -114,7 +102,7 @@
     "name": "Adam Toy",
     "category": 1,
     "role": "Physiotherapist",
-    "image": null,
+    "image": "/adam-toy.jpg",
     "qualifications": [
       "MSc Physiotherapy (Hons)",
       "BSc Sport and Exercise Science"
@@ -125,7 +113,7 @@
     "name": "Emily Goss",
     "category": 1,
     "role": "Senior Sports Therapist",
-    "image": null,
+    "image": "/emily-goss.jpg",
     "qualifications": [
       "BSc Sports Therapy (Hons)",
       "REPs Level 3 Personal Trainer"
@@ -136,7 +124,7 @@
     "name": "Eleanor Todd",
     "category": 1,
     "role": "Sports Therapist",
-    "image": null,
+    "image": "/eleanor-todd.jpg",
     "qualifications": [
       "BSc Sports Therapy (Hons)",
       "Level 4 Sports Massage",
@@ -148,7 +136,7 @@
     "name": "Miles Haslam",
     "category": 1,
     "role": "Physiotherapist",
-    "image": null,
+    "image": "/miles-haslam.jpg",
     "qualifications": [
       "MSc Physiotherapy"
     ],
@@ -158,7 +146,7 @@
     "name": "Noah Clements",
     "category": 1,
     "role": "Senior Physiotherapist",
-    "image": null,
+    "image": "/noah-clements.jpg",
     "qualifications": [
       "BSc Sports Rehabilitation",
       "MSc Physiotherapy"
