@@ -114,7 +114,7 @@ export function ServiceCard() {
                                             <li key={priceType}>
                                                 <span className="capitalize">{priceType.replace(/_/g, " ")}:</span>
                                                 <span className="ml-2">
-                                                    {value?.discounted !== undefined ? (
+                                                    {value?.discounted != null ? (
                                                         <>
                                                             <s className="text-red-500">
                                                                 {formatPrice(value.original)}
