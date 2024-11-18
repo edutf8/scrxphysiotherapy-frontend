@@ -55,7 +55,6 @@ const fetchData = async () => {
             throw new Error(`Network response was not ok, status: ${response.status}`);
         }
 
-        console.log(response.text());
         const data = await response.json();
         console.log(data);
         return Array.isArray(data) ? data : [data];
