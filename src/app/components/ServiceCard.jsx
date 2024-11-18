@@ -94,7 +94,7 @@ export function ServiceCard() {
                                             <li key={`${priceType}-${idx}`}>
                                                 <span>{item.length}:</span>
                                                 <span className="ml-2">
-                                                    {item.discounted !== undefined ? (
+                                                    {item.discounted != null ? (
                                                         <>
                                                             <s className="text-red-500">{formatPrice(item.original)}</s>
                                                             <span className="ml-2 text-blue-600 font-medium">
