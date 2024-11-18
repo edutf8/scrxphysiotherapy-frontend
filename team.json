@@ -1,7 +1,7 @@
 [
   {
     "name": "Cameron Brew",
-    "category": 3,
+    "category": "3",
     "role": "Operational & Clinical Director",
     "image": "https://scrxcdn.fra1.cdn.digitaloceanspaces.com/cam.jpg",
     "qualifications": [
@@ -14,7 +14,7 @@
   },
   {
     "name": "Daniel Rebolledo",
-    "category": 3,
+    "category": "3",
     "role": "Financial & Clinical Director",
     "image": "https://scrxcdn.fra1.cdn.digitaloceanspaces.com/dan.jpg",
     "qualifications": [
@@ -26,7 +26,7 @@
   },
   {
     "name": "Helena Dickin",
-    "category": 2,
+    "category": "2",
     "role": "Pilates Team Leader, Senior Physiotherapist",
     "image": null,
     "qualifications": [
@@ -39,7 +39,7 @@
   },
   {
     "name": "Luke Smitherad",
-    "category": 1,
+    "category": "1",
     "role": "Sports Performance Physiotherapist",
     "image": null,
     "qualifications": [
@@ -52,7 +52,7 @@
   },
   {
     "name": "Christian Robinson",
-    "category": 1,
+    "category": "1",
     "role": "Sports Performance Physiotherapist",
     "image": null,
     "qualifications": [
@@ -63,7 +63,7 @@
   },
   {
     "name": "Sarah Bamford",
-    "category": 2,
+    "category": "2",
     "role": "Clinical Specialist Paediatric & Adolescent Physiotherapist",
     "image": null,
     "qualifications": [
@@ -74,7 +74,7 @@
   },
   {
     "name": "Dan Young",
-    "category": 1,
+    "category": "1",
     "role": "Senior Physiotherapist",
     "image": null,
     "qualifications": [
@@ -86,7 +86,7 @@
   },
   {
     "name": "Samantha Groves",
-    "category": 2,
+    "category": "2",
     "role": "Pitchside Team, Leader Paediatric and Adolescent Physiotherapist",
     "image": null,
     "qualifications": [
@@ -100,7 +100,7 @@
   },
   {
     "name": "Rupak Pun",
-    "category": 1,
+    "category": "1",
     "role": "Sports Therapist",
     "image": null,
     "qualifications": [
@@ -112,7 +112,7 @@
   },
   {
     "name": "Adam Toy",
-    "category": 1,
+    "category": "1",
     "role": "Physiotherapist",
     "image": null,
     "qualifications": [
@@ -123,7 +123,7 @@
   },
   {
     "name": "Emily Goss",
-    "category": 1,
+    "category": "1",
     "role": "Senior Sports Therapist",
     "image": null,
     "qualifications": [
@@ -134,7 +134,7 @@
   },
   {
     "name": "Eleanor Todd",
-    "category": 1,
+    "category": "1",
     "role": "Sports Therapist",
     "image": null,
     "qualifications": [
@@ -146,7 +146,7 @@
   },
   {
     "name": "Miles Haslam",
-    "category": 1,
+    "category": "1",
     "role": "Physiotherapist",
     "image": null,
     "qualifications": [
@@ -156,7 +156,7 @@
   },
   {
     "name": "Noah Clements",
-    "category": 1,
+    "category": "1",
     "role": "Senior Physiotherapist",
     "image": null,
     "qualifications": [
