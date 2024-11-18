@@ -62,6 +62,7 @@ export function ServiceCard() {
 
     return (
         <>
+            {/* Collapsed Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
                 {services.map((service) => (
                     <motion.div
@@ -87,14 +88,15 @@ export function ServiceCard() {
                             {/* Price List */}
                             <ul className="mt-2 space-y-1">
                                 {Object.entries(service.prices || {}).map(([priceType, value]) => {
-                                    if (priceType === "bulk_packages") return null; // Skip in collapsed view
+                                    if (priceType === "bulk_packages") return null; // Skip bulk_packages in collapsed view
 
                                     if (Array.isArray(value)) {
+                                        // Handle session lengths
                                         return value.map((item, idx) => (
                                             <li key={`${priceType}-${idx}`}>
                                                 <span>{item.length}:</span>
                                                 <span className="ml-2">
-                                                    {item.discounted != null ? (
+                                                    {item.discounted != null ? ( // Check for null and undefined
                                                         <>
                                                             <s className="text-red-500">{formatPrice(item.original)}</s>
                                                             <span className="ml-2 text-blue-600 font-medium">
@@ -110,15 +112,14 @@ export function ServiceCard() {
                                             </li>
                                         ));
                                     } else if (typeof value === "object") {
+                                        // Handle single prices (e.g., initial, follow_up)
                                         return (
                                             <li key={priceType}>
                                                 <span className="capitalize">{priceType.replace(/_/g, " ")}:</span>
                                                 <span className="ml-2">
-                                                    {value?.discounted != null ? (
+                                                    {value.discounted != null ? (
                                                         <>
-                                                            <s className="text-red-500">
-                                                                {formatPrice(value.original)}
-                                                            </s>
+                                                            <s className="text-red-500">{formatPrice(value.original)}</s>
                                                             <span className="ml-2 text-blue-600 font-medium">
                                                                 {formatPrice(value.discounted)}
                                                             </span>
@@ -140,6 +141,7 @@ export function ServiceCard() {
                 ))}
             </div>
 
+            {/* Expanded Card */}
             <AnimatePresence>
                 {activeCard && (
                     <>
@@ -179,11 +181,70 @@ export function ServiceCard() {
                                     {activeCard.title}
                                 </h2>
                                 <p className="text-gray-600">{activeCard.description}</p>
+                                {/* Expanded Price List */}
                                 <ul className="mt-4 space-y-2">
-                                    {Object.entries(activeCard.prices || {}).map(([priceType, value]) => (
-                                        // Bulk packages only in expanded view
-                                        <li key={priceType}>{/* Render logic here */}</li>
-                                    ))}
+                                    {Object.entries(activeCard.prices || {}).map(([priceType, value]) => {
+                                        if (Array.isArray(value)) {
+                                            // Handle session lengths and bulk packages
+                                            return value.map((item, idx) => (
+                                                <li key={`${priceType}-${idx}`}>
+                                                    {priceType === "session_lengths" && (
+                                                        <span>{item.length}:</span>
+                                                    )}
+                                                    {priceType === "bulk_packages" && (
+                                                        <span>{item.quantity} sessions:</span>
+                                                    )}
+                                                    <span className="ml-2">
+                                                        {item.discounted != null ? (
+                                                            <>
+                                                                <s className="text-red-500">
+                                                                    {formatPrice(item.original)}
+                                                                </s>
+                                                                <span className="ml-2 text-blue-600 font-medium">
+                                                                    {formatPrice(item.discounted)}
+                                                                </span>
+                                                            </>
+                                                        ) : (
+                                                            <span className="text-blue-600 font-medium">
+                                                                {formatPrice(item.original)}
+                                                            </span>
+                                                        )}
+                                                        {priceType === "bulk_packages" && item.discount && (
+                                                            <span className="ml-2 text-green-600">
+                                                                ({item.discount})
+                                                            </span>
+                                                        )}
+                                                    </span>
+                                                </li>
+                                            ));
+                                        } else if (typeof value === "object") {
+                                            // Handle single prices (e.g., initial, follow_up)
+                                            return (
+                                                <li key={priceType}>
+                                                    <span className="capitalize">
+                                                        {priceType.replace(/_/g, " ")}:
+                                                    </span>
+                                                    <span className="ml-2">
+                                                        {value.discounted != null ? (
+                                                            <>
+                                                                <s className="text-red-500">
+                                                                    {formatPrice(value.original)}
+                                                                </s>
+                                                                <span className="ml-2 text-blue-600 font-medium">
+                                                                    {formatPrice(value.discounted)}
+                                                                </span>
+                                                            </>
+                                                        ) : (
+                                                            <span className="text-blue-600 font-medium">
+                                                                {formatPrice(value.original)}
+                                                            </span>
+                                                        )}
+                                                    </span>
+                                                </li>
+                                            );
+                                        }
+                                        return null;
+                                    })}
                                 </ul>
                             </div>
                         </motion.div>
