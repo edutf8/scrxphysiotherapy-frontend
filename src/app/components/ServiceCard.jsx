@@ -28,10 +28,8 @@ export function ServiceCard() {
         fetchData()
             .then((data) => {
                 if (data) {
-                    // Ensure we handle both array and object formats
                     setServices(Array.isArray(data) ? data : [data]);
                     setError(false);
-                    console.log("Set services:", services);
                 } else {
                     setError(true);
                 }
@@ -81,14 +79,75 @@ export function ServiceCard() {
                                 {service.title}
                             </h3>
                             <ul className="mt-2 space-y-1">
-                                {Object.entries(service.prices || {}).map(([priceType, value]) => (
-                                    <li key={priceType}>
-                                        {priceType.replace(/_/g, " ").replace(/^\w/, (c) => c.toUpperCase())}:
-                                        <span className="ml-2 text-blue-600 font-medium">
-                                            £{value?.discounted || value?.original}
-                                        </span>
-                                    </li>
-                                ))}
+                                {Object.entries(service.prices || {}).map(([priceType, value]) => {
+                                    if (Array.isArray(value)) {
+                                        // Handle session lengths or bulk packages
+                                        return value.map((item, idx) => (
+                                            <li key={`${priceType}-${idx}`}>
+                                                {priceType === "session_lengths" && (
+                                                    <>
+                                                        <span>{item.length}:</span>
+                                                        <span className="ml-2">
+                                                            {item.discounted ? (
+                                                                <>
+                                                                    <s className="text-red-500">
+                                                                        £{item.original.toFixed(2)}
+                                                                    </s>
+                                                                    <span className="ml-2 text-blue-600 font-medium">
+                                                                        £{item.discounted.toFixed(2)}
+                                                                    </span>
+                                                                </>
+                                                            ) : (
+                                                                <span className="text-blue-600 font-medium">
+                                                                    £{item.original.toFixed(2)}
+                                                                </span>
+                                                            )}
+                                                        </span>
+                                                    </>
+                                                )}
+                                                {priceType === "bulk_packages" && (
+                                                    <>
+                                                        <span>{item.quantity} sessions:</span>
+                                                        <span className="ml-2">
+                                                            £{item.price_per_session.toFixed(2)}
+                                                            {item.discount && (
+                                                                <span className="ml-2 text-green-600 font-medium">
+                                                                    ({item.discount})
+                                                                </span>
+                                                            )}
+                                                        </span>
+                                                    </>
+                                                )}
+                                            </li>
+                                        ));
+                                    } else if (typeof value === "object") {
+                                        // Handle single prices (e.g., initial, follow_up)
+                                        return (
+                                            <li key={priceType}>
+                                                <span className="capitalize">
+                                                    {priceType.replace(/_/g, " ")}:
+                                                </span>
+                                                <span className="ml-2">
+                                                    {value.discounted ? (
+                                                        <>
+                                                            <s className="text-red-500">
+                                                                £{value.original.toFixed(2)}
+                                                            </s>
+                                                            <span className="ml-2 text-blue-600 font-medium">
+                                                                £{value.discounted.toFixed(2)}
+                                                            </span>
+                                                        </>
+                                                    ) : (
+                                                        <span className="text-blue-600 font-medium">
+                                                            £{value.original.toFixed(2)}
+                                                        </span>
+                                                    )}
+                                                </span>
+                                            </li>
+                                        );
+                                    }
+                                    return null;
+                                })}
                             </ul>
                         </div>
                     </motion.div>
@@ -135,14 +194,60 @@ export function ServiceCard() {
                                 </h2>
                                 <p className="text-gray-600">{activeCard.description}</p>
                                 <ul className="mt-4 space-y-2">
-                                    {Object.entries(activeCard.prices || {}).map(([priceType, value]) => (
-                                        <li key={priceType} className="text-blue-600">
-                                            {priceType.replace(/_/g, " ").replace(/^\w/, (c) => c.toUpperCase())}:
-                                            <span className="ml-2 font-medium">
-                                                £{value?.discounted || value?.original}
-                                            </span>
-                                        </li>
-                                    ))}
+                                    {Object.entries(activeCard.prices || {}).map(([priceType, value]) => {
+                                        if (Array.isArray(value)) {
+                                            return value.map((item, idx) => (
+                                                <li key={`${priceType}-${idx}`}>
+                                                    <span>
+                                                        {priceType === "session_lengths" && `${item.length}:`}
+                                                        {priceType === "bulk_packages" &&
+                                                            `${item.quantity} sessions:`}
+                                                    </span>
+                                                    <span className="ml-2">
+                                                        {item.discounted ? (
+                                                            <>
+                                                                <s className="text-red-500">
+                                                                    £{item.original.toFixed(2)}
+                                                                </s>
+                                                                <span className="ml-2 text-blue-600 font-medium">
+                                                                    £{item.discounted.toFixed(2)}
+                                                                </span>
+                                                            </>
+                                                        ) : (
+                                                            <span className="text-blue-600 font-medium">
+                                                                £{item.original.toFixed(2)}
+                                                            </span>
+                                                        )}
+                                                    </span>
+                                                </li>
+                                            ));
+                                        } else if (typeof value === "object") {
+                                            return (
+                                                <li key={priceType}>
+                                                    <span className="capitalize">
+                                                        {priceType.replace(/_/g, " ")}:
+                                                    </span>
+                                                    <span className="ml-2">
+                                                        {value.discounted ? (
+                                                            <>
+                                                                <s className="text-red-500">
+                                                                    £{value.original.toFixed(2)}
+                                                                </s>
+                                                                <span className="ml-2 text-blue-600 font-medium">
+                                                                    £{value.discounted.toFixed(2)}
+                                                                </span>
+                                                            </>
+                                                        ) : (
+                                                            <span className="text-blue-600 font-medium">
+                                                                £{value.original.toFixed(2)}
+                                                            </span>
+                                                        )}
+                                                    </span>
+                                                </li>
+                                            );
+                                        }
+                                        return null;
+                                    })}
                                 </ul>
                             </div>
                         </motion.div>
