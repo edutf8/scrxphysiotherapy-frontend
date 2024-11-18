@@ -51,6 +51,7 @@ const Timeline = () => {
 
     return (
         <div className="relative p-8">
+            <h2 className="text-gray-700 text-lg font-semibold mb-6 text-center">Timeline</h2>
             {/* Static Timeline Line */}
             <div className="absolute left-1/2 w-1 bg-gray-600 top-0 bottom-0 transform -translate-x-1/2"></div>
             <div className="relative space-y-12">
@@ -81,6 +82,7 @@ const Timeline = () => {
                             }}
                         ></div>
 
+                        {/* Timeline Box with Image */}
                         <div
                             className={`relative bg-gray-800 p-6 rounded-lg shadow-lg w-2/5 flex ${
                                 index % 2 === 0 ? 'flex-row-reverse text-right' : 'flex-row text-left'
@@ -97,6 +99,14 @@ const Timeline = () => {
                                     className="rounded-lg object-cover shadow-md"
                                 />
                             </div>
+
+                            {/* Text */}
+                            <div className="flex-1">
+                                <div className="text-gray-400 text-lg font-semibold">{item.year}</div>
+                                <h3 className="text-gray-100 text-xl font-semibold mb-2">{item.title}</h3>
+                                <p className="text-gray-300">{item.description}</p>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
