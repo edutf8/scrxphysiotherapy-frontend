@@ -91,7 +91,7 @@ export default function Home() {
                       </div>
                       <div className="flex-1 p-5 mt-5 md:mt-0 md:order-1 order-1">
                           <video className="w-full h-auto rounded-lg" controls>
-                              <source src="https://scrxcdn.fra1.cdn.digitaloceanspaces.com/why-choose-us.mp4"
+                              <source src="https://scrxcdn.fra1.cdn.digitaloceanspaces.com/UoP%20Sports%20Scholars%20v3.mp4"
                                       type="video/mp4"/>
                           </video>
                       </div>
@@ -109,9 +109,9 @@ export default function Home() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8">
                       <div
                           className="bg-white p-4 md:p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                          <h3 className="text-lg md:text-xl font-semibold mb-2 text-center">NAME</h3>
+                          <h3 className="text-lg md:text-xl font-semibold mb-2 text-center">James Newton</h3>
                           <video className="w-full h-auto rounded-lg" controls>
-                              <source src="https://scrxcdn.fra1.cdn.digitaloceanspaces.com/why-choose-us.mp4"
+                              <source src="https://scrxcdn.fra1.cdn.digitaloceanspaces.com/SCRX%20-%20James%20Newton%20Testimonial%204k_Match_Framerate.mp4"
                                       type="video/mp4"/>
                           </video>
                           <p className="text-gray-700 text-center mt-5">
@@ -121,9 +121,9 @@ export default function Home() {
                       </div>
                       <div
                           className="bg-white p-4 md:p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                          <h3 className="text-lg md:text-xl font-semibold mb-2 text-center">NAME</h3>
+                          <h3 className="text-lg md:text-xl font-semibold mb-2 text-center">Claire Tewkesbury</h3>
                           <video className="w-full h-auto rounded-lg" controls>
-                              <source src="https://scrxcdn.fra1.cdn.digitaloceanspaces.com/why-choose-us.mp4"
+                              <source src="https://scrxcdn.fra1.cdn.digitaloceanspaces.com/SCRX%20-%20Claire%20Tewkesbury%20Testimonial%204k_Match_Framerate.mp4"
                                       type="video/mp4"/>
                           </video>
                           <p className="text-gray-700 text-center mt-5">
