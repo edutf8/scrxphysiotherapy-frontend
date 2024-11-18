@@ -74,8 +74,12 @@ export default function TeamLayout() {
     const groupByCategory = (data) => {
         const categories = { 1: [], 2: [], 3: [] };
         data.forEach((member) => {
+            console.log(member);
             if (categories[member.category]) {
+                console.log(member.category);
                 categories[member.category].push(member);
+            } else {
+                console.error(`Invalid category: ${member.category}`);
             }
         });
         console.log(categories);
