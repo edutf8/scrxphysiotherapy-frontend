@@ -95,9 +95,6 @@ export default function TeamLayout() {
         <div className="space-y-12">
             {[1, 2, 3].map((category) => (
                 <div key={category}>
-                    <h2 className="text-xl font-semibold text-gray-900 dark:text-neutral-200">
-                        {`Category ${category}`}
-                    </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4">
                         {categorizedData[category].map((team, index) => (
                             <div
