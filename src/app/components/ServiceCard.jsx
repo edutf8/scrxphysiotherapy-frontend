@@ -38,7 +38,7 @@ export function ServiceCard() {
             .finally(() => setLoading(false));
     }, []);
 
-    // Helper function to format prices dynamically
+    // Helper function to safely format prices
     const formatPrice = (price) => {
         if (price === null || price === undefined) return "N/A";
         return Number.isInteger(price) ? `£${price}` : `£${Number(price).toFixed(2)}`;
@@ -86,47 +86,28 @@ export function ServiceCard() {
                             </h3>
                             <ul className="mt-2 space-y-1">
                                 {Object.entries(service.prices || {}).map(([priceType, value]) => {
+                                    // Skip bulk_packages in collapsed view
+                                    if (priceType === "bulk_packages") return null;
+
                                     if (Array.isArray(value)) {
-                                        // Handle session lengths or bulk packages
+                                        // Handle session lengths
                                         return value.map((item, idx) => (
                                             <li key={`${priceType}-${idx}`}>
-                                                {priceType === "session_lengths" && (
-                                                    <>
-                                                        <span>{item.length}:</span>
-                                                        <span className="ml-2">
-                                                            {item.original !== undefined && (
-                                                                <span>
-                                                                    <s className="text-red-500">
-                                                                        {formatPrice(item.original)}
-                                                                    </s>
-                                                                </span>
-                                                            )}
-                                                            {item.discounted !== undefined && (
-                                                                <span className="ml-2 text-blue-600 font-medium">
-                                                                    {formatPrice(item.discounted)}
-                                                                </span>
-                                                            )}
-                                                            {item.original !== undefined && item.discounted === undefined && (
-                                                                <span className="text-blue-600 font-medium">
-                                                                    {formatPrice(item.original)}
-                                                                </span>
-                                                            )}
-                                                        </span>
-                                                    </>
-                                                )}
-                                                {priceType === "bulk_packages" && (
-                                                    <>
-                                                        <span>{item.quantity} sessions:</span>
-                                                        <span className="ml-2">
-                                                            {formatPrice(item.price_per_session) || "N/A"}
-                                                            {item.discount && (
-                                                                <span className="ml-2 text-green-600 font-medium">
-                                                                    ({item.discount})
-                                                                </span>
-                                                            )}
-                                                        </span>
-                                                    </>
-                                                )}
+                                                <span>{item.length}:</span>
+                                                <span className="ml-2 text-blue-600 font-medium">
+                                                    {item.discounted !== undefined ? (
+                                                        <>
+                                                            <s className="text-red-500">
+                                                                {formatPrice(item.original)}
+                                                            </s>
+                                                            <span className="ml-2">
+                                                                {formatPrice(item.discounted)}
+                                                            </span>
+                                                        </>
+                                                    ) : (
+                                                        <>{formatPrice(item.original)}</>
+                                                    )}
+                                                </span>
                                             </li>
                                         ));
                                     } else if (typeof value === "object") {
@@ -134,22 +115,18 @@ export function ServiceCard() {
                                         return (
                                             <li key={priceType}>
                                                 <span className="capitalize">{priceType.replace(/_/g, " ")}:</span>
-                                                <span className="ml-2">
-                                                    {value?.original !== undefined && value?.discounted !== undefined ? (
+                                                <span className="ml-2 text-blue-600 font-medium">
+                                                    {value?.discounted !== undefined ? (
                                                         <>
                                                             <s className="text-red-500">
                                                                 {formatPrice(value.original)}
                                                             </s>
-                                                            <span className="ml-2 text-blue-600 font-medium">
+                                                            <span className="ml-2">
                                                                 {formatPrice(value.discounted)}
                                                             </span>
                                                         </>
-                                                    ) : value?.original !== undefined ? (
-                                                        <span className="text-blue-600 font-medium">
-                                                            {formatPrice(value.original)}
-                                                        </span>
                                                     ) : (
-                                                        <span className="text-gray-500">N/A</span>
+                                                        <>{formatPrice(value.original)}</>
                                                     )}
                                                 </span>
                                             </li>
@@ -212,19 +189,22 @@ export function ServiceCard() {
                                                         {priceType === "bulk_packages" &&
                                                             `${item.quantity} sessions:`}
                                                     </span>
-                                                    <span className="ml-2">
-                                                        {item.discounted ? (
+                                                    <span className="ml-2 text-blue-600 font-medium">
+                                                        {item.discounted !== undefined ? (
                                                             <>
                                                                 <s className="text-red-500">
                                                                     {formatPrice(item.original)}
                                                                 </s>
-                                                                <span className="ml-2 text-blue-600 font-medium">
+                                                                <span className="ml-2">
                                                                     {formatPrice(item.discounted)}
                                                                 </span>
                                                             </>
                                                         ) : (
-                                                            <span className="text-blue-600 font-medium">
-                                                                {formatPrice(item.original)}
+                                                            <>{formatPrice(item.original)}</>
+                                                        )}
+                                                        {priceType === "bulk_packages" && item.discount && (
+                                                            <span className="ml-2 text-green-600">
+                                                                ({item.discount})
                                                             </span>
                                                         )}
                                                     </span>
@@ -236,20 +216,18 @@ export function ServiceCard() {
                                                     <span className="capitalize">
                                                         {priceType.replace(/_/g, " ")}:
                                                     </span>
-                                                    <span className="ml-2">
-                                                        {value.discounted ? (
+                                                    <span className="ml-2 text-blue-600 font-medium">
+                                                        {value.discounted !== undefined ? (
                                                             <>
                                                                 <s className="text-red-500">
                                                                     {formatPrice(value.original)}
                                                                 </s>
-                                                                <span className="ml-2 text-blue-600 font-medium">
+                                                                <span className="ml-2">
                                                                     {formatPrice(value.discounted)}
                                                                 </span>
                                                             </>
                                                         ) : (
-                                                            <span className="text-blue-600 font-medium">
-                                                                {formatPrice(value.original)}
-                                                            </span>
+                                                            <>{formatPrice(value.original)}</>
                                                         )}
                                                     </span>
                                                 </li>
