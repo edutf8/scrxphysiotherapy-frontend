@@ -56,6 +56,7 @@ const fetchData = async () => {
         }
 
         const data = await response.json();
+        console.log(data);
         return Array.isArray(data) ? data : [data];
     } catch (error) {
         console.error("Error fetching data:", error);
