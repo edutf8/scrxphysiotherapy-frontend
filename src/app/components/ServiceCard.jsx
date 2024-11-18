@@ -1,144 +1,150 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useId, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useOutsideClick } from "../hooks/use-outside-click";
 
 const fetchData = async () => {
     try {
-        const response = await fetch('https://scrxcdn.fra1.cdn.digitaloceanspaces.com/services.json');
+        const response = await fetch("https://scrxcdn.fra1.cdn.digitaloceanspaces.com/services.json");
         if (!response.ok) {
-            throw new Error(`Network response was not ok, status: ${response.status}`);
+            throw new Error("Failed to fetch services.");
         }
         return await response.json();
     } catch (error) {
-        console.error('Error fetching data:', error);
-        return [];
+        console.error("Fetch error:", error);
+        return null;
     }
 };
 
 export function ServiceCard() {
-    const [cards, setCards] = useState([]);
-    const [active, setActive] = useState(null);
-    const id = useId();
-    const ref = useRef(null);
+    const [services, setServices] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
+    const [activeCard, setActiveCard] = useState(null);
 
     useEffect(() => {
-        fetchData().then(setCards);
+        fetchData()
+            .then((data) => {
+                if (data) {
+                    setServices(data);
+                    setError(false);
+                } else {
+                    setError(true);
+                }
+            })
+            .catch(() => setError(true))
+            .finally(() => setLoading(false));
     }, []);
 
-    useOutsideClick(ref, () => setActive(null));
+    if (loading) {
+        return (
+            <div className="flex justify-center items-center min-h-screen">
+                <div className="spinner border-t-blue-600 border-4 border-solid rounded-full w-12 h-12 animate-spin"></div>
+            </div>
+        );
+    }
 
-    if (!cards.length) return <div>Loading...</div>;
+    if (error || !services || services.length === 0) {
+        return (
+            <div className="flex justify-center items-center min-h-screen">
+                <p className="text-red-500 text-lg font-semibold">Failed to load services, please try again.</p>
+            </div>
+        );
+    }
 
     return (
         <>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+                {services.map((service) => (
+                    <motion.div
+                        key={service.id}
+                        layout
+                        onClick={() => setActiveCard(service)}
+                        className="cursor-pointer bg-white rounded-lg shadow-md hover:shadow-lg overflow-hidden"
+                        aria-labelledby={`${service.id}-title`}
+                        role="button"
+                        tabIndex={0}
+                    >
+                        <Image
+                            src={service.image}
+                            alt={service.title}
+                            width={500}
+                            height={300}
+                            className="object-cover w-full h-48"
+                        />
+                        <div className="p-4">
+                            <h3 id={`${service.id}-title`} className="font-bold text-lg text-center text-blue-600">
+                                {service.title}
+                            </h3>
+                            <ul className="mt-2 space-y-1">
+                                {Object.entries(service.prices || {}).map(([priceType, value]) => (
+                                    <li key={priceType}>
+                                        {priceType.replace(/_/g, " ").replace(/^\w/, (c) => c.toUpperCase())}:
+                                        <span className="ml-2 text-blue-600 font-medium">
+                                            £{value?.discounted || value?.original}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </motion.div>
+                ))}
+            </div>
+
             <AnimatePresence>
-                {active && (
+                {activeCard && (
                     <>
                         <motion.div
+                            className="fixed inset-0 bg-black bg-opacity-50 z-10"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="fixed inset-0 bg-black/20 h-full w-full z-10"
+                            onClick={() => setActiveCard(null)}
                         />
-                        <div className="fixed inset-0 grid place-items-center z-[100]">
-                            <motion.div
-                                layoutId={`card-${active.id}`}
-                                ref={ref}
-                                className="bg-white dark:bg-neutral-900 p-4 rounded-xl max-w-[500px]"
+                        <motion.div
+                            className="fixed inset-0 flex items-center justify-center z-20"
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.8, opacity: 0 }}
+                        >
+                            <div
+                                className="bg-white rounded-lg shadow-xl p-6 max-w-lg w-full relative"
+                                role="dialog"
+                                aria-labelledby="service-dialog-title"
                             >
+                                <button
+                                    onClick={() => setActiveCard(null)}
+                                    className="absolute top-4 right-4 text-gray-600 hover:text-gray-800"
+                                    aria-label="Close"
+                                >
+                                    ✕
+                                </button>
                                 <Image
-                                    src={active.image}
-                                    alt={active.title}
-                                    layout="responsive"
-                                    width={1328}
-                                    height={768}
-                                    className="rounded-lg"
+                                    src={activeCard.image}
+                                    alt={activeCard.title}
+                                    width={600}
+                                    height={400}
+                                    className="rounded-lg mb-4"
                                 />
-                                <h3 className="text-lg font-bold mt-4">{active.title}</h3>
-                                <p className="text-sm mt-2">{active.description}</p>
+                                <h2 id="service-dialog-title" className="text-2xl font-bold text-blue-600 mb-4">
+                                    {activeCard.title}
+                                </h2>
+                                <p className="text-gray-600">{activeCard.description}</p>
                                 <ul className="mt-4 space-y-2">
-                                    {active?.prices &&
-                                        Object.entries(active.prices).map(([priceType, value]) => {
-                                            if (priceType === "session_lengths" && Array.isArray(value) && value.length > 0) {
-                                                return (
-                                                    <li key={priceType}>
-                                                        <h4 className="font-bold mt-2">Session Lengths</h4>
-                                                        {value.map(({length, original, discounted}) => (
-                                                            <div key={length} className="flex justify-between">
-                                                                <span>{length}</span>
-                                                                <span>
-                                    <s className={discounted ? "mr-2 text-red-500" : ""}>£{original}</s>
-                                                                    {discounted && <span>£{discounted}</span>}
-                                </span>
-                                                            </div>
-                                                        ))}
-                                                    </li>
-                                                );
-                                            }
-
-                                            if (priceType === "bulk_packages" && Array.isArray(value) && value.length > 0) {
-                                                return (
-                                                    <li key={priceType}>
-                                                        <h4 className="font-bold mt-2">Bulk Packages</h4>
-                                                        {value.map(({quantity, price_per_session, discount}) => (
-                                                            <div
-                                                                key={quantity}
-                                                                className="tooltip"
-                                                                data-tooltip={discount}
-                                                            >
-                                                                {quantity} sessions @ £{price_per_session} each
-                                                            </div>
-                                                        ))}
-                                                    </li>
-                                                );
-                                            }
-
-                                            if (typeof value === "object" && value?.original) {
-                                                return (
-                                                    <li key={priceType} className="flex justify-between">
-                                                        <span
-                                                            className="capitalize">{priceType.replace(/_/g, " ")}</span>
-                                                        <span>
-                            <s className={value.discounted ? "mr-2 text-red-500" : ""}>
-                                £{value.original}
-                            </s>
-                                                            {value.discounted && <span>£{value.discounted}</span>}
-                        </span>
-                                                    </li>
-                                                );
-                                            }
-
-                                            return null; // Skip rendering if the price type doesn't match expected formats
-                                        })}
+                                    {Object.entries(activeCard.prices || {}).map(([priceType, value]) => (
+                                        <li key={priceType} className="text-blue-600">
+                                            {priceType.replace(/_/g, " ").replace(/^\w/, (c) => c.toUpperCase())}:
+                                            <span className="ml-2 font-medium">
+                                                £{value?.discounted || value?.original}
+                                            </span>
+                                        </li>
+                                    ))}
                                 </ul>
-
-                            </motion.div>
-                        </div>
+                            </div>
+                        </motion.div>
                     </>
                 )}
             </AnimatePresence>
-
-            <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {cards.map((card) => (
-                    <motion.div
-                        key={card.id}
-                        onClick={() => setActive(card)}
-                        className="cursor-pointer bg-white shadow-lg rounded-lg overflow-hidden p-4"
-                    >
-                        <Image
-                            src={card.image}
-                            alt={card.title}
-                            layout="responsive"
-                            width={1328}
-                            height={768}
-                            className="rounded-lg"
-                        />
-                        <h3 className="font-bold mt-4 text-center">{card.title}</h3>
-                    </motion.div>
-                ))}
-            </ul>
         </>
     );
 }
