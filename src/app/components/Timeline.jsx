@@ -4,21 +4,25 @@ const Timeline = () => {
     const timelineData = [
         {
             title: 'Treatment Philosophy',
+            image: '/what-makes-us-different-one.jpeg',
             description:
                 'We believe in building comprehensive capacity. Simply put, we use targeted exercise to help you develop a strong, resilient and adaptable body which is able to meet the demands of your sport, hobbies and interests.'
         },
         {
             title: 'We are driven by a core set of values',
+            image: '/what-makes-us-different-two.jpg',
             description:
                 'People. Integrity. Together. Effort.'
         },
         {
             title: 'You are at the centre of everything we do ',
+            image: '/what-makes-us-different-three.jpg',
             description:
                 'We will listen to you and will tailor our approach to your needs and goals. We will send you a pre-assessment questionnaire to establish what you would like to get from your appointment and identify how best we can help you.'
         },
         {
             title: 'Education and Empowerment',
+            image: '/what-makes-us-different-four.jpg',
             description:
                 'We aim to answer 4 key questions for every client: \n' +
                 '\n' +
@@ -34,11 +38,13 @@ const Timeline = () => {
         },
         {
             title: 'Prevent. Recover. Optimise',
+            image: '/what-makes-us-different-five.jpg',
             description:
                 'We can help you recover from pain or injury as quickly as possible. Not only this, but we can also help identify what may have contributed to the injury happening in the first place. Addressing these issues can help prevent injury in the future, keeping you doing the things you love. '
         },
         {
             title: 'Technology and Research',
+            image: '/what-makes-us-different-six.jpeg',
             description: 'We have integrated the latest technology and evidence to support our assessment and treatment techniques to ensure that we are delivering a truly gold standard service. '
         }
     ];
@@ -75,18 +81,22 @@ const Timeline = () => {
                             }}
                         ></div>
 
-                        {/* Timeline Box */}
                         <div
-                            className={`relative bg-gray-800 p-6 rounded-lg shadow-lg w-5/12 ${
-                                index % 2 === 0 ? 'text-right' : 'text-left'
+                            className={`relative bg-gray-800 p-6 rounded-lg shadow-lg w-2/5 flex ${
+                                index % 2 === 0 ? 'flex-row-reverse text-right' : 'flex-row text-left'
                             }`}
                             style={{
                                 zIndex: 10, // Ensure boxes appear above the connection lines
                             }}
                         >
-                            <h3 className="text-gray-100 text-xl font-semibold mb-2">{item.title}</h3>
-                            <p className="text-gray-300">{item.description}</p>
-                        </div>
+                            {/* Image */}
+                            <div className="w-1/3 mr-4">
+                                <img
+                                    src={item.image}
+                                    alt={item.title}
+                                    className="rounded-lg object-cover shadow-md"
+                                />
+                            </div>
                     </div>
                 ))}
             </div>
