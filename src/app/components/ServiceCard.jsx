@@ -198,7 +198,7 @@ export function ServiceCard() {
                                                         {item.discounted != null ? (
                                                             <>
                                                                 <s className="text-red-500">
-                                                                    {formatPrice(item.original)}
+                                                                    {formatPrice(item.price_per_session)}
                                                                 </s>
                                                                 <span className="ml-2 text-blue-600 font-medium">
                                                                     {formatPrice(item.discounted)}
@@ -206,7 +206,7 @@ export function ServiceCard() {
                                                             </>
                                                         ) : (
                                                             <span className="text-blue-600 font-medium">
-                                                                {formatPrice(item.original)}
+                                                                {formatPrice(item.price_per_session)}
                                                             </span>
                                                         )}
                                                         {priceType === "bulk_packages" && item.discount && (
