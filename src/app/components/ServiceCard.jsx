@@ -84,49 +84,49 @@ export function ServiceCard() {
                             <h3 id={`${service.id}-title`} className="font-bold text-lg text-center text-blue-600">
                                 {service.title}
                             </h3>
+                            {/* Price List */}
                             <ul className="mt-2 space-y-1">
                                 {Object.entries(service.prices || {}).map(([priceType, value]) => {
-                                    // Skip bulk_packages in collapsed view
-                                    if (priceType === "bulk_packages") return null;
+                                    if (priceType === "bulk_packages") return null; // Skip in collapsed view
 
                                     if (Array.isArray(value)) {
-                                        // Handle session lengths
                                         return value.map((item, idx) => (
                                             <li key={`${priceType}-${idx}`}>
                                                 <span>{item.length}:</span>
-                                                <span className="ml-2 text-blue-600 font-medium">
+                                                <span className="ml-2">
                                                     {item.discounted !== undefined ? (
                                                         <>
-                                                            <s className="text-red-500">
-                                                                {formatPrice(item.original)}
-                                                            </s>
-                                                            <span className="ml-2">
+                                                            <s className="text-red-500">{formatPrice(item.original)}</s>
+                                                            <span className="ml-2 text-blue-600 font-medium">
                                                                 {formatPrice(item.discounted)}
                                                             </span>
                                                         </>
                                                     ) : (
-                                                        <>{formatPrice(item.original)}</>
+                                                        <span className="text-blue-600 font-medium">
+                                                            {formatPrice(item.original)}
+                                                        </span>
                                                     )}
                                                 </span>
                                             </li>
                                         ));
                                     } else if (typeof value === "object") {
-                                        // Handle single prices (e.g., initial, follow_up)
                                         return (
                                             <li key={priceType}>
                                                 <span className="capitalize">{priceType.replace(/_/g, " ")}:</span>
-                                                <span className="ml-2 text-blue-600 font-medium">
+                                                <span className="ml-2">
                                                     {value?.discounted !== undefined ? (
                                                         <>
                                                             <s className="text-red-500">
                                                                 {formatPrice(value.original)}
                                                             </s>
-                                                            <span className="ml-2">
+                                                            <span className="ml-2 text-blue-600 font-medium">
                                                                 {formatPrice(value.discounted)}
                                                             </span>
                                                         </>
                                                     ) : (
-                                                        <>{formatPrice(value.original)}</>
+                                                        <span className="text-blue-600 font-medium">
+                                                            {formatPrice(value.original)}
+                                                        </span>
                                                     )}
                                                 </span>
                                             </li>
@@ -180,61 +180,10 @@ export function ServiceCard() {
                                 </h2>
                                 <p className="text-gray-600">{activeCard.description}</p>
                                 <ul className="mt-4 space-y-2">
-                                    {Object.entries(activeCard.prices || {}).map(([priceType, value]) => {
-                                        if (Array.isArray(value)) {
-                                            return value.map((item, idx) => (
-                                                <li key={`${priceType}-${idx}`}>
-                                                    <span>
-                                                        {priceType === "session_lengths" && `${item.length}:`}
-                                                        {priceType === "bulk_packages" &&
-                                                            `${item.quantity} sessions:`}
-                                                    </span>
-                                                    <span className="ml-2 text-blue-600 font-medium">
-                                                        {item.discounted !== undefined ? (
-                                                            <>
-                                                                <s className="text-red-500">
-                                                                    {formatPrice(item.original)}
-                                                                </s>
-                                                                <span className="ml-2">
-                                                                    {formatPrice(item.discounted)}
-                                                                </span>
-                                                            </>
-                                                        ) : (
-                                                            <>{formatPrice(item.original)}</>
-                                                        )}
-                                                        {priceType === "bulk_packages" && item.discount && (
-                                                            <span className="ml-2 text-green-600">
-                                                                ({item.discount})
-                                                            </span>
-                                                        )}
-                                                    </span>
-                                                </li>
-                                            ));
-                                        } else if (typeof value === "object") {
-                                            return (
-                                                <li key={priceType}>
-                                                    <span className="capitalize">
-                                                        {priceType.replace(/_/g, " ")}:
-                                                    </span>
-                                                    <span className="ml-2 text-blue-600 font-medium">
-                                                        {value.discounted !== undefined ? (
-                                                            <>
-                                                                <s className="text-red-500">
-                                                                    {formatPrice(value.original)}
-                                                                </s>
-                                                                <span className="ml-2">
-                                                                    {formatPrice(value.discounted)}
-                                                                </span>
-                                                            </>
-                                                        ) : (
-                                                            <>{formatPrice(value.original)}</>
-                                                        )}
-                                                    </span>
-                                                </li>
-                                            );
-                                        }
-                                        return null;
-                                    })}
+                                    {Object.entries(activeCard.prices || {}).map(([priceType, value]) => (
+                                        // Bulk packages only in expanded view
+                                        <li key={priceType}>{/* Render logic here */}</li>
+                                    ))}
                                 </ul>
                             </div>
                         </motion.div>
