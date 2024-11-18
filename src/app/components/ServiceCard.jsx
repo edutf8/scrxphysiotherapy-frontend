@@ -40,7 +40,8 @@ export function ServiceCard() {
 
     // Helper function to format prices dynamically
     const formatPrice = (price) => {
-        return Number.isInteger(price) ? `£${price}` : `£${price.toFixed(2)}`;
+        if (price === null || price === undefined) return "N/A";
+        return Number.isInteger(price) ? `£${price}` : `£${Number(price).toFixed(2)}`;
     };
 
     if (loading) {
