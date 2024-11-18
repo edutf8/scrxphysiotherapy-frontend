@@ -71,7 +71,7 @@ export default function FirstAid4Sport() {
                     </div>
                     <div className="col-span-1 relative top-10">
                         <Image
-                            src="/first-aid-4-sport-twp.jpg"
+                            src="/first-aid-4-sport-two.jpg"
                             alt="First Aid 4 Sport product 2"
                             width={300}
                             height={300}
