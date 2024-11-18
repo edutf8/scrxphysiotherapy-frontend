@@ -35,14 +35,6 @@ export default function Home() {
                   </div>
               </div>
           </section>
-          <section id={"partners-section"}>
-              <div className={"container mx-auto mt-10 text-center"}>
-                  <h1 className={"text-4xl uppercase font-semibold"}>Who We Work With</h1>
-              </div>
-              <div className={"container mx-auto object-center"}>
-                  <PartnersGrid partners={partners}/>
-              </div>
-          </section>
           <section id={"why-choose-scrx"}>
               <div className={"container mx-auto mt-10 text-center"}>
                   <div className="flex flex-col md:flex-row mx-auto justify-center items-center text-center">
@@ -67,7 +59,8 @@ export default function Home() {
                       </div>
                       <div className="flex-1 p-5 mt-5 md:mt-0">
                           <video className="w-full h-auto rounded-lg" controls>
-                              <source src="https://scrxcdn.fra1.cdn.digitaloceanspaces.com/why-choose-us.mp4" type="video/mp4"/>
+                              <source src="https://scrxcdn.fra1.cdn.digitaloceanspaces.com/why-choose-us.mp4"
+                                      type="video/mp4"/>
                           </video>
                       </div>
                   </div>
@@ -85,7 +78,8 @@ export default function Home() {
                       <div className="flex-1 p-5 text-black md:order-2 order-2">
                           <h1 className="text-3xl font-bold mb-4 uppercase">Our Work In Elite Sport</h1>
                           <p className={"text-lg"}>
-                              South Coast Rx Physiotherapy are proud to be the provider of choice for a number of England, GB and other professional athletes.
+                              South Coast Rx Physiotherapy are proud to be the provider of choice for a number of
+                              England, GB and other professional athletes.
                           </p>
                           <button className="mt-5 p-[3px] text-lg sm:text-xl md:text-xl relative">
                               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg"/>
@@ -97,7 +91,8 @@ export default function Home() {
                       </div>
                       <div className="flex-1 p-5 mt-5 md:mt-0 md:order-1 order-1">
                           <video className="w-full h-auto rounded-lg" controls>
-                              <source src="https://scrxcdn.fra1.cdn.digitaloceanspaces.com/why-choose-us.mp4" type="video/mp4"/>
+                              <source src="https://scrxcdn.fra1.cdn.digitaloceanspaces.com/why-choose-us.mp4"
+                                      type="video/mp4"/>
                           </video>
                       </div>
                   </div>
@@ -137,6 +132,14 @@ export default function Home() {
                           </p>
                       </div>
                   </div>
+              </div>
+          </section>
+          <section id={"partners-section"}>
+              <div className={"container mx-auto mt-10 text-center"}>
+                  <h1 className={"text-4xl uppercase font-semibold"}>Who We Work With</h1>
+              </div>
+              <div className={"container mx-auto object-center"}>
+                  <PartnersGrid partners={partners}/>
               </div>
           </section>
           <section id={"call-to-action"}>
