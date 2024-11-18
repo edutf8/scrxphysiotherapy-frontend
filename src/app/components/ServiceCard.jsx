@@ -31,6 +31,7 @@ export function ServiceCard() {
                     // Ensure we handle both array and object formats
                     setServices(Array.isArray(data) ? data : [data]);
                     setError(false);
+                    console.log("Set services:", services);
                 } else {
                     setError(true);
                 }
