@@ -1,8 +1,7 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 function Modal({ isOpen, onClose, teamMember }) {
     useEffect(() => {
-        // Function to handle keydown events
         const handleKeyDown = (event) => {
             if (event.key === "Escape") {
                 onClose();
@@ -51,9 +50,7 @@ const fetchData = async () => {
         const data = await response.json();
         console.log('Fetched data:', data);
 
-        // Check if the data is an array, if not, convert it into an array
         const dataArray = Array.isArray(data) ? data : [data];
-
         console.log('Data as array:', dataArray);
         return dataArray;
     } catch (error) {
@@ -72,24 +69,46 @@ export default function TeamLayout() {
         });
     }, []);
 
-    if (!Array.isArray(teamData) || !teamData.length) return <div>Loading...</div>; // Handle the loading state
+    const groupByCategory = (data) => {
+        const categories = { 1: [], 2: [], 3: [] };
+        data.forEach(member => {
+            if (categories[member.category]) {
+                categories[member.category].push(member);
+            }
+        });
+        return categories;
+    };
+
+    if (!Array.isArray(teamData) || !teamData.length) return <div>Loading...</div>;
+
+    const categorizedData = groupByCategory(teamData);
 
     return (
-        <div className={"grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12"}>
-            {teamData.map((team, index) => (
-                <div key={index} className={"text-center cursor-pointer"} onClick={() => setSelectedTeamMember(team)}>
-                    <img
-                        className={"rounded-xl w-24 h-auto mx-auto sm:w-36 md:w-48 lg:w-48"}
-                        src={team.image}
-                        alt={`${team.name}'s Avatar`}
-                    />
-                    <div className={"mt-2 sm:mt-4"}>
-                        <h3 className={"text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-neutral-200"}>
-                            {team.name}
-                        </h3>
-                        <p className={"text-xs text-gray-600 sm:text-sm lg:text-base dark:text-neutral-400"}>
-                            {team.role}
-                        </p>
+        <div className="space-y-12">
+            {[1, 2, 3].map(category => (
+                <div key={category}>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 mt-4">
+                        {categorizedData[category].map((team, index) => (
+                            <div
+                                key={index}
+                                className="text-center cursor-pointer"
+                                onClick={() => setSelectedTeamMember(team)}
+                            >
+                                <img
+                                    className="rounded-xl w-24 h-auto mx-auto sm:w-36 md:w-48 lg:w-48"
+                                    src={team.image}
+                                    alt={`${team.name}'s Avatar`}
+                                />
+                                <div className="mt-2 sm:mt-4">
+                                    <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-neutral-200">
+                                        {team.name}
+                                    </h3>
+                                    <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-neutral-400">
+                                        {team.role}
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             ))}
