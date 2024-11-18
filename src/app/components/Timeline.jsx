@@ -50,16 +50,16 @@ const Timeline = () => {
     ];
 
     return (
-        <div className="relative p-8">
-            <h2 className="text-gray-700 text-lg font-semibold mb-6 text-center">Timeline</h2>
+        <div className="relative p-8 bg-gray-50">
+            <h2 className="text-gray-800 text-lg font-bold mb-6 text-center">Timeline</h2>
             {/* Static Timeline Line */}
-            <div className="absolute left-1/2 w-1 bg-gray-600 top-0 bottom-0 transform -translate-x-1/2"></div>
+            <div className="absolute left-1/2 w-1 bg-gray-400 top-0 bottom-0 transform -translate-x-1/2"></div>
             <div className="relative space-y-12">
                 {timelineData.map((item, index) => (
                     <div
                         key={index}
-                        className={`relative flex items-center ${
-                            index % 2 === 0 ? 'justify-start' : 'justify-end'
+                        className={`relative flex flex-col items-center ${
+                            index % 2 === 0 ? 'lg:items-start lg:flex-row' : 'lg:items-end lg:flex-row-reverse'
                         }`}
                     >
                         {/* Connection Line */}
@@ -68,7 +68,7 @@ const Timeline = () => {
                                 index % 2 === 0 ? 'right-[50%]' : 'left-[50%]'
                             }`}
                             style={{
-                                width: 'calc(25% - 2rem)', // Reduced width ensures alignment with the box edge
+                                width: 'calc(25% - 2rem)', // Adjusted width for clean alignment
                                 top: '50%',
                             }}
                         ></div>
@@ -82,30 +82,25 @@ const Timeline = () => {
                             }}
                         ></div>
 
-                        {/* Timeline Box with Image */}
+                        {/* Timeline Card */}
                         <div
-                            className={`relative bg-gray-800 p-6 rounded-lg shadow-lg w-2/5 flex ${
-                                index % 2 === 0 ? 'flex-row-reverse text-right' : 'flex-row text-left'
+                            className={`relative bg-white p-6 rounded-lg shadow-lg w-full max-w-md lg:max-w-lg ${
+                                index % 2 === 0 ? 'text-left' : 'text-right'
                             }`}
                             style={{
-                                zIndex: 10, // Ensure boxes appear above the connection lines
+                                zIndex: 10,
                             }}
                         >
-                            {/* Image */}
-                            <div className="w-1/3 mr-4">
+                            <div className="mb-4">
                                 <img
                                     src={item.image}
                                     alt={item.title}
-                                    className="rounded-lg object-cover shadow-md"
+                                    className="rounded-lg shadow-md w-full object-cover"
                                 />
                             </div>
-
-                            {/* Text */}
-                            <div className="flex-1">
-                                <div className="text-gray-400 text-lg font-semibold">{item.year}</div>
-                                <h3 className="text-gray-100 text-xl font-semibold mb-2">{item.title}</h3>
-                                <p className="text-gray-300">{item.description}</p>
-                            </div>
+                            <h3 className="text-gray-800 text-xl font-bold mb-2">{item.title}</h3>
+                            <p className="text-gray-600">{item.description}</p>
+                            <p className="mt-4 text-sm text-gray-400 italic">Year: {item.year}</p>
                         </div>
                     </div>
                 ))}
