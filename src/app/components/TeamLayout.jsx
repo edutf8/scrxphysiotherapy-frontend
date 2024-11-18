@@ -24,7 +24,12 @@ function Modal({ isOpen, onClose, teamMember }) {
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
             <div className="bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-lg max-w-lg w-full md:max-w-2xl">
                 <h2 className="text-xl font-bold text-gray-900 dark:text-neutral-200">{teamMember.name}</h2>
-                <p className="mt-4 text-gray-700 dark:text-neutral-300" dangerouslySetInnerHTML={{__html: teamMember.description}}/>
+                <p
+                    className="mt-4 text-gray-700 dark:text-neutral-300"
+                    dangerouslySetInnerHTML={{
+                        __html: teamMember.description.replace(/\n/g, '<br />'),
+                    }}
+                />
                 <button
                     onClick={onClose}
                     className="mt-6 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 dark:hover:bg-blue-700"
