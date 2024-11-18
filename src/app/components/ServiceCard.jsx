@@ -9,7 +9,9 @@ const fetchData = async () => {
         if (!response.ok) {
             throw new Error("Failed to fetch services.");
         }
-        return await response.json();
+        const data = await response.json();
+        console.log("Fetched services:", data); // Debug fetched data
+        return data;
     } catch (error) {
         console.error("Fetch error:", error);
         return null;
@@ -26,7 +28,8 @@ export function ServiceCard() {
         fetchData()
             .then((data) => {
                 if (data) {
-                    setServices(data);
+                    // Ensure we handle both array and object formats
+                    setServices(Array.isArray(data) ? data : [data]);
                     setError(false);
                 } else {
                     setError(true);
