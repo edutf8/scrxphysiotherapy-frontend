@@ -3,7 +3,7 @@
     "id": "msk-physiotherapy",
     "title": "MSK Physiotherapy/Acupuncture",
     "description": "MSK physiotherapy, short for musculoskeletal physiotherapy, is a specialized branch of physical therapy focused on treating injuries and disorders affecting the muscles, bones, and joints. It aims to alleviate pain, improve mobility, and enhance overall physical function through a combination of manual therapy, exercise, and education. MSK physiotherapists assess conditions such as back pain, sports injuries, arthritis, and post-surgical rehabilitation, tailoring treatments to individual needs.<br />&nbsp;<br />Their approach often includes techniques like joint manipulation, massage, stretching, and strengthening exercises, along with advice on posture and ergonomics to prevent future issues.",
-    "image": "https://scrxcdn.fra1.cdn.digitaloceanspaces.com/luke.jpg",
+    "image": "/luke.jpg",
     "prices": {
       "Initial Appointment": {
         "original": 72,
@@ -32,7 +32,7 @@
     "id": "sports_soft_deep_tissue_massage",
     "title": "Sports / Soft and Deep Tissue Massage",
     "description": "Relieve muscle tension, improve recovery, and promote relaxation with a soft or deep tissue massage tailored to your needs.",
-    "image": "/images/sports-massage.jpg",
+    "image": "/luke.jpg",
     "prices": {
       "session_lengths": [
         {
@@ -74,7 +74,7 @@
     "id": "normatec_recovery",
     "title": "Normatec Recovery",
     "description": "Accelerate recovery and reduce muscle soreness with the Normatec Recovery system, available for flexible rental periods.",
-    "image": "/images/normatec-recovery.jpg",
+    "image": "/luke.jpg",
     "prices": {
       "session_lengths": [
         {
@@ -100,7 +100,7 @@
     "id": "clinical_specialist_appointments",
     "title": "Clinical Specialist Appointments",
     "description": "Expert physiotherapy care provided by clinical specialists and directors.",
-    "image": "/images/clinical-specialist.jpg",
+    "image": "/luke.jpg",
     "prices": {
       "initial": {
         "original": 95,
@@ -116,7 +116,7 @@
     "id": "clinical_pilates",
     "title": "Clinical Pilates",
     "description": "Improve strength, flexibility, and posture through tailored clinical Pilates programs.",
-    "image": "/images/clinical-pilates.jpg",
+    "image": "/clinical-pilates.jpg",
     "prices": {
       "six_week_course": {
         "original": 157,
@@ -137,7 +137,7 @@
     "id": "strength_and_conditioning",
     "title": "Strength and Conditioning",
     "description": "Optimize your performance and fitness with structured strength and conditioning programs.",
-    "image": "/images/strength-conditioning.jpg",
+    "image": "/strength-conditioning.jpg",
     "prices": {
       "consultation_programming": {
         "original": 150,
@@ -159,7 +159,7 @@
     "id": "athlete_testing",
     "title": "Athlete Testing",
     "description": "Comprehensive testing to evaluate functional movement and performance.",
-    "image": "/images/athlete-testing.jpg",
+    "image": "/athlete-testing.jpg",
     "prices": {
       "functional_movement_screen": {
         "original": 130,
@@ -182,7 +182,7 @@
     "id": "joint_injections",
     "title": "Joint Injections",
     "description": "Relieve pain and inflammation with targeted joint injections.",
-    "image": "/images/joint-injections.jpg",
+    "image": "/joint-injections.jpg",
     "prices": {
       "steroid_injection": {
         "original": 250,
@@ -198,7 +198,7 @@
     "id": "physiotherapy_at_home",
     "title": "Physiotherapy at Home",
     "description": "Personalized physiotherapy services delivered to your home.",
-    "image": "/images/physiotherapy-at-home.jpg",
+    "image": "/physio-at-home.jpg",
     "prices": {
       "initial_assessment": {
         "original": 99,
@@ -221,7 +221,7 @@
     "id": "podiatry",
     "title": "Podiatry",
     "description": "Specialized podiatry care including orthotics and assessments.",
-    "image": "/images/podiatry.jpg",
+    "image": "/podiatry.jpg",
     "prices": {
       "initial_assessment": {
         "original": 150,
@@ -241,7 +241,7 @@
     "id": "clinical_report_writing",
     "title": "Clinical Report Writing Fee",
     "description": "Professional report writing services for clinical documentation.",
-    "image": "/images/report-writing.jpg",
+    "image": "/luke.jpg",
     "prices": {
       "long_report": {
         "original": 65,

@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const fetchData = async () => {
     try {
-        const response = await fetch("https://scrxcdn.fra1.cdn.digitaloceanspaces.com/services.json");
+        const response = await fetch("/services.json");
         if (!response.ok) {
             throw new Error("Failed to fetch services.");
         }

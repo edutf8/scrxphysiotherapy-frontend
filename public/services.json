@@ -1,0 +1,256 @@
+[
+  {
+    "id": "msk-physiotherapy",
+    "title": "MSK Physiotherapy/Acupuncture",
+    "description": "MSK physiotherapy, short for musculoskeletal physiotherapy, is a specialized branch of physical therapy focused on treating injuries and disorders affecting the muscles, bones, and joints. It aims to alleviate pain, improve mobility, and enhance overall physical function through a combination of manual therapy, exercise, and education. MSK physiotherapists assess conditions such as back pain, sports injuries, arthritis, and post-surgical rehabilitation, tailoring treatments to individual needs.<br />&nbsp;<br />Their approach often includes techniques like joint manipulation, massage, stretching, and strengthening exercises, along with advice on posture and ergonomics to prevent future issues.",
+    "image": "/luke.jpg",
+    "prices": {
+      "Initial Appointment": {
+        "original": 72,
+        "discounted": 64.80
+      },
+      "Follow Up": {
+        "original": 59,
+        "discounted": null
+      },
+      "session_lengths": [],
+      "bulk_packages": [
+        {
+          "quantity": 3,
+          "price_per_session": 53.10,
+          "discount": "10% off"
+        },
+        {
+          "quantity": 5,
+          "price_per_session": 50.15,
+          "discount": "15% off"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sports_soft_deep_tissue_massage",
+    "title": "Sports / Soft and Deep Tissue Massage",
+    "description": "Relieve muscle tension, improve recovery, and promote relaxation with a soft or deep tissue massage tailored to your needs.",
+    "image": "/luke.jpg",
+    "prices": {
+      "session_lengths": [
+        {
+          "length": "60 mins",
+          "original": 65,
+          "discounted": null
+        },
+        {
+          "length": "40 mins",
+          "original": 50,
+          "discounted": null
+        }
+      ],
+      "bulk_packages": [
+        {
+          "quantity": 3,
+          "price_per_session": 58.50,
+          "discount": "10% off (60 mins)"
+        },
+        {
+          "quantity": 3,
+          "price_per_session": 45.00,
+          "discount": "10% off (40 mins)"
+        },
+        {
+          "quantity": 5,
+          "price_per_session": 55.25,
+          "discount": "15% off (60 mins)"
+        },
+        {
+          "quantity": 5,
+          "price_per_session": 42.50,
+          "discount": "15% off (40 mins)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "normatec_recovery",
+    "title": "Normatec Recovery",
+    "description": "Accelerate recovery and reduce muscle soreness with the Normatec Recovery system, available for flexible rental periods.",
+    "image": "/luke.jpg",
+    "prices": {
+      "session_lengths": [
+        {
+          "length": "24 hours",
+          "original": 25,
+          "discounted": null
+        },
+        {
+          "length": "72 hours",
+          "original": 50,
+          "discounted": null
+        },
+        {
+          "length": "7 days",
+          "original": 75,
+          "discounted": null
+        }
+      ],
+      "bulk_packages": []
+    }
+  },
+  {
+    "id": "clinical_specialist_appointments",
+    "title": "Clinical Specialist Appointments",
+    "description": "Expert physiotherapy care provided by clinical specialists and directors.",
+    "image": "/luke.jpg",
+    "prices": {
+      "initial": {
+        "original": 95,
+        "discounted": null
+      },
+      "follow_up": {
+        "original": 75,
+        "discounted": null
+      }
+    }
+  },
+  {
+    "id": "clinical_pilates",
+    "title": "Clinical Pilates",
+    "description": "Improve strength, flexibility, and posture through tailored clinical Pilates programs.",
+    "image": "/clinical-pilates.jpg",
+    "prices": {
+      "six_week_course": {
+        "original": 157,
+        "includes": "Includes 1:1 Pilates assessment"
+      },
+      "six_classes": {
+        "original": 85,
+        "discounted": null
+      },
+      "one_to_one": {
+        "original": 72,
+        "discounted": null,
+        "unit": "hour"
+      }
+    }
+  },
+  {
+    "id": "strength_and_conditioning",
+    "title": "Strength and Conditioning",
+    "description": "Optimize your performance and fitness with structured strength and conditioning programs.",
+    "image": "/strength-conditioning.jpg",
+    "prices": {
+      "consultation_programming": {
+        "original": 150,
+        "discounted": null,
+        "details": "8 weeks"
+      },
+      "remote_support": {
+        "original": 210,
+        "discounted": null,
+        "details": "8 weeks with remote support"
+      },
+      "follow_up_technical_session": {
+        "original": 60,
+        "discounted": null
+      }
+    }
+  },
+  {
+    "id": "athlete_testing",
+    "title": "Athlete Testing",
+    "description": "Comprehensive testing to evaluate functional movement and performance.",
+    "image": "/athlete-testing.jpg",
+    "prices": {
+      "functional_movement_screen": {
+        "original": 130,
+        "discounted": null,
+        "unit": "60 mins"
+      },
+      "running_mot_gait_analysis": {
+        "original": 175,
+        "discounted": null,
+        "unit": "90 mins"
+      },
+      "gait_analysis": {
+        "original": 95,
+        "discounted": null,
+        "unit": "60 mins"
+      }
+    }
+  },
+  {
+    "id": "joint_injections",
+    "title": "Joint Injections",
+    "description": "Relieve pain and inflammation with targeted joint injections.",
+    "image": "/joint-injections.jpg",
+    "prices": {
+      "steroid_injection": {
+        "original": 250,
+        "discounted": null
+      },
+      "hyaluronic_acid": {
+        "original": 350,
+        "discounted": null
+      }
+    }
+  },
+  {
+    "id": "physiotherapy_at_home",
+    "title": "Physiotherapy at Home",
+    "description": "Personalized physiotherapy services delivered to your home.",
+    "image": "/physio-at-home.jpg",
+    "prices": {
+      "initial_assessment": {
+        "original": 99,
+        "discounted": null,
+        "unit": "1 hour"
+      },
+      "follow_up_1_hour": {
+        "original": 89,
+        "discounted": null,
+        "unit": "1 hour"
+      },
+      "follow_up_30_minutes": {
+        "original": 59,
+        "discounted": null,
+        "unit": "30 minutes"
+      }
+    }
+  },
+  {
+    "id": "podiatry",
+    "title": "Podiatry",
+    "description": "Specialized podiatry care including orthotics and assessments.",
+    "image": "/podiatry.jpg",
+    "prices": {
+      "initial_assessment": {
+        "original": 150,
+        "discounted": null,
+        "unit": "1 hour"
+      },
+      "follow_up": {
+        "original": 75,
+        "discounted": null
+      },
+      "orthotics": {
+        "details": "Price varies on orthotic type and fitting required"
+      }
+    }
+  },
+  {
+    "id": "clinical_report_writing",
+    "title": "Clinical Report Writing Fee",
+    "description": "Professional report writing services for clinical documentation.",
+    "image": "/luke.jpg",
+    "prices": {
+      "long_report": {
+        "original": 65,
+        "discounted": null
+      },
+      "short_report": {
+        "original": 35,
+        "discounted": null
+      }
+    }
+  }
+]
