@@ -62,7 +62,7 @@ export default function FirstAid4Sport() {
                 <div className="grid grid-cols-2 gap-4 relative">
                     <div className="col-span-1 relative">
                         <Image
-                            src="/images/product1.jpg"
+                            src="/first-aid-4-sport-one.jpg"
                             alt="First Aid 4 Sport product 1"
                             width={300}
                             height={300}
@@ -71,7 +71,7 @@ export default function FirstAid4Sport() {
                     </div>
                     <div className="col-span-1 relative top-10">
                         <Image
-                            src="/images/product2.jpg"
+                            src="/first-aid-4-sport-twp.jpg"
                             alt="First Aid 4 Sport product 2"
                             width={300}
                             height={300}
@@ -80,7 +80,7 @@ export default function FirstAid4Sport() {
                     </div>
                     <div className="col-span-1 relative -top-6">
                         <Image
-                            src="/images/product3.jpg"
+                            src="/first-aid-4-sport-three.jpg"
                             alt="First Aid 4 Sport product 3"
                             width={300}
                             height={300}
@@ -89,7 +89,7 @@ export default function FirstAid4Sport() {
                     </div>
                     <div className="col-span-1 relative">
                         <Image
-                            src="/images/product4.jpg"
+                            src="/first-aid-4-sport-four.jpg"
                             alt="First Aid 4 Sport product 4"
                             width={300}
                             height={300}
