@@ -3,35 +3,44 @@ import React from 'react';
 const Timeline = () => {
     const timelineData = [
         {
-            year: '1984',
-            title: 'First Macintosh computer',
+            title: 'Treatment Philosophy',
             description:
-                'The Apple Macintosh—later rebranded as the Macintosh 128K—is the original Apple Macintosh personal computer. It played a pivotal role in establishing desktop publishing as a general office function. The motherboard, a 9 in (23 cm) CRT monitor, and a floppy drive were housed in a beige case with an integrated carrying handle; it came with a keyboard and single-button mouse.',
+                'We believe in building comprehensive capacity. Simply put, we use targeted exercise to help you develop a strong, resilient and adaptable body which is able to meet the demands of your sport, hobbies and interests.'
         },
         {
-            year: '1998',
-            title: 'iMac',
+            title: 'We are driven by a core set of values',
             description:
-                'iMac is a family of all-in-one Mac desktop computers designed and built by Apple Inc. It has been the primary part of Apple\'s consumer desktop offerings since its debut in August 1998, and has evolved through seven distinct forms.',
+                'People. Integrity. Together. Effort.'
         },
         {
-            year: '2001',
-            title: 'iPod',
+            title: 'You are at the centre of everything we do ',
             description:
-                'The iPod is a discontinued series of portable media players and multi-purpose mobile devices designed and marketed by Apple Inc. The first version was released on October 23, 2001, about 8½ months after the Macintosh version of iTunes was released. Apple sold an estimated 450 million iPod products as of 2022. Apple discontinued the iPod product line on May 10, 2022. At over 20 years, the iPod brand is the oldest to be discontinued by Apple.',
+                'We will listen to you and will tailor our approach to your needs and goals. We will send you a pre-assessment questionnaire to establish what you would like to get from your appointment and identify how best we can help you.'
         },
         {
-            year: '2007',
-            title: 'iPhone',
+            title: 'Education and Empowerment',
             description:
-                'iPhone is a line of smartphones produced by Apple Inc. that use Apple\'s own iOS mobile operating system. The first-generation iPhone was announced by then-Apple CEO Steve Jobs on January 9, 2007. Since then, Apple has annually released new iPhone models and iOS updates. As of November 1, 2018, more than 2.2 billion iPhones had been sold. As of 2022, the iPhone accounts for 15.6% of global smartphone market share.',
+                'We aim to answer 4 key questions for every client: \n' +
+                '\n' +
+                'What is wrong? \n' +
+                '\n' +
+                'How long will it take to get better? \n' +
+                '\n' +
+                'What can we do to help you? \n' +
+                '\n' +
+                'What can you do to help yourself? \n' +
+                '\n' +
+                'We passionately believe in empowering our clients with the knowledge and tools required to improve their symptoms.'
         },
         {
-            year: '2015',
-            title: 'Apple Watch',
+            title: 'Prevent. Recover. Optimise',
             description:
-                'The Apple Watch is a line of smartwatches produced by Apple Inc. It incorporates fitness tracking, health-oriented capabilities, and wireless telecommunication, and integrates with iOS and other Apple products and services.',
+                'We can help you recover from pain or injury as quickly as possible. Not only this, but we can also help identify what may have contributed to the injury happening in the first place. Addressing these issues can help prevent injury in the future, keeping you doing the things you love. '
         },
+        {
+            title: 'Technology and Research',
+            description: 'We have integrated the latest technology and evidence to support our assessment and treatment techniques to ensure that we are delivering a truly gold standard service. '
+        }
     ];
 
     return (
@@ -75,7 +84,6 @@ const Timeline = () => {
                                 zIndex: 10, // Ensure boxes appear above the connection lines
                             }}
                         >
-                            <div className="text-gray-400 text-lg font-semibold">{item.year}</div>
                             <h3 className="text-gray-100 text-xl font-semibold mb-2">{item.title}</h3>
                             <p className="text-gray-300">{item.description}</p>
                         </div>
