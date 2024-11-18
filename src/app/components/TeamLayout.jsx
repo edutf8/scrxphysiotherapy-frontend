@@ -78,6 +78,7 @@ export default function TeamLayout() {
                 categories[member.category].push(member);
             }
         });
+        console.log(categories);
         return categories;
     };
 
