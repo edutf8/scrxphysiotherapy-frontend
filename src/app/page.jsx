@@ -167,82 +167,82 @@ const images = [
 const partners = [
     {
         name: "University of Portsmouth",
-        logo: "https://via.placeholder.com/200x150?text=1"
+        logo: "/university-of-portsmouth.png"
     },
     {
         name: "PGMOL",
-        logo: "https://via.placeholder.com/200x150?text=2"
+        logo: "/pgmol.png"
     },
     {
         name: "University of Chichester",
-        logo: "https://via.placeholder.com/200x150?text=3"
+        logo: "/university-of-chichester.png"
     },
     {
         name: "PA",
-        logo: "https://via.placeholder.com/200x150?text=4"
+        logo: "/pa.png"
     },
     {
         name: "EHUB",
-        logo: "https://via.placeholder.com/200x150?text=5"
+        logo: "/ehub.png"
     },
     {
         name: "Constant",
-        logo: "https://via.placeholder.com/200x150?text=6"
+        logo: "/constant.jpeg"
     },
     {
         name: "Southampton Solent University",
-        logo: "https://via.placeholder.com/200x150?text=7"
+        logo: "/solent-university.png"
     },
     {
         name: "Southern Legion",
-        logo: "https://via.placeholder.com/200x150?text=8"
+        logo: "/southern-legion.png"
     },
     {
         name: "NHS",
-        logo: "https://via.placeholder.com/200x150?text=9"
+        logo: "/nhs.png"
     },
     {
         name: "Wild Dogs Rugby",
-        logo: "https://via.placeholder.com/200x150?text=10"
+        logo: "/wild-dogs-rugby.png"
     },
     {
         name: "Alexandra Sports",
-        logo: "https://via.placeholder.com/200x150?text=11"
+        logo: "/alexandra-sports-logo.png"
     },
     {
         name: "Arthritis Action",
-        logo: "https://via.placeholder.com/200x150?text=12"
+        logo: "/arthritis-action.png"
     },
     {
         name: "TASS",
-        logo: "https://via.placeholder.com/200x150?text=7"
+        logo: "/tass.png"
     },
     {
         name: "South Island Sevens",
-        logo: "https://via.placeholder.com/200x150?text=8"
+        logo: "/south-island-sevens.jpeg"
     },
     {
         name: "Portsmouth Force",
-        logo: "https://via.placeholder.com/200x150?text=9"
+        logo: "/portsmouth-force.jpeg"
     },
     {
         name: "PN",
-        logo: "https://via.placeholder.com/200x150?text=10"
+        logo: "/pn.png"
     },
     {
         name: "Believe & Achieve",
-        logo: "https://via.placeholder.com/200x150?text=11"
+        logo: "/believe-and-achieve.jpeg"
     },
     {
-        name: "Garmin",
-        logo: "https://via.placeholder.com/200x150?text=12"
+        name: "New Forest Marathon",
+        logo: "/new-forest-marathon.png"
     },
     {
         name: "Portsmouth Grammar School",
-        logo: "https://via.placeholder.com/200x150?text=7"
+        logo: "/PGS.jpeg"
     },
     {
         name: "Royal Navy",
-        logo: "https://via.placeholder.com/200x150?text=8"
+        logo: "/royal-navy.png"
     }
 ]
