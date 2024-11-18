@@ -24,8 +24,8 @@ export default function Home() {
           <section id={"physio-at-home"}>
               <div className={"mt-10 text-center bg-gray-200"}>
                   <div className={"container mx-auto pt-5 pb-5"}>
-                      <h1 className={"text-4xl uppercase font-semibold"}>South Coast Rx Physiotherapy now offers
-                          appointments at home</h1>
+                      <h1 className={"text-4xl font-semibold"}>South Coast Rx Physiotherapy Now Offers
+                          Appointments at Home</h1>
                       <a className={"mt-5 py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium" +
                           " rounded-full border border-gray-200 bg-blue-500 text-gray-800 shadow-sm hover:bg-blue-700" +
                           " focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none text-white"}
@@ -39,7 +39,7 @@ export default function Home() {
               <div className={"container mx-auto mt-10 text-center"}>
                   <div className="flex flex-col md:flex-row mx-auto justify-center items-center text-center">
                       <div className="flex-1 p-5 text-black">
-                          <h1 className="text-2xl sm:text-3xl font-bold mb-4 uppercase">
+                          <h1 className="text-2xl sm:text-3xl font-bold mb-4">
                               Why Choose Us?
                           </h1>
                           <p className="text-base sm:text-lg">
@@ -76,7 +76,7 @@ export default function Home() {
                   <div
                       className="flex flex-col-reverse md:flex-row mx-auto justify-center items-center text-center h-full w-full">
                       <div className="flex-1 p-5 text-black md:order-2 order-2">
-                          <h1 className="text-3xl font-bold mb-4 uppercase">Our Work In Elite Sport</h1>
+                          <h1 className="text-3xl font-bold mb-4">Our Work In Elite Sport</h1>
                           <p className={"text-lg"}>
                               South Coast Rx Physiotherapy are proud to be the provider of choice for a number of
                               England, GB and other professional athletes.
@@ -101,7 +101,7 @@ export default function Home() {
           <section id={"reviews"}>
               <div className={"container mx-auto mt-10 text-center items-center justify-center"}>
                   <div className={"w-full p-5"}>
-                      <h1 className={"text-4xl uppercase font-semibold pt-2"}>Our Testimonials</h1>
+                      <h1 className={"text-4xl font-semibold pt-2"}>Our Testimonials</h1>
                   </div>
               </div>
               <div
@@ -136,7 +136,7 @@ export default function Home() {
           </section>
           <section id={"partners-section"}>
               <div className={"container mx-auto mt-10 text-center"}>
-                  <h1 className={"text-4xl uppercase font-semibold"}>Who We Work With</h1>
+                  <h1 className={"text-4xl font-semibold"}>Who We Work With</h1>
               </div>
               <div className={"container mx-auto object-center"}>
                   <PartnersGrid partners={partners}/>
