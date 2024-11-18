@@ -88,16 +88,19 @@ export function ServiceCard() {
                                                     <>
                                                         <span>{item.length}:</span>
                                                         <span className="ml-2">
-                                                            {item.discounted ? (
-                                                                <>
+                                                            {item.original !== undefined && (
+                                                                <span>
                                                                     <s className="text-red-500">
                                                                         £{item.original.toFixed(2)}
                                                                     </s>
-                                                                    <span className="ml-2 text-blue-600 font-medium">
-                                                                        £{item.discounted.toFixed(2)}
-                                                                    </span>
-                                                                </>
-                                                            ) : (
+                                                                </span>
+                                                            )}
+                                                            {item.discounted !== undefined && (
+                                                                <span className="ml-2 text-blue-600 font-medium">
+                                                                    £{item.discounted.toFixed(2)}
+                                                                </span>
+                                                            )}
+                                                            {item.original !== undefined && item.discounted === undefined && (
                                                                 <span className="text-blue-600 font-medium">
                                                                     £{item.original.toFixed(2)}
                                                                 </span>
@@ -109,7 +112,7 @@ export function ServiceCard() {
                                                     <>
                                                         <span>{item.quantity} sessions:</span>
                                                         <span className="ml-2">
-                                                            £{item.price_per_session.toFixed(2)}
+                                                            £{item.price_per_session?.toFixed(2) || "N/A"}
                                                             {item.discount && (
                                                                 <span className="ml-2 text-green-600 font-medium">
                                                                     ({item.discount})
@@ -124,11 +127,9 @@ export function ServiceCard() {
                                         // Handle single prices (e.g., initial, follow_up)
                                         return (
                                             <li key={priceType}>
-                                                <span className="capitalize">
-                                                    {priceType.replace(/_/g, " ")}:
-                                                </span>
+                                                <span className="capitalize">{priceType.replace(/_/g, " ")}:</span>
                                                 <span className="ml-2">
-                                                    {value.discounted ? (
+                                                    {value?.original !== undefined && value?.discounted !== undefined ? (
                                                         <>
                                                             <s className="text-red-500">
                                                                 £{value.original.toFixed(2)}
@@ -137,10 +138,12 @@ export function ServiceCard() {
                                                                 £{value.discounted.toFixed(2)}
                                                             </span>
                                                         </>
-                                                    ) : (
+                                                    ) : value?.original !== undefined ? (
                                                         <span className="text-blue-600 font-medium">
                                                             £{value.original.toFixed(2)}
                                                         </span>
+                                                    ) : (
+                                                        <span className="text-gray-500">N/A</span>
                                                     )}
                                                 </span>
                                             </li>
