@@ -59,60 +59,61 @@ export function ServiceCard() {
                                 <h3 className="text-lg font-bold mt-4">{active.title}</h3>
                                 <p className="text-sm mt-2">{active.description}</p>
                                 <ul className="mt-4 space-y-2">
-                                    {Object.entries(active.prices).map(([priceType, value]) => {
-                                        if (priceType === "session_lengths" && value.length > 0) {
-                                            return (
-                                                <li key={priceType}>
-                                                    <h4 className="font-bold mt-2">Session Lengths</h4>
-                                                    {value.map(({ length, original, discounted }) => (
-                                                        <div key={length} className="flex justify-between">
-                                                            <span>{length}</span>
-                                                            <span>
-                                                                <s className={discounted ? "mr-2 text-red-500" : ""}>
-                                                                    £{original}
-                                                                </s>
-                                                                {discounted && <span>£{discounted}</span>}
-                                                            </span>
-                                                        </div>
-                                                    ))}
-                                                </li>
-                                            );
-                                        }
+                                    {active?.prices &&
+                                        Object.entries(active.prices).map(([priceType, value]) => {
+                                            if (priceType === "session_lengths" && Array.isArray(value) && value.length > 0) {
+                                                return (
+                                                    <li key={priceType}>
+                                                        <h4 className="font-bold mt-2">Session Lengths</h4>
+                                                        {value.map(({length, original, discounted}) => (
+                                                            <div key={length} className="flex justify-between">
+                                                                <span>{length}</span>
+                                                                <span>
+                                    <s className={discounted ? "mr-2 text-red-500" : ""}>£{original}</s>
+                                                                    {discounted && <span>£{discounted}</span>}
+                                </span>
+                                                            </div>
+                                                        ))}
+                                                    </li>
+                                                );
+                                            }
 
-                                        if (priceType === "bulk_packages" && value.length > 0) {
-                                            return (
-                                                <li key={priceType}>
-                                                    <h4 className="font-bold mt-2">Bulk Packages</h4>
-                                                    {value.map(({ quantity, price_per_session, discount }) => (
-                                                        <div
-                                                            key={quantity}
-                                                            className="tooltip"
-                                                            data-tooltip={discount}
-                                                        >
-                                                            {quantity} sessions @ £{price_per_session} each
-                                                        </div>
-                                                    ))}
-                                                </li>
-                                            );
-                                        }
+                                            if (priceType === "bulk_packages" && Array.isArray(value) && value.length > 0) {
+                                                return (
+                                                    <li key={priceType}>
+                                                        <h4 className="font-bold mt-2">Bulk Packages</h4>
+                                                        {value.map(({quantity, price_per_session, discount}) => (
+                                                            <div
+                                                                key={quantity}
+                                                                className="tooltip"
+                                                                data-tooltip={discount}
+                                                            >
+                                                                {quantity} sessions @ £{price_per_session} each
+                                                            </div>
+                                                        ))}
+                                                    </li>
+                                                );
+                                            }
 
-                                        if (typeof value === "object" && value.original) {
-                                            return (
-                                                <li key={priceType} className="flex justify-between">
-                                                    <span className="capitalize">{priceType.replace(/_/g, " ")}</span>
-                                                    <span>
-                                                        <s className={value.discounted ? "mr-2 text-red-500" : ""}>
-                                                            £{value.original}
-                                                        </s>
-                                                        {value.discounted && <span>£{value.discounted}</span>}
-                                                    </span>
-                                                </li>
-                                            );
-                                        }
+                                            if (typeof value === "object" && value?.original) {
+                                                return (
+                                                    <li key={priceType} className="flex justify-between">
+                                                        <span
+                                                            className="capitalize">{priceType.replace(/_/g, " ")}</span>
+                                                        <span>
+                            <s className={value.discounted ? "mr-2 text-red-500" : ""}>
+                                £{value.original}
+                            </s>
+                                                            {value.discounted && <span>£{value.discounted}</span>}
+                        </span>
+                                                    </li>
+                                                );
+                                            }
 
-                                        return null;
-                                    })}
+                                            return null; // Skip rendering if the price type doesn't match expected formats
+                                        })}
                                 </ul>
+
                             </motion.div>
                         </div>
                     </>
