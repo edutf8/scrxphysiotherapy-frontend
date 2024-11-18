@@ -49,7 +49,7 @@ function Modal({ isOpen, onClose, teamMember }) {
 const fetchData = async () => {
     try {
         const response = await fetch(
-            "https://scrxcdn.fra1.cdn.digitaloceanspaces.com/team.json"
+            "/team.json"
         );
         if (!response.ok) {
             throw new Error(`Network response was not ok, status: ${response.status}`);
