@@ -1,89 +1,166 @@
 "use client";
-
-import Link from 'next/link';
-import { useState } from 'react';
 import Image from "next/image";
+import React, { useEffect, useState, useRef } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
-export default function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+const fetchData = async () => {
+    try {
+        const response = await fetch("https://scrxcdn.fra1.cdn.digitaloceanspaces.com/services.json");
+        if (!response.ok) {
+            throw new Error("Failed to fetch services.");
+        }
+        return await response.json();
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+};
+
+export function ServiceCard() {
+    const [services, setServices] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
+    const [activeCard, setActiveCard] = useState(null);
+
+    useEffect(() => {
+        fetchData()
+            .then((data) => {
+                if (data) {
+                    setServices(data);
+                    setError(false);
+                } else {
+                    setError(true);
+                }
+            })
+            .catch(() => setError(true))
+            .finally(() => setLoading(false));
+    }, []);
+
+    if (loading) {
+        return (
+            <div className="flex justify-center items-center min-h-screen">
+                <div className="spinner border-t-blue-600 border-4 border-solid rounded-full w-12 h-12 animate-spin"></div>
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className="flex justify-center items-center min-h-screen">
+                <p className="text-red-500 text-lg font-semibold">Failed to load services, please try again.</p>
+            </div>
+        );
+    }
 
     return (
-        <nav className="bg-white shadow-lg p-5 z-50 relative">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16">
-                    <div className="flex items-center">
-                        <div className="hidden md:flex space-x-8">
-                            <Link href="/services" className="text-gray-800 hover:text-blue-600 transition duration-300">Services</Link>
-                            <Link href="/physiotherapy-at-home" className="text-gray-800 hover:text-blue-600 transition duration-300">Physiotherapy At Home</Link>
-                            <Link href="/clinics" className="text-gray-800 hover:text-blue-600 transition duration-300">Clinics</Link>
+        <>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+                {services.map((service) => (
+                    <motion.div
+                        key={service.id}
+                        layout
+                        onClick={() => setActiveCard(service)}
+                        className="cursor-pointer bg-white rounded-lg shadow-md hover:shadow-lg overflow-hidden"
+                        aria-labelledby={`${service.id}-title`}
+                        role="button"
+                        tabIndex={0}
+                    >
+                        <Image
+                            src={service.image}
+                            alt={service.title}
+                            width={500}
+                            height={300}
+                            className="object-cover w-full h-48"
+                        />
+                        <div className="p-4">
+                            <h3 id={`${service.id}-title`} className="font-bold text-lg text-center text-blue-600">
+                                {service.title}
+                            </h3>
+                            <ul className="mt-2 space-y-1">
+                                {Object.entries(service.prices).map(([priceType, value]) => {
+                                    if (priceType === "session_lengths" || priceType === "bulk_packages") {
+                                        return Array.isArray(value) && value.length > 0 ? (
+                                            value.map(({ length, quantity, price_per_session, discount, original, discounted }) => (
+                                                <li key={`${priceType}-${length || quantity}`}>
+                                                    {length || `${quantity} sessions`}:
+                                                    <span className="ml-2 text-blue-600 font-medium">
+                                                        £{price_per_session || discounted || original}
+                                                        {discount && ` (${discount})`}
+                                                    </span>
+                                                </li>
+                                            ))
+                                        ) : null;
+                                    } else {
+                                        return (
+                                            <li key={priceType}>
+                                                {priceType.replace(/_/g, " ").replace(/^\w/, (c) => c.toUpperCase())}:
+                                                <span className="ml-2 text-blue-600 font-medium">
+                                                    £{value.discounted || value.original}
+                                                </span>
+                                            </li>
+                                        );
+                                    }
+                                })}
+                            </ul>
                         </div>
-                    </div>
-
-                    <div className="flex-shrink-0">
-                        <Link href="/">
-                            <Image
-                                src={"/SCRx-logo.jpeg"}
-                                alt={"logo"}
-                                className={"w-48 md:w-48 lg:w-72 mx-auto"}
-                                width={300} height={500}
-                            />
-                        </Link>
-                    </div>
-
-                    <div className="flex items-center">
-                        <div className="hidden md:flex space-x-8">
-                            <Link href="/team" className="text-gray-800 hover:text-blue-600 transition duration-300">Team</Link>
-                            <Link href="/first-aid-4-sport" className="text-gray-800 hover:text-blue-600 transition duration-300">First Aid 4 Sport</Link>
-                            <Link href="/vision" className="text-gray-800 hover:text-blue-600 transition duration-300">Vision</Link>
-                        </div>
-
-                        <div className="md:hidden flex items-center">
-                            <button
-                                onClick={() => setIsOpen(!isOpen)}
-                                className="text-gray-800 hover:text-blue-600 focus:outline-none ml-auto"
-                            >
-                                <svg
-                                    className="h-6 w-6"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    {isOpen ? (
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                            d="M6 18L18 6M6 6l12 12"
-                                        />
-                                    ) : (
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                            d="M4 6h16M4 12h16m-7 6h7"
-                                        />
-                                    )}
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                    </motion.div>
+                ))}
             </div>
 
-            {isOpen && (
-                <div className="md:hidden">
-                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center z-50">
-                        <Link href="/services" className="block text-gray-800 hover:text-blue-600">Services</Link>
-                        <Link href="/physiotherapy-at-home" className="block text-gray-800 hover:text-blue-600">Physiotherapy At Home</Link>
-                        <Link href="/clinics" className="block text-gray-800 hover:text-blue-600">Clinics</Link>
-                        <Link href="/team" className="block text-gray-800 hover:text-blue-600">Team</Link>
-                        <Link href="/first-aid-4-sport" className="block text-gray-800 hover:text-blue-600">First Aid 4 Sport</Link>
-                        <Link href="/vision" className="block text-gray-800 hover:text-blue-600">Vision</Link>
-                    </div>
-                </div>
-            )}
-        </nav>
+            <AnimatePresence>
+                {activeCard && (
+                    <>
+                        <motion.div
+                            className="fixed inset-0 bg-black bg-opacity-50 z-10"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setActiveCard(null)}
+                        />
+                        <motion.div
+                            className="fixed inset-0 flex items-center justify-center z-20"
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.8, opacity: 0 }}
+                        >
+                            <div
+                                className="bg-white rounded-lg shadow-xl p-6 max-w-lg w-full relative"
+                                role="dialog"
+                                aria-labelledby="service-dialog-title"
+                            >
+                                <button
+                                    onClick={() => setActiveCard(null)}
+                                    className="absolute top-4 right-4 text-gray-600 hover:text-gray-800"
+                                    aria-label="Close"
+                                >
+                                    ✕
+                                </button>
+                                <Image
+                                    src={activeCard.image}
+                                    alt={activeCard.title}
+                                    width={600}
+                                    height={400}
+                                    className="rounded-lg mb-4"
+                                />
+                                <h2 id="service-dialog-title" className="text-2xl font-bold text-blue-600 mb-4">
+                                    {activeCard.title}
+                                </h2>
+                                <p className="text-gray-600">{activeCard.description}</p>
+                                <ul className="mt-4 space-y-2">
+                                    {Object.entries(activeCard.prices).map(([priceType, value]) => (
+                                        <li key={priceType} className="text-blue-600">
+                                            {priceType.replace(/_/g, " ").replace(/^\w/, (c) => c.toUpperCase())}:
+                                            <span className="ml-2 font-medium">
+                                                £{value.discounted || value.original}
+                                            </span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </motion.div>
+                    </>
+                )}
+            </AnimatePresence>
+        </>
     );
 }
