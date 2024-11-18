@@ -207,7 +207,7 @@ const partners = [
     },
     {
         name: "Alexandra Sports",
-        logo: "/alexandra-sports-logo.png"
+        logo: "/alexandra-sports-logo.jpeg"
     },
     {
         name: "Arthritis Action",
